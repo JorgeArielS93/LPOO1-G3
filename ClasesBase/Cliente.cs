@@ -7,7 +7,7 @@ namespace ClasesBase
 {
     public class Cliente
     {
-        private string @CLI_DNI;
+        private string @CLI_DNI; //llave primaria
 
         public string cli_DNI
         {
