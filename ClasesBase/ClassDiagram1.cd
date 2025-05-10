@@ -20,5 +20,12 @@
       <FileName>Prestamo.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="ClasesBase.Cuota">
+    <Position X="6.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAQAAAAAAAEAAAAABAQEAAAAAQAAAAQBAAQAEAAAAA=</HashCode>
+      <FileName>Cuota.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
