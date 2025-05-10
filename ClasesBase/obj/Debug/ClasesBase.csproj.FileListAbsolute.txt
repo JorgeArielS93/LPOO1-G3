@@ -1,0 +1,5 @@
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\ClasesBase\bin\Debug\ClasesBase.dll
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\ClasesBase\bin\Debug\ClasesBase.pdb
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\ClasesBase\obj\Debug\ClasesBase.dll
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\ClasesBase\obj\Debug\ClasesBase.pdb
