@@ -20,5 +20,11 @@ namespace ClasesBase
             get { return ROL_Descripcion; }
             set { ROL_Descripcion = value; }
         }
+
+        public Rol(string codigo, string descripcion)
+        {
+            ROL_Codigo = codigo;
+            ROL_Descripcion = descripcion;
+        }
     }
 }
