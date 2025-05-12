@@ -11,7 +11,7 @@ namespace ClasesBase
         private string USU_NombreUsuario;
         private string USU_Contraseña;
         private string USU_ApellidoNombre;
-        private string ROL_Codigo_FK;       // # Clave Foránea a Rol
+        private string ROL_Codigo;       // # Clave Foránea a Rol
 
         public int usu_ID
         {
@@ -36,8 +36,19 @@ namespace ClasesBase
 
         public string rol_Codigo
         {
-            get { return ROL_Codigo_FK; }
-            set { ROL_Codigo_FK = value; }
+            get { return ROL_Codigo; }
+            set { ROL_Codigo = value; }
         }
+
+        public Usuario(int id, string nombreUsuario, string contraseña, string apellidoNombre, string rolCodigo)
+        {
+            USU_ID = id;
+            USU_NombreUsuario = nombreUsuario;
+            USU_Contraseña = contraseña;
+            USU_ApellidoNombre = apellidoNombre;
+            ROL_Codigo = rolCodigo;
+        }
+
+
     }
 }
