@@ -15,5 +15,17 @@ namespace Vistas
         {
             InitializeComponent();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAltaCliente frmAlta = new FrmAltaCliente();
+            frmAlta.Show();
+        }
+
+        private void prestamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPrestamo frmPrestamo = new FrmPrestamo();
+            frmPrestamo.Show();
+        }
     }
 }
