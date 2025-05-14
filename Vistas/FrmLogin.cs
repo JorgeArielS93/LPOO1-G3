@@ -101,5 +101,31 @@ namespace Vistas
         {
 
         }
+        private Color colorOriginal;
+        private void btnIngresar_MouseHover(object sender, EventArgs e)
+        {
+            colorOriginal = btnIngresar.BackColor;
+            btnIngresar.BackColor = Color.DarkBlue;
+            btnIngresar.ForeColor = Color.White;
+        }
+
+        private void btnIngresar_MouseLeave(object sender, EventArgs e)
+        {
+            btnIngresar.BackColor = colorOriginal;
+            btnIngresar.ForeColor = Color.Black;
+        }
+
+        private void btnSalir_MouseHover(object sender, EventArgs e)
+        {
+            colorOriginal = btnSalir.BackColor;
+            btnSalir.BackColor = Color.DarkRed;
+            btnSalir.ForeColor = Color.White;
+        }
+
+        private void btnSalir_MouseLeave(object sender, EventArgs e)
+        {
+            btnSalir.BackColor = colorOriginal;
+            btnSalir.ForeColor = Color.Black;
+        }
     }
 }

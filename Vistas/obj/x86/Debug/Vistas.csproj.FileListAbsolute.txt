@@ -30,3 +30,18 @@ C:\Users\gusty\OneDrive\Desktop\2025 1C\Labo POO 1\TP1\LPOO1-G3\Vistas\bin\Debug
 C:\Users\gusty\OneDrive\Desktop\2025 1C\Labo POO 1\TP1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmDestino.resources
 C:\Users\gusty\OneDrive\Desktop\2025 1C\Labo POO 1\TP1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmPeriodo.resources
 C:\Users\gusty\OneDrive\Desktop\2025 1C\Labo POO 1\TP1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmPrestamo.resources
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.exe
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.pdb
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\bin\Debug\Vistas.exe
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\bin\Debug\Vistas.pdb
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\bin\Debug\ClasesBase.dll
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\bin\Debug\ClasesBase.pdb
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmAltaCliente.resources
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmDestino.resources
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmLogin.resources
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmMain.resources
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmPeriodo.resources
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmPrestamo.resources
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
