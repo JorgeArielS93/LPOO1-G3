@@ -127,5 +127,23 @@ namespace Vistas
             btnSalir.BackColor = colorOriginal;
             btnSalir.ForeColor = Color.Black;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '*') 
+            {
+                button1.BringToFront();
+                txtPassword.PasswordChar = '\0';
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '\0')
+            {
+                button2.BringToFront();
+                txtPassword.PasswordChar = '*';
+            }
+        }
     }
 }
