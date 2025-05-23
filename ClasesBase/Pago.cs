@@ -12,7 +12,6 @@ namespace ClasesBase
         private decimal PAG_Importe;
         // Clave Foránea
         private int CUO_Codigo_FK;          // # Clave Foránea a Cuota
-        private Cuota CUOTA_NAV;
 
         public int pag_Codigo
         {
@@ -34,12 +33,6 @@ namespace ClasesBase
         {
             get { return CUO_Codigo_FK; }
             set { CUO_Codigo_FK = value; }
-        }
-
-        public Cuota cuota
-        {
-            get { return CUOTA_NAV; }
-            set { CUOTA_NAV = value; }
         }
     }
 }

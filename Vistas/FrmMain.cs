@@ -38,9 +38,7 @@ namespace Vistas
             DialogResult optionSelected = MessageBox.Show("¿Cerrar sesion?", "Aviso", MessageBoxButtons.YesNo);
             if (optionSelected == DialogResult.Yes) {
                 this.Hide();
-                FrmLogin frmLogin = new FrmLogin();
-                frmLogin.FormClosed += (s, args) => this.Close();
-                frmLogin.Show();
+                Application.Exit();
             }
         }
     }
