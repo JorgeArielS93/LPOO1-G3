@@ -10,7 +10,9 @@ namespace ClasesBase
         private int PAG_Codigo;             // @ Clave Primaria
         private DateTime PAG_Fecha;
         private decimal PAG_Importe;
-        private int CUO_Codigo;          // # Clave Foránea a Cuota
+        // Clave Foránea
+        private int CUO_Codigo_FK;          // # Clave Foránea a Cuota
+        private Cuota CUOTA_NAV;
 
         public int pag_Codigo
         {
@@ -30,8 +32,14 @@ namespace ClasesBase
 
         public int cuo_Codigo
         {
-            get { return CUO_Codigo; }
-            set { CUO_Codigo = value; }
+            get { return CUO_Codigo_FK; }
+            set { CUO_Codigo_FK = value; }
+        }
+
+        public Cuota cuota
+        {
+            get { return CUOTA_NAV; }
+            set { CUOTA_NAV = value; }
         }
     }
 }
