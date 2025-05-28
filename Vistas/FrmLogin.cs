@@ -13,62 +13,62 @@ namespace Vistas
 {
     public partial class FrmLogin : Form
     {
+        public static Usuario UsuarioLogueado { get; private set; }
         public FrmLogin()
         {
             InitializeComponent();
         }
 
-        private List<Rol> cargarRoles()
-        {
-            return new List<Rol> {
-                                    new Rol("ADMIN", "Administrador"),
-                                    new Rol("OPER", "Operador"),
-                                    new Rol("AUD", "Auditor")};
-        }
-
-        private List<Usuario> cargarUsuarios()
-        {
-            return new List<Usuario> {
-                                        new Usuario(1, "admin", "123", "Juan Pérez", "ADMIN"),
-                                        new Usuario(2, "operador", "123", "Lucía Gómez", "OPER"),
-                                        new Usuario(3, "auditor", "123", "Martín Díaz", "AUD")};
-        }
+       
     
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            Boolean usuarioValido = false;
-            List<Usuario> usuarios = cargarUsuarios();
-            List<Rol> roles = cargarRoles();
-            string nombreIngresado = txtUserName.Text;
-            string passwordIngresado = txtPassword.Text;
-            string rolUsuario = "";
-            FrmMain oFrmMain = new FrmMain();
+            string nombreUsuario = txtUserName.Text;
+            string password = txtPassword.Text;
 
-            foreach(Usuario usuario in usuarios){
-                if(usuario.usu_NombreUsuario == nombreIngresado && usuario.usu_Contraseña == passwordIngresado){
-                    usuarioValido = true;
-                    foreach (Rol rol in roles){
-                        if(usuario.rol_Codigo == rol.rol_Codigo){
-                            rolUsuario = rol.rol_Descripcion;
-                        }
-
-                    }
-                    MessageBox.Show("Bienvenido/a: " + usuario.usu_ApellidoNombre +
-                                                    "\nRol: " + rolUsuario);
-
-                    this.Hide(); 
-                    oFrmMain.FormClosed += (s, args) => this.Close(); 
-                    oFrmMain.Show();
-                    
-                    break;
-                }
-            }
-            
-            if(!usuarioValido){
-                MessageBox.Show("Credenciales incorrectas");
+            if (string.IsNullOrEmpty(nombreUsuario) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Ingrese usuario y contraseña", "Validación", 
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
+            Usuario usuario = ABMUsuario.AutenticarUsuario(nombreUsuario, password);
+
+            if (usuario != null)
+            {
+                UsuarioLogueado = usuario;
+
+                MessageBox.Show("Bienvenido/a: " + usuario.usu_Nombre + " " + usuario.usu_Apellido + "\n" +
+                "Rol: " + obtenerDescripcionRol(usuario.rol_Codigo),
+                "Acceso concedido",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+                FrmMain mainForm = new FrmMain(usuario);
+                this.Hide();
+                mainForm.FormClosed += (s, args) => this.Close();
+                mainForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Credenciales incorrectas", "Acceso denegado", 
+                              MessageBoxButtons.OK, 
+                              MessageBoxIcon.Error);
+            }
         }
+
+        private string obtenerDescripcionRol(string codigoRol)
+        {
+            switch (codigoRol)
+            {
+                case "ADMIN": return "Administrador";
+                case "OPER": return "Operador";
+                case "AUDI": return "Auditor";
+                default: return "Sin rol asignado";
+            }
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
