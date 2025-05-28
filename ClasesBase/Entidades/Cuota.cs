@@ -7,7 +7,7 @@ namespace ClasesBase
 {
     public class Cuota
     {
-        private int @CUO_Codigo;
+        private int CUO_Codigo;
 
         public int cuo_Codigo
         {
