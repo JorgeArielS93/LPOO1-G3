@@ -7,7 +7,7 @@ namespace ClasesBase
 {
     public class Prestamo
     {
-        private int PRE_Numero;
+        private int @PRE_Numero;
 
         public int pre_Numero
         {

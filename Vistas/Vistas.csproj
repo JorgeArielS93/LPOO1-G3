@@ -65,79 +65,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="VistaUsuario\FrmVerUsuarios.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VistaUsuario\FrmVerUsuarios.Designer.cs">
-      <DependentUpon>FrmVerUsuarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VistaUsuario\FrmAltaUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VistaUsuario\FrmAltaUsuario.Designer.cs">
-      <DependentUpon>FrmAltaUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAltaCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAltaCliente.Designer.cs">
-      <DependentUpon>FrmAltaCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmDestino.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDestino.Designer.cs">
-      <DependentUpon>FrmDestino.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmLogin.Designer.cs">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPeriodo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPeriodo.Designer.cs">
-      <DependentUpon>FrmPeriodo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPrestamo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPrestamo.Designer.cs">
-      <DependentUpon>FrmPrestamo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="prestamosDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>prestamosDataSet.xsd</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAltaCliente.resx">
-      <DependentUpon>FrmAltaCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDestino.resx">
-      <DependentUpon>FrmDestino.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmLogin.resx">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain.resx">
-      <DependentUpon>FrmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPeriodo.resx">
-      <DependentUpon>FrmPeriodo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPrestamo.resx">
-      <DependentUpon>FrmPrestamo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -147,24 +82,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="VistaUsuario\FrmAltaUsuario.resx">
-      <DependentUpon>FrmAltaUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VistaUsuario\FrmVerUsuarios.resx">
-      <DependentUpon>FrmVerUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="app.config" />
-    <None Include="prestamosDataSet.xsc">
-      <DependentUpon>prestamosDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="prestamosDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>prestamosDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="prestamosDataSet.xss">
-      <DependentUpon>prestamosDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
