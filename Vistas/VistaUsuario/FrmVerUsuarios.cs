@@ -183,6 +183,11 @@ namespace Vistas
     
     }
 
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
 
 
     }

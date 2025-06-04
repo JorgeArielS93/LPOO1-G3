@@ -92,7 +92,7 @@
             // txtDNI
             // 
             this.txtDNI.Location = new System.Drawing.Point(162, 54);
-            this.txtDNI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDNI.Margin = new System.Windows.Forms.Padding(2);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(140, 20);
             this.txtDNI.TabIndex = 0;
@@ -101,7 +101,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(162, 98);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(140, 20);
             this.txtNombre.TabIndex = 1;
@@ -110,7 +110,7 @@
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(162, 141);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(140, 20);
             this.txtApellido.TabIndex = 2;
@@ -146,7 +146,7 @@
             "Masculino",
             "Otro"});
             this.comboBoxSexo.Location = new System.Drawing.Point(162, 185);
-            this.comboBoxSexo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxSexo.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxSexo.Name = "comboBoxSexo";
             this.comboBoxSexo.Size = new System.Drawing.Size(140, 21);
             this.comboBoxSexo.TabIndex = 3;
@@ -165,7 +165,7 @@
             // fechaNacimiento
             // 
             this.fechaNacimiento.Location = new System.Drawing.Point(162, 231);
-            this.fechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechaNacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.fechaNacimiento.Name = "fechaNacimiento";
             this.fechaNacimiento.Size = new System.Drawing.Size(140, 20);
             this.fechaNacimiento.TabIndex = 4;
@@ -194,7 +194,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(162, 318);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(140, 20);
             this.txtDireccion.TabIndex = 6;
@@ -212,7 +212,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(162, 362);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(140, 20);
             this.txtTelefono.TabIndex = 7;
@@ -226,7 +226,7 @@
             0,
             131072});
             this.numIngreso.Location = new System.Drawing.Point(162, 275);
-            this.numIngreso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numIngreso.Margin = new System.Windows.Forms.Padding(2);
             this.numIngreso.Maximum = new decimal(new int[] {
             276447231,
             23283,
@@ -270,9 +270,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DNI);
             this.Controls.Add(this.btnAlta);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAltaCliente";
             this.Text = "FrmAltaCliente";
+            this.Load += new System.EventHandler(this.FrmAltaCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numIngreso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

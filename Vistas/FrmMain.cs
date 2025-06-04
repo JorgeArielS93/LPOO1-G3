@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 
 using ClasesBase;
+using Vistas.VistaCliente;
+using Vistas.VistaDestino;
 
 namespace Vistas
 {
@@ -74,8 +76,7 @@ namespace Vistas
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmAltaCliente frmAlta = new FrmAltaCliente();
-            frmAlta.Show();
+            
         }
 
         private void prestamosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,6 +110,39 @@ namespace Vistas
             frmVer.Show();
         }
 
+        private void altaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmAltaCliente frmAlta = new FrmAltaCliente();
+            frmAlta.Show();
+        }
+
+        private void verClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerClientes frmVerC = new FrmVerClientes();
+            frmVerC.Show();
+        }
+
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void altaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmAltaDestino frmAltaDes = new FrmAltaDestino();
+            frmAltaDes.Show();
+        }
+
+        private void verDestinosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerDestinos frmVerDes = new FrmVerDestinos();
+            frmVerDes.Show();
+        }
+
+       
+
+       
 
     }
 }

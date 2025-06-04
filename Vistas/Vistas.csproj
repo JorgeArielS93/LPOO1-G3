@@ -65,6 +65,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="VistaCliente\FrmVerClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaCliente\FrmVerClientes.Designer.cs">
+      <DependentUpon>FrmVerClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaDestino\FrmAltaDestino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaDestino\FrmAltaDestino.Designer.cs">
+      <DependentUpon>FrmAltaDestino.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaDestino\FrmVerDestinos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaDestino\FrmVerDestinos.Designer.cs">
+      <DependentUpon>FrmVerDestinos.cs</DependentUpon>
+    </Compile>
     <Compile Include="VistaUsuario\FrmVerUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,10 +95,10 @@
     <Compile Include="VistaUsuario\FrmAltaUsuario.Designer.cs">
       <DependentUpon>FrmAltaUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAltaCliente.cs">
+    <Compile Include="VistaCliente\FrmAltaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAltaCliente.Designer.cs">
+    <Compile Include="VistaCliente\FrmAltaCliente.Designer.cs">
       <DependentUpon>FrmAltaCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDestino.cs">
@@ -120,7 +138,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAltaCliente.resx">
+    <EmbeddedResource Include="VistaCliente\FrmAltaCliente.resx">
       <DependentUpon>FrmAltaCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDestino.resx">
@@ -147,6 +165,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VistaCliente\FrmVerClientes.resx">
+      <DependentUpon>FrmVerClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaDestino\FrmAltaDestino.resx">
+      <DependentUpon>FrmAltaDestino.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaDestino\FrmVerDestinos.resx">
+      <DependentUpon>FrmVerDestinos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VistaUsuario\FrmAltaUsuario.resx">
       <DependentUpon>FrmAltaUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +230,7 @@
       <Name>ClasesBase</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
