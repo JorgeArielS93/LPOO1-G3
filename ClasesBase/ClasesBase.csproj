@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABMCliente.cs" />
+    <Compile Include="ABMDestino.cs" />
     <Compile Include="ABMUsuario.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Cuota.cs" />

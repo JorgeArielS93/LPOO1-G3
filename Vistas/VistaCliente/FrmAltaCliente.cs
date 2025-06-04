@@ -51,7 +51,7 @@ namespace Vistas
                 return;
             }
 
-            if (numIngreso.Value == 0)
+            if (numIngreso.Value <= 0)
             {
                 MessageBox.Show("Los ingresos son obligatorios.");
                 return;
@@ -68,22 +68,31 @@ namespace Vistas
                 MessageBox.Show("El teléfono es obligatorio.");
                 return;
             }
+            Cliente cliente = new Cliente();
+            cliente.cli_DNI = txtDNI.Text;
+            cliente.cli_Nombre = txtNombre.Text;
+            cliente.cli_Apellido = txtApellido.Text;
+            cliente.cli_Sexo = comboBoxSexo.SelectedItem.ToString();
+            cliente.cli_FechaNacimiento = fechaNacimiento.Value;
+            cliente.cli_Ingresos = numIngreso.Value;
+            cliente.cli_Direccion = txtDireccion.Text;
+            cliente.cli_Telefono = txtTelefono.Text;
 
-            Cliente nuevoCliente = new Cliente
-            {
-                cli_DNI = txtDNI.Text,
-                cli_Apellido = txtApellido.Text,
-                cli_Nombre = txtNombre.Text,
-                cli_Sexo = comboBoxSexo.SelectedItem.ToString(),
-                cli_FechaNacimiento = fechaNacimiento.Value,
-                cli_Ingresos = numIngreso.Value,
-                cli_Direccion = txtDireccion.Text,
-                cli_Telefono = txtTelefono.Text
-            };
+            //Cliente nuevoCliente = new Cliente():
+            //{
+            //    cli_DNI = txtDNI.Text,
+            //    cli_Apellido = txtApellido.Text,
+            //    cli_Nombre = txtNombre.Text,
+            //    cli_Sexo = comboBoxSexo.SelectedItem.ToString(),
+            //    cli_FechaNacimiento = fechaNacimiento.Value,
+            //    cli_Ingresos = numIngreso.Value,
+            //    cli_Direccion = txtDireccion.Text,
+            //    cli_Telefono = txtTelefono.Text
+            //};
 
-            listaClientes.Add(nuevoCliente);
-
-            MessageBox.Show("Cliente Guardado, DNI: " + nuevoCliente.cli_DNI);
+            //listaClientes.Add(nuevoCliente);
+            ABMCliente.altaCliente(cliente);
+            MessageBox.Show("Cliente agregado!");
 
             this.Close();
         }
@@ -128,6 +137,11 @@ namespace Vistas
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmAltaCliente_Load(object sender, EventArgs e)
+        {
+
         }
 
     }
