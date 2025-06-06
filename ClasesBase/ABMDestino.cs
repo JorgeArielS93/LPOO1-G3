@@ -74,5 +74,31 @@ namespace ClasesBase
             cnn.Close();
         }
 
+        public static Destino getDestinoByCodigo(int codigo)
+        {
+            SqlConnection cn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
+            SqlCommand cmd = new SqlCommand(
+                @"SELECT DES_Descripcion 
+            FROM Destino
+            WHERE DES_Codigo = @codigo", cn);
+
+            cmd.Parameters.AddWithValue("@codigo", codigo);
+
+            cn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                Destino destino = new Destino
+                {
+                    des_Descripcion = dr["DES_Descripcion"].ToString()
+                };
+                cn.Close();
+                return destino;
+            }
+            cn.Close();
+            return null;
+
+        }
+
     }
 }

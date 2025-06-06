@@ -31,14 +31,12 @@
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblDestino = new System.Windows.Forms.Label();
             this.lblPeriodo = new System.Windows.Forms.Label();
-            this.lblFecha = new System.Windows.Forms.Label();
             this.lblImporte = new System.Windows.Forms.Label();
             this.lblTasaInteres = new System.Windows.Forms.Label();
             this.lblCantidadCuotas = new System.Windows.Forms.Label();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.cmbPeriodo = new System.Windows.Forms.ComboBox();
             this.cmbDestino = new System.Windows.Forms.ComboBox();
-            this.dtpFechaPrestamo = new System.Windows.Forms.DateTimePicker();
             this.txtImporte = new System.Windows.Forms.TextBox();
             this.txtTasaInteres = new System.Windows.Forms.TextBox();
             this.txtCantidadCuotas = new System.Windows.Forms.TextBox();
@@ -73,19 +71,10 @@
             this.lblPeriodo.TabIndex = 2;
             this.lblPeriodo.Text = "Periodo de Pago";
             // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(41, 129);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(84, 13);
-            this.lblFecha.TabIndex = 3;
-            this.lblFecha.Text = "Fecha Prestamo";
-            // 
             // lblImporte
             // 
             this.lblImporte.AutoSize = true;
-            this.lblImporte.Location = new System.Drawing.Point(41, 176);
+            this.lblImporte.Location = new System.Drawing.Point(42, 127);
             this.lblImporte.Name = "lblImporte";
             this.lblImporte.Size = new System.Drawing.Size(42, 13);
             this.lblImporte.TabIndex = 4;
@@ -94,7 +83,7 @@
             // lblTasaInteres
             // 
             this.lblTasaInteres.AutoSize = true;
-            this.lblTasaInteres.Location = new System.Drawing.Point(41, 215);
+            this.lblTasaInteres.Location = new System.Drawing.Point(41, 164);
             this.lblTasaInteres.Name = "lblTasaInteres";
             this.lblTasaInteres.Size = new System.Drawing.Size(81, 13);
             this.lblTasaInteres.TabIndex = 5;
@@ -103,7 +92,7 @@
             // lblCantidadCuotas
             // 
             this.lblCantidadCuotas.AutoSize = true;
-            this.lblCantidadCuotas.Location = new System.Drawing.Point(41, 260);
+            this.lblCantidadCuotas.Location = new System.Drawing.Point(42, 204);
             this.lblCantidadCuotas.Name = "lblCantidadCuotas";
             this.lblCantidadCuotas.Size = new System.Drawing.Size(100, 13);
             this.lblCantidadCuotas.TabIndex = 6;
@@ -134,37 +123,30 @@
             this.cmbDestino.Size = new System.Drawing.Size(200, 21);
             this.cmbDestino.TabIndex = 9;
             // 
-            // dtpFechaPrestamo
-            // 
-            this.dtpFechaPrestamo.Location = new System.Drawing.Point(243, 129);
-            this.dtpFechaPrestamo.Name = "dtpFechaPrestamo";
-            this.dtpFechaPrestamo.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaPrestamo.TabIndex = 10;
-            // 
             // txtImporte
             // 
-            this.txtImporte.Location = new System.Drawing.Point(243, 173);
+            this.txtImporte.Location = new System.Drawing.Point(243, 124);
             this.txtImporte.Name = "txtImporte";
             this.txtImporte.Size = new System.Drawing.Size(200, 20);
             this.txtImporte.TabIndex = 11;
             // 
             // txtTasaInteres
             // 
-            this.txtTasaInteres.Location = new System.Drawing.Point(243, 208);
+            this.txtTasaInteres.Location = new System.Drawing.Point(243, 161);
             this.txtTasaInteres.Name = "txtTasaInteres";
             this.txtTasaInteres.Size = new System.Drawing.Size(200, 20);
             this.txtTasaInteres.TabIndex = 12;
             // 
             // txtCantidadCuotas
             // 
-            this.txtCantidadCuotas.Location = new System.Drawing.Point(243, 253);
+            this.txtCantidadCuotas.Location = new System.Drawing.Point(243, 201);
             this.txtCantidadCuotas.Name = "txtCantidadCuotas";
             this.txtCantidadCuotas.Size = new System.Drawing.Size(200, 20);
             this.txtCantidadCuotas.TabIndex = 13;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(180, 339);
+            this.btnGuardar.Location = new System.Drawing.Point(67, 285);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 14;
@@ -174,7 +156,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(294, 339);
+            this.btnCancelar.Location = new System.Drawing.Point(368, 285);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 15;
@@ -192,14 +174,12 @@
             this.Controls.Add(this.txtCantidadCuotas);
             this.Controls.Add(this.txtTasaInteres);
             this.Controls.Add(this.txtImporte);
-            this.Controls.Add(this.dtpFechaPrestamo);
             this.Controls.Add(this.cmbDestino);
             this.Controls.Add(this.cmbPeriodo);
             this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.lblCantidadCuotas);
             this.Controls.Add(this.lblTasaInteres);
             this.Controls.Add(this.lblImporte);
-            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblPeriodo);
             this.Controls.Add(this.lblDestino);
             this.Controls.Add(this.lblCliente);
@@ -216,14 +196,12 @@
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Label lblDestino;
         private System.Windows.Forms.Label lblPeriodo;
-        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblImporte;
         private System.Windows.Forms.Label lblTasaInteres;
         private System.Windows.Forms.Label lblCantidadCuotas;
         private System.Windows.Forms.ComboBox cmbCliente;
         private System.Windows.Forms.ComboBox cmbPeriodo;
         private System.Windows.Forms.ComboBox cmbDestino;
-        private System.Windows.Forms.DateTimePicker dtpFechaPrestamo;
         private System.Windows.Forms.TextBox txtImporte;
         private System.Windows.Forms.TextBox txtTasaInteres;
         private System.Windows.Forms.TextBox txtCantidadCuotas;

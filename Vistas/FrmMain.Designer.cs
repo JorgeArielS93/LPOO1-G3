@@ -37,6 +37,8 @@
             this.altaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verPrestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.destinosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.verDestinosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,10 +123,27 @@
             // 
             // prestamosToolStripMenuItem
             // 
+            this.prestamosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaPrestamoToolStripMenuItem,
+            this.verPrestamosToolStripMenuItem});
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
             this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.prestamosToolStripMenuItem.Text = "Prestamos";
             this.prestamosToolStripMenuItem.Click += new System.EventHandler(this.prestamosToolStripMenuItem_Click);
+            // 
+            // altaPrestamoToolStripMenuItem
+            // 
+            this.altaPrestamoToolStripMenuItem.Name = "altaPrestamoToolStripMenuItem";
+            this.altaPrestamoToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.altaPrestamoToolStripMenuItem.Text = "Alta";
+            this.altaPrestamoToolStripMenuItem.Click += new System.EventHandler(this.altaPrestamoToolStripMenuItem_Click);
+            // 
+            // verPrestamosToolStripMenuItem
+            // 
+            this.verPrestamosToolStripMenuItem.Name = "verPrestamosToolStripMenuItem";
+            this.verPrestamosToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.verPrestamosToolStripMenuItem.Text = "Ver Prestamos";
+            this.verPrestamosToolStripMenuItem.Click += new System.EventHandler(this.verPrestamosToolStripMenuItem_Click);
             // 
             // destinosToolStripMenuItem
             // 
@@ -138,14 +157,14 @@
             // altaToolStripMenuItem2
             // 
             this.altaToolStripMenuItem2.Name = "altaToolStripMenuItem2";
-            this.altaToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.altaToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
             this.altaToolStripMenuItem2.Text = "Alta";
             this.altaToolStripMenuItem2.Click += new System.EventHandler(this.altaToolStripMenuItem2_Click);
             // 
             // verDestinosToolStripMenuItem
             // 
             this.verDestinosToolStripMenuItem.Name = "verDestinosToolStripMenuItem";
-            this.verDestinosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.verDestinosToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.verDestinosToolStripMenuItem.Text = "Ver Destinos";
             this.verDestinosToolStripMenuItem.Click += new System.EventHandler(this.verDestinosToolStripMenuItem_Click);
             // 
@@ -178,6 +197,7 @@
             this.lblUsuario.Size = new System.Drawing.Size(35, 13);
             this.lblUsuario.TabIndex = 1;
             this.lblUsuario.Text = "label1";
+            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
             // 
             // lblRol
             // 
@@ -226,5 +246,7 @@
         private System.Windows.Forms.ToolStripMenuItem verClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem verDestinosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaPrestamoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verPrestamosToolStripMenuItem;
     }
 }
