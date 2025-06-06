@@ -37,10 +37,15 @@ namespace Vistas
             cbRol.DisplayMember = "ROL_Descripcion";
             cbRol.ValueMember = "ROL_Codigo";
             cbRol.DataSource = dt;
+            cbRol.SelectedIndex = -1;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (!validarCampos())
+            {
+                return;
+            }
             Usuario oUsuario = crearUsuario();
             ABMUsuario.altaUsuario(oUsuario);
 
@@ -50,7 +55,7 @@ namespace Vistas
         private Usuario crearUsuario()
         {
             Usuario nuevoUsuario = new Usuario();
-
+     
             nuevoUsuario.usu_NombreUsuario = txtNombreUsuario.Text;
             nuevoUsuario.usu_Nombre = txtNombre.Text;
             nuevoUsuario.usu_Apellido = txtApellido.Text;
@@ -64,5 +69,41 @@ namespace Vistas
         {
             this.Close();
         }
+
+        private bool validarCampos()
+        {
+            if (cbRol.SelectedValue == null)
+            {
+                MessageBox.Show("Debe seleccionar un rol.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNombreUsuario.Text))
+            {
+                MessageBox.Show("El campo Usuario es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                MessageBox.Show("El campo Contraseña es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("El campo Nombre es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtApellido.Text))
+            {
+                MessageBox.Show("El campo Apellido es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }

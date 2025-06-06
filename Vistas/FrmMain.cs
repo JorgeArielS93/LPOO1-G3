@@ -82,8 +82,6 @@ namespace Vistas
 
         private void prestamosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmAltaPrestamo frmPrestamo = new FrmAltaPrestamo();
-            frmPrestamo.Show();
         }
 
 
@@ -139,6 +137,25 @@ namespace Vistas
         {
             FrmVerDestinos frmVerDes = new FrmVerDestinos();
             frmVerDes.Show();
+        }
+
+        private void altaPrestamoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FrmAltaPrestamo frmPrestamo = new FrmAltaPrestamo();
+            frmPrestamo.Show();
+        }
+
+        private void verPrestamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FrmVerPrestamos frmPrestamo = new FrmVerPrestamos();
+            frmPrestamo.Show();
+        }
+
+        private void lblUsuario_Click(object sender, EventArgs e)
+        {
+
         }
 
        

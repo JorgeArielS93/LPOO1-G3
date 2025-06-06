@@ -49,6 +49,26 @@ namespace ClasesBase
 
         }
 
+        public static bool existeDNI(string dni)
+        {
+            bool existe = false;
+
+            using (SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Cliente WHERE CLI_DNI = @dni", cn);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                cn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                cn.Close();
+
+                existe = (count > 0);
+            }
+
+            return existe;
+        }
+
+
         public static DataTable filtrarClientes(string nombre, string apellido)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
@@ -106,6 +126,7 @@ namespace ClasesBase
 
         }
 
+
         public static void eliminarCliente(string dni)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
@@ -118,6 +139,35 @@ namespace ClasesBase
             cnn.Close();
 
         }
+
+        public static Cliente getClienteByDNI(string dni)
+        {
+            SqlConnection cn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
+            SqlCommand cmd = new SqlCommand(
+                @"SELECT CLI_DNI, CLI_Nombre, CLI_Apellido 
+            FROM Cliente
+            WHERE CLI_DNI = @dni", cn);
+
+            cmd.Parameters.AddWithValue("@dni", dni);
+
+            cn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                Cliente cliente = new Cliente
+                {
+                    cli_DNI = dr["CLI_DNI"].ToString(),
+                    cli_Nombre = dr["CLI_Nombre"].ToString(),
+                    cli_Apellido = dr["CLI_Apellido"].ToString()
+                };
+                cn.Close();
+                return cliente;
+            }
+            cn.Close();
+            return null;
+            
+        }
+
 
     }
 }

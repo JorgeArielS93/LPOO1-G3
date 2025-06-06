@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Collections.Generic; // Aunque no se use directamente aquí, es una buena práctica incluirla si se manejan colecciones
-using ClasesBase; // Asegúrate de que este namespace sea el de tu proyecto ClasesBase
+using System.Collections.Generic; 
+using ClasesBase; 
 
 namespace ClasesBase
 {
@@ -14,8 +14,9 @@ namespace ClasesBase
 
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
 
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM Rol";
+            SqlCommand cmd = new SqlCommand(); 
+            cmd.CommandText = "SELECT CLI_DNI, CLI_Nombre + ' ' + CLI_Apellido AS NombreCompleto FROM Cliente";
+
 
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn;
@@ -113,12 +114,84 @@ namespace ClasesBase
             return dt;
         }
 
+        // Metodo para devolver los prestamos de la base de datos
+        public static DataTable getPrestamos(){
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM Prestamo";
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            cn.Open();
+            da.Fill(dt);
+
+            cn.Close();
+            return dt;
+        }
+
+        // Metodo para devolver las cuotas asociadas a un prestamo
+
+        public static DataTable getCuotas(int numeroPrestamo)
+        {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = @"
+        SELECT CUO_Codigo, CUO_Numero, CUO_Vencimiento, CUO_Importe, CUO_Estado
+        FROM Cuota
+        WHERE PRE_Numero = @numeroPrestamo";
+
+            cmd.Parameters.AddWithValue("@numeroPrestamo", numeroPrestamo);
+            cmd.Connection = cn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            cn.Open();
+            da.Fill(dt);
+            cn.Close();
+
+            return dt;
+        }
+
+        //Metodo para devolver la descripcion del periodo asociado a un prestamo
+        public static Periodo getPeriodoByCodigo(int codigo)
+        {
+            SqlConnection cn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
+            SqlCommand cmd = new SqlCommand(
+                @"SELECT PER_Descripcion 
+            FROM Periodo
+            WHERE PER_Codigo = @codigo", cn);
+
+            cmd.Parameters.AddWithValue("@codigo", codigo);
+
+            cn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                Periodo periodo = new Periodo
+                {
+                    per_Descripcion = dr["PER_Descripcion"].ToString()
+                };
+                cn.Close();
+                return periodo;
+            }
+            cn.Close();
+            return null;
+
+        }
+
+
         // Método para insertar un préstamo y sus cuotas en una transacción
         public static int InsertarPrestamoYCuotas(
             string cliDni, int desCodigo, int perCodigo, DateTime preFecha,
             decimal preImporte, float preTasaInteres, int preCantidadCuotas)
         {
-            int prestamoNumero = 0; // Para almacenar el ID del préstamo insertado
+            int prestamoNumero = 0; 
 
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
             SqlTransaction transaction = null;
@@ -126,16 +199,15 @@ namespace ClasesBase
             try
             {
                 cnn.Open();
-                transaction = cnn.BeginTransaction(); // Iniciar una transacción
+                transaction = cnn.BeginTransaction(); 
 
-                // 1. Insertar en la tabla Prestamo
                 SqlCommand cmdPrestamo = new SqlCommand();
                 cmdPrestamo.CommandText = "INSERT INTO Prestamo (CLI_DNI, DES_Codigo, PER_Codigo, PRE_Fecha, PRE_Importe, PRE_TasaInteres, PRE_CantidadCuotas, PRE_Estado) " +
                                            "VALUES (@CLI_DNI, @DES_Codigo, @PER_Codigo, @PRE_Fecha, @PRE_Importe, @PRE_TasaInteres, @PRE_CantidadCuotas, @PRE_Estado); " +
-                                           "SELECT SCOPE_IDENTITY();"; // Para obtener el ID autoincremental
+                                           "SELECT SCOPE_IDENTITY();"; 
                 cmdPrestamo.CommandType = CommandType.Text;
                 cmdPrestamo.Connection = cnn;
-                cmdPrestamo.Transaction = transaction; // Asignar la transacción
+                cmdPrestamo.Transaction = transaction; 
 
                 cmdPrestamo.Parameters.AddWithValue("@CLI_DNI", cliDni);
                 cmdPrestamo.Parameters.AddWithValue("@DES_Codigo", desCodigo);
@@ -146,9 +218,8 @@ namespace ClasesBase
                 cmdPrestamo.Parameters.AddWithValue("@PRE_CantidadCuotas", preCantidadCuotas);
                 cmdPrestamo.Parameters.AddWithValue("@PRE_Estado", "PENDIENTE");
 
-                prestamoNumero = Convert.ToInt32(cmdPrestamo.ExecuteScalar()); // Ejecutar y obtener el ID
+                prestamoNumero = Convert.ToInt32(cmdPrestamo.ExecuteScalar()); 
 
-                // 2. Insertar en la tabla Cuota (en un bucle)
                 decimal importePorCuota = preImporte / preCantidadCuotas;
 
                 for (int i = 1; i <= preCantidadCuotas; i++)
@@ -160,7 +231,7 @@ namespace ClasesBase
                                             "VALUES (@PRE_Numero, @CUO_Numero, @CUO_Vencimiento, @CUO_Importe, @CUO_Estado)";
                     cmdCuota.CommandType = CommandType.Text;
                     cmdCuota.Connection = cnn;
-                    cmdCuota.Transaction = transaction; // Asignar la transacción
+                    cmdCuota.Transaction = transaction; 
 
                     cmdCuota.Parameters.AddWithValue("@PRE_Numero", prestamoNumero);
                     cmdCuota.Parameters.AddWithValue("@CUO_Numero", i);
@@ -171,8 +242,8 @@ namespace ClasesBase
                     cmdCuota.ExecuteNonQuery();
                 }
 
-                transaction.Commit(); // Confirmar la transacción
-                return prestamoNumero; // Retornar el ID del préstamo creado
+                transaction.Commit(); 
+                return prestamoNumero; 
             }
             catch (SqlException ex)
             {

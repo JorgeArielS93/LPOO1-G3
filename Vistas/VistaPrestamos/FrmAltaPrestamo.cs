@@ -22,23 +22,15 @@ namespace Vistas.VistaPrestamos
             CargarClientes();
             CargarDestinos();
             CargarPeriodos();
-
-            dtpFechaPrestamo.Value = DateTime.Now;
         }
 
         public void CargarClientes()
         {
             DataTable dt = ABMPrestamo.CargarClientes();
-
-            if (dt.Rows.Count == 0)
-            {
-                MessageBox.Show("No se encontraron roles.");
-                return;
-            }
-
-            cmbCliente.DisplayMember = "CLI_Nombre";
+            cmbCliente.DisplayMember = "NombreCompleto";
             cmbCliente.ValueMember = "CLI_DNI";
             cmbCliente.DataSource = dt;
+            cmbCliente.SelectedIndex = -1;
         }
 
         public void CargarDestinos()
@@ -60,39 +52,34 @@ namespace Vistas.VistaPrestamos
 
         public void btnGuardar_Click(object sender, EventArgs e)
         {
-            // 1. Validar las entradas del usuario
             if (!ValidarCampos())
             {
-                return; // Si la validación falla, salir
+                return; 
             }
 
-            // Obtener los valores de los controles
             string cliDni = cmbCliente.SelectedValue.ToString();
             int desCodigo = (int)cmbDestino.SelectedValue;
             int perCodigo = (int)cmbPeriodo.SelectedValue;
-            DateTime preFecha = dtpFechaPrestamo.Value;
+            DateTime preFecha = DateTime.Now;
             decimal preImporte = decimal.Parse(txtImporte.Text);
             float preTasaInteres = float.Parse(txtTasaInteres.Text);
             int preCantidadCuotas = int.Parse(txtCantidadCuotas.Text);
 
             try
             {
-                // Llamar al método de la clase ABMPrestamo para guardar el préstamo y sus cuotas
                 int prestamoNumero = ABMPrestamo.InsertarPrestamoYCuotas(
                     cliDni, desCodigo, perCodigo, preFecha,
                     preImporte, preTasaInteres, preCantidadCuotas);
 
                 MessageBox.Show("Préstamo (ID: " + prestamoNumero + ") y cuotas registrados exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close(); // Cerrar el formulario después de guardar
+                this.Close(); 
             }
             catch (FormatException)
             {
-                // Este catch debería ser suficiente si ValidarCampos() ya hace su trabajo
                 MessageBox.Show("Por favor, ingrese valores numéricos válidos para Importe, Tasa de Interés y Cantidad de Cuotas.", "Error de Formato", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
-                // Captura cualquier otra excepción relanzada desde ABMPrestamo
                 MessageBox.Show("Error al guardar el préstamo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -140,15 +127,11 @@ namespace Vistas.VistaPrestamos
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close(); // cierra el formulario
+            this.Close(); 
         }
 
         private void cmbCliente_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //cmbCliente.DataSource = ABMPrestamo.CargarClientes().Tables[0];
-            cmbCliente.DisplayMember = "CLI_Apellido"; // Mostrar solo el apellido como indicaste
-            cmbCliente.ValueMember = "CLI_DNI";        // El valor real asociado (DNI)
-            cmbCliente.Refresh(); 
         }
 
     }

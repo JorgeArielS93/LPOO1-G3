@@ -21,51 +21,8 @@ namespace Vistas
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtDNI.Text))
+            if (!validarCliente())
             {
-                MessageBox.Show("El DNI es obligatorio.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtNombre.Text))
-            {
-                MessageBox.Show("El nombre es obligatorio.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtApellido.Text))
-            {
-                MessageBox.Show("El apellido es obligatorio.");
-                return;
-            }
-
-            if (comboBoxSexo.SelectedItem == null)
-            {
-                MessageBox.Show("Debe seleccionar un sexo.");
-                return;
-            }
-
-            if (fechaNacimiento.Value == null || fechaNacimiento.Value == DateTime.MinValue)
-            {
-                MessageBox.Show("La fecha de nacimiento es obligatoria.");
-                return;
-            }
-
-            if (numIngreso.Value <= 0)
-            {
-                MessageBox.Show("Los ingresos son obligatorios.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtDireccion.Text))
-            {
-                MessageBox.Show("La dirección es obligatoria.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtTelefono.Text))
-            {
-                MessageBox.Show("El teléfono es obligatorio.");
                 return;
             }
             Cliente cliente = new Cliente();
@@ -78,24 +35,73 @@ namespace Vistas
             cliente.cli_Direccion = txtDireccion.Text;
             cliente.cli_Telefono = txtTelefono.Text;
 
-            //Cliente nuevoCliente = new Cliente():
-            //{
-            //    cli_DNI = txtDNI.Text,
-            //    cli_Apellido = txtApellido.Text,
-            //    cli_Nombre = txtNombre.Text,
-            //    cli_Sexo = comboBoxSexo.SelectedItem.ToString(),
-            //    cli_FechaNacimiento = fechaNacimiento.Value,
-            //    cli_Ingresos = numIngreso.Value,
-            //    cli_Direccion = txtDireccion.Text,
-            //    cli_Telefono = txtTelefono.Text
-            //};
-
-            //listaClientes.Add(nuevoCliente);
             ABMCliente.altaCliente(cliente);
             MessageBox.Show("Cliente agregado!");
 
             this.Close();
         }
+
+        private bool validarCliente()
+        {
+            if (string.IsNullOrWhiteSpace(txtDNI.Text))
+            {
+                MessageBox.Show("El campo DNI es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            long dniTemp;
+            if (!long.TryParse(txtDNI.Text, out dniTemp))
+            {
+                MessageBox.Show("El DNI debe ser numérico.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("El campo Nombre es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtApellido.Text))
+            {
+                MessageBox.Show("El campo Apellido es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (comboBoxSexo.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un sexo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (fechaNacimiento.Value >= DateTime.Today)
+            {
+                MessageBox.Show("La fecha de nacimiento debe ser anterior a hoy.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtDireccion.Text))
+            {
+                MessageBox.Show("El campo Dirección es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtTelefono.Text))
+            {
+                MessageBox.Show("El campo Teléfono es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Validar que el DNI no esté ya en uso
+            if (ABMCliente.existeDNI(txtDNI.Text))
+            {
+                MessageBox.Show("El DNI ingresado ya está registrado en otro cliente.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
 
         private void txtDNI_TextChanged(object sender, EventArgs e)
         {
