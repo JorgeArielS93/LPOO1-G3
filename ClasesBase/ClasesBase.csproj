@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ABMCliente.cs" />
     <Compile Include="ABMDestino.cs" />
+    <Compile Include="ABMPrestamo.cs" />
     <Compile Include="ABMUsuario.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Cuota.cs" />

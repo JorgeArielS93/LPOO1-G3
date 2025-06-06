@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ClasesBase;
 using Vistas.VistaCliente;
 using Vistas.VistaDestino;
+using Vistas.VistaPrestamos;
 
 namespace Vistas
 {
@@ -81,7 +82,7 @@ namespace Vistas
 
         private void prestamosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmPrestamo frmPrestamo = new FrmPrestamo();
+            FrmAltaPrestamo frmPrestamo = new FrmAltaPrestamo();
             frmPrestamo.Show();
         }
 

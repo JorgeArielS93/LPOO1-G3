@@ -1,9 +1,3 @@
-d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\bin\Debug\Vistas.exe
-d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\bin\Debug\Vistas.pdb
-d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
-d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
-d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.exe
-d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.pdb
 D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 1\LPOO1-G3\Vistas\bin\Debug\Vistas.exe
 D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 1\LPOO1-G3\Vistas\bin\Debug\Vistas.pdb
 D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 1\LPOO1-G3\Vistas\bin\Debug\ClasesBase.dll
@@ -51,3 +45,25 @@ D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas
 D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaCliente.FrmVerClientes.resources
 D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaDestino.FrmAltaDestino.resources
 D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaDestino.FrmVerDestinos.resources
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\bin\Debug\Vistas.exe.config
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\bin\Debug\Vistas.exe
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\bin\Debug\Vistas.pdb
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\bin\Debug\ClasesBase.dll
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\bin\Debug\ClasesBase.pdb
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.FrmAltaCliente.resources
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.FrmDestino.resources
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.FrmLogin.resources
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.FrmMain.resources
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.FrmPeriodo.resources
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.FrmPrestamo.resources
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.VistaCliente.FrmVerClientes.resources
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.VistaDestino.FrmAltaDestino.resources
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.VistaDestino.FrmVerDestinos.resources
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.VistaPrestamos.FrmAltaPrestamo.resources
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.FrmAltaUsuario.resources
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.FrmVerUsuarios.resources
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.exe
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\Vistas\obj\x86\Debug\Vistas.pdb
