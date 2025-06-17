@@ -42,7 +42,7 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (!validarCampos())
+            if (!validarCampos(txtNombreUsuario.Text))
             {
                 return;
             }
@@ -70,8 +70,14 @@ namespace Vistas
             this.Close();
         }
 
-        private bool validarCampos()
+        private bool validarCampos(string userName)
         {
+            if (ABMUsuario.existeUserName(userName))
+            {
+                MessageBox.Show("El Nombre de usuario ya existe.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             if (cbRol.SelectedValue == null)
             {
                 MessageBox.Show("Debe seleccionar un rol.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);

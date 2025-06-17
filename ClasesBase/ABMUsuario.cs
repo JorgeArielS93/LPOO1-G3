@@ -34,7 +34,7 @@ namespace ClasesBase
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM Usuario";
+            cmd.CommandText = "SELECT * FROM vw_usuario";
 
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cn;
@@ -68,15 +68,34 @@ namespace ClasesBase
             cn.Close();
         }
 
+        public static bool existeUserName(string userName)
+        {
+            bool existe = false;
+
+            using (SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Usuario WHERE USU_NombreUsuario = @userName", cn);
+                cmd.Parameters.AddWithValue("@userName", userName);
+
+                cn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                cn.Close();
+
+                existe = (count > 0);
+            }
+
+            return existe;
+        }
+
         public static DataTable filtrarUsuarios(string apellido, string nombre)
         {
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = @"
-        SELECT USU_Id, USU_NombreUsuario, USU_Nombre, USU_Apellido, ROL_Codigo, USU_Contrasenia
-        FROM Usuario
-        WHERE USU_Apellido LIKE @apellido AND USU_Nombre LIKE @nombre";
+            SELECT *
+            FROM vw_usuario
+            WHERE Apellido LIKE @apellido AND Nombre LIKE @nombre";
 
             cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
             cmd.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
@@ -173,6 +192,27 @@ namespace ClasesBase
             cn.Close();
             return null;
             
+        }
+
+        public static DataTable ordenarUsuariosPorUserNameOApellido(string filtro)
+        {
+            SqlConnection cn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "listar_usuarios_ordenados_por_username_o_apellido_sp";
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Connection = cn;
+
+            cmd.Parameters.AddWithValue("@ordenarPor", filtro);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
         }
 
     }

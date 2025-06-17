@@ -46,14 +46,14 @@ namespace Vistas.VistaCliente
         {
             if (dgvClientes.CurrentRow != null) 
             {
-                txtDNI.Text = dgvClientes.CurrentRow.Cells["CLI_DNI"].Value.ToString();
-                txtNombre.Text = dgvClientes.CurrentRow.Cells["CLI_Nombre"].Value.ToString();
-                txtApellido.Text = dgvClientes.CurrentRow.Cells["CLI_Apellido"].Value.ToString();
-                comboBoxSexo.Text = dgvClientes.CurrentRow.Cells["CLI_Sexo"].Value.ToString();
-                fechaNacimiento.Value = Convert.ToDateTime(dgvClientes.CurrentRow.Cells["CLI_fechaNacimiento"].Value.ToString());
-                numIngreso.Value = Convert.ToDecimal(dgvClientes.CurrentRow.Cells["CLI_Ingresos"].Value);
-                txtDireccion.Text = dgvClientes.CurrentRow.Cells["CLI_Direccion"].Value.ToString();
-                txtTelefono.Text = dgvClientes.CurrentRow.Cells["CLI_Telefono"].Value.ToString();
+                txtDNI.Text = dgvClientes.CurrentRow.Cells["DNI"].Value.ToString();
+                txtNombre.Text = dgvClientes.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtApellido.Text = dgvClientes.CurrentRow.Cells["Apellido"].Value.ToString();
+                comboBoxSexo.Text = dgvClientes.CurrentRow.Cells["Sexo"].Value.ToString();
+                fechaNacimiento.Value = Convert.ToDateTime(dgvClientes.CurrentRow.Cells["Fecha Nacimiento"].Value.ToString());
+                numIngreso.Value = Convert.ToDecimal(dgvClientes.CurrentRow.Cells["Ingresos"].Value);
+                txtDireccion.Text = dgvClientes.CurrentRow.Cells["Direccion"].Value.ToString();
+                txtTelefono.Text = dgvClientes.CurrentRow.Cells["Telefono"].Value.ToString();
             }
         }
 
@@ -64,14 +64,19 @@ namespace Vistas.VistaCliente
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (txtFNombre.Text != "" && txtFApellido.Text != "")
-            {
-                dgvClientes.DataSource = ABMCliente.filtrarClientes(txtFNombre.Text, txtFApellido.Text);
-            }
-            else
+            string nombre = txtFNombre.Text == "NOMBRE" ? "" : txtFNombre.Text;
+            string apellido = txtFApellido.Text == "APELLIDO" ? "" : txtFApellido.Text;
+
+            if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(apellido))
             {
                 load_clientes();
+                return;
             }
+
+            if (txtFNombre.Text == "NOMBRE") txtFNombre.Text = "";
+            if (txtFApellido.Text == "APELLIDO") txtFApellido.Text = "";
+
+            dgvClientes.DataSource = ABMCliente.filtrarClientes(nombre, apellido);
         }
 
         private void txtFNombre_MouseEnter(object sender, EventArgs e)
@@ -84,8 +89,8 @@ namespace Vistas.VistaCliente
             if (txtFNombre.Text == "NOMBRE")
             {
                 txtFNombre.Text = "";
-                txtFNombre.ForeColor = Color.Black;
             }
+            txtFNombre.ForeColor = Color.Black;
         }
 
         private void txtFApellido_Enter(object sender, EventArgs e)
@@ -93,8 +98,8 @@ namespace Vistas.VistaCliente
             if (txtFApellido.Text == "APELLIDO")
             {
                 txtFApellido.Text = "";
-                txtFApellido.ForeColor = Color.Black;
             }
+            txtFApellido.ForeColor = Color.Black;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -143,7 +148,7 @@ namespace Vistas.VistaCliente
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            string dni = dgvClientes.CurrentRow.Cells["CLI_DNI"].Value.ToString();
+            string dni = dgvClientes.CurrentRow.Cells["DNI"].Value.ToString();
 
             DialogResult respuesta = MessageBox.Show(
                 "¿Estás seguro de eliminar este usuario?",
@@ -161,6 +166,11 @@ namespace Vistas.VistaCliente
 
                 load_clientes();
             }
+        }
+
+        private void btnOrdenarApellido_Click(object sender, EventArgs e)
+        {
+            dgvClientes.DataSource = ABMCliente.ordenarClientesPorApellido();
         }
 
     }
