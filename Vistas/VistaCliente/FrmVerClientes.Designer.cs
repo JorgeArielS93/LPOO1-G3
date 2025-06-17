@@ -52,6 +52,7 @@
             this.DNI = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnOrdenarApellido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numIngreso)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Location = new System.Drawing.Point(50, 86);
             this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.Size = new System.Drawing.Size(518, 249);
+            this.dgvClientes.Size = new System.Drawing.Size(568, 249);
             this.dgvClientes.TabIndex = 0;
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvClientes.CurrentCellChanged += new System.EventHandler(this.dgvClientes_CurrentCellChanged);
@@ -71,9 +72,9 @@
             this.lblFiltros.AutoSize = true;
             this.lblFiltros.Location = new System.Drawing.Point(47, 42);
             this.lblFiltros.Name = "lblFiltros";
-            this.lblFiltros.Size = new System.Drawing.Size(34, 13);
+            this.lblFiltros.Size = new System.Drawing.Size(37, 13);
             this.lblFiltros.TabIndex = 1;
-            this.lblFiltros.Text = "Filtros";
+            this.lblFiltros.Text = "Filtros:";
             // 
             // txtFNombre
             // 
@@ -110,7 +111,7 @@
             // lblDatos
             // 
             this.lblDatos.AutoSize = true;
-            this.lblDatos.Location = new System.Drawing.Point(607, 36);
+            this.lblDatos.Location = new System.Drawing.Point(628, 9);
             this.lblDatos.Name = "lblDatos";
             this.lblDatos.Size = new System.Drawing.Size(87, 13);
             this.lblDatos.TabIndex = 8;
@@ -159,9 +160,9 @@
             this.Telefono.Location = new System.Drawing.Point(663, 359);
             this.Telefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Telefono.Name = "Telefono";
-            this.Telefono.Size = new System.Drawing.Size(49, 13);
+            this.Telefono.Size = new System.Drawing.Size(52, 13);
             this.Telefono.TabIndex = 30;
-            this.Telefono.Text = "Telefono";
+            this.Telefono.Text = "Telefono:";
             // 
             // txtDireccion
             // 
@@ -177,9 +178,9 @@
             this.Direccion.Location = new System.Drawing.Point(663, 315);
             this.Direccion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Direccion.Name = "Direccion";
-            this.Direccion.Size = new System.Drawing.Size(52, 13);
+            this.Direccion.Size = new System.Drawing.Size(55, 13);
             this.Direccion.TabIndex = 29;
-            this.Direccion.Text = "Direccion";
+            this.Direccion.Text = "Direccion:";
             // 
             // label5
             // 
@@ -187,9 +188,9 @@
             this.label5.Location = new System.Drawing.Point(663, 272);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 13);
+            this.label5.Size = new System.Drawing.Size(50, 13);
             this.label5.TabIndex = 28;
-            this.label5.Text = "Ingresos";
+            this.label5.Text = "Ingresos:";
             // 
             // fechaNacimiento
             // 
@@ -205,9 +206,9 @@
             this.label4.Location = new System.Drawing.Point(663, 228);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 27;
-            this.label4.Text = "Fecha de Nac.";
+            this.label4.Text = "Fecha de Nac.:";
             // 
             // comboBoxSexo
             // 
@@ -230,9 +231,9 @@
             this.label3.Location = new System.Drawing.Point(663, 182);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 25;
-            this.label3.Text = "Sexo";
+            this.label3.Text = "Sexo:";
             // 
             // txtApellido
             // 
@@ -264,9 +265,9 @@
             this.label2.Location = new System.Drawing.Point(663, 138);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 21;
-            this.label2.Text = "Apellido";
+            this.label2.Text = "Apellido:";
             // 
             // label1
             // 
@@ -274,9 +275,9 @@
             this.label1.Location = new System.Drawing.Point(666, 98);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 22;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Nombre:";
             // 
             // DNI
             // 
@@ -284,9 +285,9 @@
             this.DNI.Location = new System.Drawing.Point(666, 58);
             this.DNI.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DNI.Name = "DNI";
-            this.DNI.Size = new System.Drawing.Size(26, 13);
+            this.DNI.Size = new System.Drawing.Size(29, 13);
             this.DNI.TabIndex = 16;
-            this.DNI.Text = "DNI";
+            this.DNI.Text = "DNI:";
             // 
             // btnModificar
             // 
@@ -308,11 +309,22 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // btnOrdenarApellido
+            // 
+            this.btnOrdenarApellido.Location = new System.Drawing.Point(505, 36);
+            this.btnOrdenarApellido.Name = "btnOrdenarApellido";
+            this.btnOrdenarApellido.Size = new System.Drawing.Size(113, 23);
+            this.btnOrdenarApellido.TabIndex = 33;
+            this.btnOrdenarApellido.Text = "Ordenar por Apellido";
+            this.btnOrdenarApellido.UseVisualStyleBackColor = true;
+            this.btnOrdenarApellido.Click += new System.EventHandler(this.btnOrdenarApellido_Click);
+            // 
             // FrmVerClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(972, 441);
+            this.Controls.Add(this.btnOrdenarApellido);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.numIngreso);
@@ -373,5 +385,6 @@
         private System.Windows.Forms.Label DNI;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnOrdenarApellido;
     }
 }

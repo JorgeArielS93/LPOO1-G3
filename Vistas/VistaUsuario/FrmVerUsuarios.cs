@@ -22,6 +22,7 @@ namespace Vistas
         {
             cargarUsuarios();
             cargarRoles();
+            cargarCbOrdenarPor();
         }
 
         private void cargarRoles()
@@ -55,22 +56,32 @@ namespace Vistas
 
         private void filtrarUsuarios()
         {
-            string apellido = txtApellido.Text.Trim();
-            string nombre = txtNombre.Text.Trim();
+            string nombre = txtNombre.Text == "NOMBRE" ? "" : txtNombre.Text;
+            string apellido = txtApellido.Text == "APELLIDO" ? "" : txtApellido.Text;
 
-            DataTable dt = ABMUsuario.filtrarUsuarios(apellido, nombre);
-            dgvUsuarios.DataSource = dt;
+            if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(apellido))
+            {
+                cargarUsuarios();
+                return;
+            }
+
+            if (txtNombre.Text == "NOMBRE") txtNombre.Text = "";
+            if (txtApellido.Text == "APELLIDO") txtApellido.Text = "";
+
+            dgvUsuarios.DataSource = ABMUsuario.filtrarUsuarios(apellido, nombre);
+
+
         }
 
         private void dgvUsuarios_CurrentCellChanged(object sender, EventArgs e)
         {
             if (dgvUsuarios.CurrentRow != null)
             {
-                cbRol.SelectedValue = dgvUsuarios.CurrentRow.Cells["ROL_Codigo"].Value.ToString();
-                txtApellidoMod.Text = dgvUsuarios.CurrentRow.Cells["USU_Apellido"].Value.ToString();
-                txtNombreMod.Text = dgvUsuarios.CurrentRow.Cells["USU_Nombre"].Value.ToString();
-                txtNombreUsuario.Text = dgvUsuarios.CurrentRow.Cells["USU_NombreUsuario"].Value.ToString();
-                txtPassword.Text = dgvUsuarios.CurrentRow.Cells["USU_Contrasenia"].Value.ToString();
+                cbRol.SelectedValue = dgvUsuarios.CurrentRow.Cells["Codigo Rol"].Value.ToString();
+                txtApellidoMod.Text = dgvUsuarios.CurrentRow.Cells["Apellido"].Value.ToString();
+                txtNombreMod.Text = dgvUsuarios.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtNombreUsuario.Text = dgvUsuarios.CurrentRow.Cells["Nombre Usuario"].Value.ToString();
+                txtPassword.Text = dgvUsuarios.CurrentRow.Cells["Contraseña"].Value.ToString();
             }
         }
 
@@ -79,8 +90,8 @@ namespace Vistas
             if (txtNombre.Text == "NOMBRE")
             {
                 txtNombre.Text = "";
-                txtNombre.ForeColor = Color.Black;
             }
+            txtNombre.ForeColor = Color.Black;
         }
 
         private void txtApellido_Enter(object sender, EventArgs e)
@@ -88,16 +99,16 @@ namespace Vistas
             if (txtApellido.Text == "APELLIDO")
             {
                 txtApellido.Text = "";
-                txtApellido.ForeColor = Color.Black;
             }
+            txtApellido.ForeColor = Color.Black;
         }
 
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["USU_Id"].Value);
+            int id = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["ID"].Value);
 
-            bool esAdmin = Convert.ToString(dgvUsuarios.CurrentRow.Cells["ROL_Codigo"].Value) == "ADMIN";
+            bool esAdmin = Convert.ToString(dgvUsuarios.CurrentRow.Cells["Codigo Rol"].Value) == "ADMIN";
 
             if (esAdmin)
             {
@@ -133,7 +144,7 @@ namespace Vistas
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            bool esAdmin = Convert.ToString(dgvUsuarios.CurrentRow.Cells["ROL_Codigo"].Value) == "ADMIN";
+            bool esAdmin = Convert.ToString(dgvUsuarios.CurrentRow.Cells["Codigo Rol"].Value) == "ADMIN";
             string nuevoRol = cbRol.SelectedValue.ToString();
             int cantidadAdmins = ABMUsuario.contarAdministradores();
             if (esAdmin && nuevoRol != "ADMIN" && cantidadAdmins <= 1)
@@ -166,7 +177,7 @@ namespace Vistas
 
             Usuario usuario = new Usuario
             {
-                usu_ID  = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["USU_Id"].Value),
+                usu_ID  = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["ID"].Value),
                 usu_Nombre = txtNombreMod.Text.Trim(),
                 usu_Apellido = txtApellidoMod.Text.Trim(),
                 usu_Contrasenia = txtPassword.Text, 
@@ -183,10 +194,23 @@ namespace Vistas
     
     }
 
-        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void cargarCbOrdenarPor()
         {
-
+            cbOrdenarPor.Items.Add("UserName");
+            cbOrdenarPor.Items.Add("Apellido");
         }
+
+        private void cbOrdenarPor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void cbOrdenarPor_SelectedValueChanged(object sender, EventArgs e)
+        {
+            DataTable dt = ABMUsuario.ordenarUsuariosPorUserNameOApellido(cbOrdenarPor.Text);
+
+            dgvUsuarios.DataSource = dt;
+        }
+
 
 
 

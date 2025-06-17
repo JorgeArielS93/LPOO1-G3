@@ -37,7 +37,7 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "SELECT * FROM Cliente";
+            cmd.CommandText = "SELECT * FROM vw_cliente";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -75,9 +75,9 @@ namespace ClasesBase
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = @"
-            SELECT CLI_DNI, CLI_Nombre, CLI_Apellido, CLI_Sexo, CLI_fechaNacimiento, CLI_Ingresos, CLI_Direccion, CLI_Telefono
-            FROM Cliente
-            WHERE CLI_Apellido LIKE @apellido AND CLI_Nombre LIKE @nombre";
+            SELECT *
+            FROM vw_cliente
+            WHERE Apellido LIKE @apellido AND Nombre LIKE @nombre";
 
             cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
             cmd.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
@@ -166,6 +166,25 @@ namespace ClasesBase
             cn.Close();
             return null;
             
+        }
+
+        public static DataTable ordenarClientesPorApellido()
+        {
+            SqlConnection cn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "listar_clientes_ordenados_por_apellidos_sp";
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Connection = cn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
         }
 
 
