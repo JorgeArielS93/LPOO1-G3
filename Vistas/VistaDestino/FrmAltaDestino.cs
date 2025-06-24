@@ -38,5 +38,10 @@ namespace Vistas.VistaDestino
             this.Close();
 
         }
+
+        private void txtDestino_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

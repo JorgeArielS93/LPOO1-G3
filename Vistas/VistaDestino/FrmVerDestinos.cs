@@ -36,7 +36,7 @@ namespace Vistas.VistaDestino
         {
             if (dgvDestino.CurrentRow != null)
             {
-                txtFDescripcion.Text = dgvDestino.CurrentRow.Cells["DES_Descripcion"].Value.ToString();
+                txtFDescripcion.Text = dgvDestino.CurrentRow.Cells["Descripcion"].Value.ToString();
             }
         }
 
@@ -58,7 +58,7 @@ namespace Vistas.VistaDestino
 
             Destino des = new Destino
             {
-                des_Codigo = Convert.ToInt32(dgvDestino.CurrentRow.Cells["DES_Codigo"].Value),
+                des_Codigo = Convert.ToInt32(dgvDestino.CurrentRow.Cells["Codigo"].Value),
                 des_Descripcion = txtFDescripcion.Text.Trim()
             };
 
@@ -77,7 +77,7 @@ namespace Vistas.VistaDestino
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            int codigo = Convert.ToInt32(dgvDestino.CurrentRow.Cells["DES_Codigo"].Value);
+            int codigo = Convert.ToInt32(dgvDestino.CurrentRow.Cells["Codigo"].Value);
 
             DialogResult respuesta = MessageBox.Show(
                 "¿Estás seguro de eliminar este destino?",

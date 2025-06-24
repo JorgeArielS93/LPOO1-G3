@@ -15,8 +15,8 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "INSERT INTO Destino(DES_Descripcion) values(@descripcion)";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "alta_destino_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
             cmd.Parameters.AddWithValue("@descripcion", destino.des_Descripcion);
@@ -32,8 +32,8 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "SELECT * FROM Destino";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "listar_destinos_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -48,10 +48,8 @@ namespace ClasesBase
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = @"UPDATE Destino 
-                              SET DES_Descripcion = @descripcion
-                              WHERE DES_Codigo = @codigo";
-            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "modificar_destino_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 
             cmd.Parameters.AddWithValue("@codigo", destino.des_Codigo);
@@ -66,21 +64,23 @@ namespace ClasesBase
         public static void eliminarDestino(int codigo)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
-            SqlCommand cmd = new SqlCommand("DELETE FROM Destino WHERE DES_Codigo = @codigo", cnn);
+            SqlCommand cmd = new SqlCommand("eliminar_destino_sp", cnn);
+
+            cmd.CommandType = CommandType.StoredProcedure; 
+
             cmd.Parameters.AddWithValue("@codigo", codigo);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
-
         public static Destino getDestinoByCodigo(int codigo)
         {
             SqlConnection cn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
             SqlCommand cmd = new SqlCommand(
-                @"SELECT DES_Descripcion 
-            FROM Destino
-            WHERE DES_Codigo = @codigo", cn);
+                "obtener_destino_por_codigo_sp", cn);
+
+            cmd.CommandType = CommandType.StoredProcedure; 
 
             cmd.Parameters.AddWithValue("@codigo", codigo);
 
@@ -90,7 +90,7 @@ namespace ClasesBase
             {
                 Destino destino = new Destino
                 {
-                    des_Descripcion = dr["DES_Descripcion"].ToString()
+                    des_Descripcion = dr["Descripcion"].ToString()
                 };
                 cn.Close();
                 return destino;
