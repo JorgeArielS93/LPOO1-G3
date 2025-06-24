@@ -49,6 +49,7 @@
             this.txtDestino.Name = "txtDestino";
             this.txtDestino.Size = new System.Drawing.Size(254, 54);
             this.txtDestino.TabIndex = 1;
+            this.txtDestino.TextChanged += new System.EventHandler(this.txtDestino_TextChanged);
             // 
             // btnCrear
             // 
