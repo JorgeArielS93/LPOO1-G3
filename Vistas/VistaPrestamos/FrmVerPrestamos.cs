@@ -22,7 +22,16 @@ namespace Vistas.VistaPrestamos
         private void FrmVerPrestamos_Load(object sender, EventArgs e)
         {
             cargarPrestamos();
+            cargarComboDestinos();
         }
+
+        private void cargarComboDestinos()
+        {
+            cmbDestiny.DataSource = ABMDestino.getDestinos();
+            cmbDestiny.DisplayMember = "Descripcion";
+            cmbDestiny.ValueMember = "Codigo";
+
+        } 
 
         private void cargarPrestamos()
         {
@@ -50,6 +59,65 @@ namespace Vistas.VistaPrestamos
         private void dgvPrestamos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resetForm()
+        {
+            cmbDestiny.SelectedIndex = -1;
+            dtpFechaDesde.Checked = false;
+            dtpFechaHasta.Checked = false;
+            cargarPrestamos();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           object destinoRaw = cmbDestiny.SelectedValue;
+           DateTime fechaDesde = dtpFechaDesde.Value;
+           DateTime fechaHasta = dtpFechaHasta.Value;
+           bool destinoValido = destinoRaw != null;
+           bool fechasValidas = dtpFechaDesde.Checked && dtpFechaHasta.Checked;
+           bool rangoFechasCorrecto = !fechasValidas || (fechaDesde < fechaHasta);
+           if ((destinoValido || fechasValidas) && rangoFechasCorrecto)
+           {
+             dgvPrestamos.DataSource = ABMPrestamo.filtrarPrestamos(
+             destinoValido ? (int)cmbDestiny.SelectedValue : -1,
+             fechasValidas ? fechaDesde : DateTime.MinValue,
+             fechasValidas ? fechaHasta : DateTime.MaxValue
+             );
+           }
+           else
+          {
+          if (!destinoValido && !fechasValidas)
+          {
+              MessageBox.Show("Debe seleccionar al menos un destino o completar ambas fechas.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+              resetForm();
+          }
+          else if (fechasValidas && fechaDesde >= fechaHasta)
+          {
+            MessageBox.Show("La fecha desde debe ser menor que la fecha hasta.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            resetForm();
+          }
+         }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            resetForm();
         }
     }
 }

@@ -9,32 +9,35 @@ namespace ClasesBase
 {
     public class ABMDestino
     {
+        private static string connectionString = Properties.Settings.Default.prestamoConnectionString;
+
+        private static SqlConnection connection = new SqlConnection(connectionString);
 
         public static void altaDestino(Destino destino)
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+            
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "alta_destino_sp";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Connection = cnn;
+            cmd.Connection = connection;
 
             cmd.Parameters.AddWithValue("@descripcion", destino.des_Descripcion);
 
-            cnn.Open();
+            connection.Open();
             cmd.ExecuteNonQuery();
-            cnn.Close();
+            connection.Close();
 
         }
 
         public static DataTable getDestinos()
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+           
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "listar_destinos_sp";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Connection = cnn;
+            cmd.Connection = connection;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -45,46 +48,46 @@ namespace ClasesBase
 
         public static void modificarDestino(Destino destino)
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+           
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "modificar_destino_sp";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Connection = cnn;
+            cmd.Connection = connection;
 
             cmd.Parameters.AddWithValue("@codigo", destino.des_Codigo);
             cmd.Parameters.AddWithValue("@descripcion", destino.des_Descripcion);
 
-            cnn.Open();
+            connection.Open();
             cmd.ExecuteNonQuery();
-            cnn.Close();
+            connection.Close();
 
         }
 
         public static void eliminarDestino(int codigo)
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
-            SqlCommand cmd = new SqlCommand("eliminar_destino_sp", cnn);
+
+            SqlCommand cmd = new SqlCommand("eliminar_destino_sp", connection);
 
             cmd.CommandType = CommandType.StoredProcedure; 
 
             cmd.Parameters.AddWithValue("@codigo", codigo);
 
-            cnn.Open();
+            connection.Open();
             cmd.ExecuteNonQuery();
-            cnn.Close();
+            connection.Close();
         }
         public static Destino getDestinoByCodigo(int codigo)
         {
-            SqlConnection cn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
+            
             SqlCommand cmd = new SqlCommand(
-                "obtener_destino_por_codigo_sp", cn);
+                "obtener_destino_por_codigo_sp", connection);
 
             cmd.CommandType = CommandType.StoredProcedure; 
 
             cmd.Parameters.AddWithValue("@codigo", codigo);
 
-            cn.Open();
+            connection.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -92,10 +95,10 @@ namespace ClasesBase
                 {
                     des_Descripcion = dr["Descripcion"].ToString()
                 };
-                cn.Close();
+                connection.Close();
                 return destino;
             }
-            cn.Close();
+            connection.Close();
             return null;
 
         }

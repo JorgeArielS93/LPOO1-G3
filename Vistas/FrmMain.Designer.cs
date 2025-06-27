@@ -47,6 +47,7 @@
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
+            this.verPagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,14 +87,14 @@
             // altaToolStripMenuItem
             // 
             this.altaToolStripMenuItem.Name = "altaToolStripMenuItem";
-            this.altaToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.altaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.altaToolStripMenuItem.Text = "Alta";
             this.altaToolStripMenuItem.Click += new System.EventHandler(this.altaToolStripMenuItem_Click);
             // 
             // verUsuariosToolStripMenuItem
             // 
             this.verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.verUsuariosToolStripMenuItem.Text = "Ver Usuarios";
             this.verUsuariosToolStripMenuItem.Click += new System.EventHandler(this.verUsuariosToolStripMenuItem_Click);
             // 
@@ -110,14 +111,14 @@
             // altaToolStripMenuItem1
             // 
             this.altaToolStripMenuItem1.Name = "altaToolStripMenuItem1";
-            this.altaToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
+            this.altaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.altaToolStripMenuItem1.Text = "Alta";
             this.altaToolStripMenuItem1.Click += new System.EventHandler(this.altaToolStripMenuItem1_Click);
             // 
             // verClientesToolStripMenuItem
             // 
             this.verClientesToolStripMenuItem.Name = "verClientesToolStripMenuItem";
-            this.verClientesToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.verClientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.verClientesToolStripMenuItem.Text = "Ver Clientes";
             this.verClientesToolStripMenuItem.Click += new System.EventHandler(this.verClientesToolStripMenuItem_Click);
             // 
@@ -134,14 +135,14 @@
             // altaPrestamoToolStripMenuItem
             // 
             this.altaPrestamoToolStripMenuItem.Name = "altaPrestamoToolStripMenuItem";
-            this.altaPrestamoToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.altaPrestamoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.altaPrestamoToolStripMenuItem.Text = "Alta";
             this.altaPrestamoToolStripMenuItem.Click += new System.EventHandler(this.altaPrestamoToolStripMenuItem_Click);
             // 
             // verPrestamosToolStripMenuItem
             // 
             this.verPrestamosToolStripMenuItem.Name = "verPrestamosToolStripMenuItem";
-            this.verPrestamosToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.verPrestamosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.verPrestamosToolStripMenuItem.Text = "Ver Prestamos";
             this.verPrestamosToolStripMenuItem.Click += new System.EventHandler(this.verPrestamosToolStripMenuItem_Click);
             // 
@@ -157,14 +158,14 @@
             // altaToolStripMenuItem2
             // 
             this.altaToolStripMenuItem2.Name = "altaToolStripMenuItem2";
-            this.altaToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
+            this.altaToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.altaToolStripMenuItem2.Text = "Alta";
             this.altaToolStripMenuItem2.Click += new System.EventHandler(this.altaToolStripMenuItem2_Click);
             // 
             // verDestinosToolStripMenuItem
             // 
             this.verDestinosToolStripMenuItem.Name = "verDestinosToolStripMenuItem";
-            this.verDestinosToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.verDestinosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.verDestinosToolStripMenuItem.Text = "Ver Destinos";
             this.verDestinosToolStripMenuItem.Click += new System.EventHandler(this.verDestinosToolStripMenuItem_Click);
             // 
@@ -176,9 +177,12 @@
             // 
             // pagosToolStripMenuItem
             // 
+            this.pagosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verPagosToolStripMenuItem});
             this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
             this.pagosToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.pagosToolStripMenuItem.Text = "Pagos";
+            this.pagosToolStripMenuItem.Click += new System.EventHandler(this.pagosToolStripMenuItem_Click);
             // 
             // sALIRToolStripMenuItem
             // 
@@ -207,6 +211,13 @@
             this.lblRol.Size = new System.Drawing.Size(35, 13);
             this.lblRol.TabIndex = 2;
             this.lblRol.Text = "label1";
+            // 
+            // verPagosToolStripMenuItem
+            // 
+            this.verPagosToolStripMenuItem.Name = "verPagosToolStripMenuItem";
+            this.verPagosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.verPagosToolStripMenuItem.Text = "Ver Pagos";
+            this.verPagosToolStripMenuItem.Click += new System.EventHandler(this.verPagosToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -248,5 +259,6 @@
         private System.Windows.Forms.ToolStripMenuItem verDestinosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaPrestamoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verPrestamosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verPagosToolStripMenuItem;
     }
 }

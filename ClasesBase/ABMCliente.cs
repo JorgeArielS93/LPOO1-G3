@@ -9,14 +9,17 @@ namespace ClasesBase
 {
     public class ABMCliente
     {
+        private static string connectionString = Properties.Settings.Default.prestamoConnectionString;
+
+        private static SqlConnection connection = new SqlConnection(connectionString);
+
         public static void altaCliente(Cliente cliente) 
         {
  
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "INSERT INTO Cliente(CLI_DNI, CLI_Nombre, CLI_Apellido, CLI_Sexo, CLI_FechaNacimiento, CLI_Ingresos, CLI_Direccion, CLI_Telefono) values(@dni, @nombre, @apellido, @sexo, @fechaNacimiento, @ingresos, @direccion, @telefono)";
             cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
+            cmd.Connection = connection;
 
             cmd.Parameters.AddWithValue("@dni", cliente.cli_DNI);
             cmd.Parameters.AddWithValue("@nombre", cliente.cli_Nombre);
@@ -27,23 +30,23 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@direccion", cliente.cli_Direccion);
             cmd.Parameters.AddWithValue("@telefono", cliente.cli_Telefono);
 
-            cnn.Open();
+            connection.Open();
             cmd.ExecuteNonQuery();
-            cnn.Close();
+            connection.Close();
         }
 
         public static DataTable getClientes()
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "SELECT * FROM vw_cliente";
             cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
+            cmd.Connection = connection;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            dt.Columns.Add("NombreCompleto", typeof(string), "Nombre + ' ' + Apellido");
 
             return dt;
 
@@ -53,14 +56,13 @@ namespace ClasesBase
         {
             bool existe = false;
 
-            using (SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString))
             {
-                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Cliente WHERE CLI_DNI = @dni", cn);
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Cliente WHERE CLI_DNI = @dni", connection);
                 cmd.Parameters.AddWithValue("@dni", dni);
 
-                cn.Open();
+                connection.Open();
                 int count = (int)cmd.ExecuteScalar();
-                cn.Close();
+                connection.Close();
 
                 existe = (count > 0);
             }
@@ -68,10 +70,9 @@ namespace ClasesBase
             return existe;
         }
 
-
         public static DataTable filtrarClientes(string nombre, string apellido)
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+           
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = @"
@@ -81,21 +82,21 @@ namespace ClasesBase
 
             cmd.Parameters.AddWithValue("@apellido", "%" + apellido + "%");
             cmd.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
-            cmd.Connection = cnn;
+            cmd.Connection = connection;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
 
-            cnn.Open();
+            connection.Open();
             da.Fill(dt);
-            cnn.Close();
+            connection.Close();
 
             return dt;
         }
 
         public static void modificarCliente(Cliente cliente)
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+           
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = @"UPDATE Cliente 
@@ -109,7 +110,7 @@ namespace ClasesBase
                               CLI_Telefono = @telefono
                           WHERE CLI_DNI = @dni";
             cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
+            cmd.Connection = connection;
 
             cmd.Parameters.AddWithValue("@dni", cliente.cli_DNI);
             cmd.Parameters.AddWithValue("@nombre", cliente.cli_Nombre);
@@ -120,37 +121,36 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@direccion", cliente.cli_Direccion);
             cmd.Parameters.AddWithValue("@telefono", cliente.cli_Telefono);
 
-            cnn.Open();
+            connection.Open();
             cmd.ExecuteNonQuery();
-            cnn.Close();
+            connection.Close();
 
         }
 
-
         public static void eliminarCliente(string dni)
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
-            SqlCommand cmd = new SqlCommand("DELETE FROM Cliente WHERE CLI_DNI = @dni", cnn);
+
+            SqlCommand cmd = new SqlCommand("DELETE FROM Cliente WHERE CLI_DNI = @dni", connection);
 
             cmd.Parameters.AddWithValue("@dni", dni);
 
-            cnn.Open();
+            connection.Open();
             cmd.ExecuteNonQuery();
-            cnn.Close();
+            connection.Close();
 
         }
 
         public static Cliente getClienteByDNI(string dni)
         {
-            SqlConnection cn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
+            
             SqlCommand cmd = new SqlCommand(
                 @"SELECT CLI_DNI, CLI_Nombre, CLI_Apellido 
             FROM Cliente
-            WHERE CLI_DNI = @dni", cn);
+            WHERE CLI_DNI = @dni", connection);
 
             cmd.Parameters.AddWithValue("@dni", dni);
 
-            cn.Open();
+            connection.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -160,24 +160,24 @@ namespace ClasesBase
                     cli_Nombre = dr["CLI_Nombre"].ToString(),
                     cli_Apellido = dr["CLI_Apellido"].ToString()
                 };
-                cn.Close();
+                connection.Close();
                 return cliente;
             }
-            cn.Close();
+            connection.Close();
             return null;
             
         }
 
         public static DataTable ordenarClientesPorApellido()
         {
-            SqlConnection cn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
+            
             SqlCommand cmd = new SqlCommand();
 
             cmd.CommandText = "listar_clientes_ordenados_por_apellidos_sp";
 
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Connection = cn;
+            cmd.Connection = connection;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
@@ -187,6 +187,15 @@ namespace ClasesBase
             return dt;
         }
 
-
+        public static DataTable getPagosDeClientes(string dni)
+        {
+            SqlCommand cmd = new SqlCommand("listar_pagos_clientes_sp",connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@dni", SqlDbType.VarChar).Value = dni;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
     }
 }

@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPago.Designer.cs">
+      <DependentUpon>FrmPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="prestamosDataSet.cs">
       <DependentUpon>prestamosDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -154,6 +160,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmPago.resx">
+      <DependentUpon>FrmPago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VistaCliente\FrmAltaCliente.resx">
       <DependentUpon>FrmAltaCliente.cs</DependentUpon>
     </EmbeddedResource>

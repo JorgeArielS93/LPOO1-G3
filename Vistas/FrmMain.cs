@@ -158,6 +158,16 @@ namespace Vistas
 
         }
 
+        private void pagosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void verPagosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPago frmVerPagos = new FrmPago();
+            frmVerPagos.Show();
+        }
+
        
 
        

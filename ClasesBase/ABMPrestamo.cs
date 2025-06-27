@@ -2,49 +2,51 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic; 
-using ClasesBase; 
+using ClasesBase;
+using System.Text; 
 
 namespace ClasesBase
 {
     public class ABMPrestamo
     {
+        private static string connectionString = Properties.Settings.Default.prestamoConnectionString;
+        private static SqlConnection connection = new SqlConnection(connectionString);
         // Método para cargar clientes desde la base de datos
         public static DataTable CargarClientes()
         {
 
-            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
 
             SqlCommand cmd = new SqlCommand(); 
             cmd.CommandText = "SELECT CLI_DNI, CLI_Nombre + ' ' + CLI_Apellido AS NombreCompleto FROM Cliente";
 
 
             cmd.CommandType = CommandType.Text;
-            cmd.Connection = cn;
+            cmd.Connection = connection;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
             DataTable dt = new DataTable();
-            cn.Open();
+            connection.Open();
             da.Fill(dt);
 
-            cn.Close();
+            connection.Close();
             return dt;
         }
 
         // Método para cargar destinos desde la base de datos
         public static DataTable CargarDestinos()
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+            
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr = null;
             DataTable dt = new DataTable();
 
             cmd.CommandText = "SELECT DES_Codigo, DES_Descripcion FROM Destino";
             cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
+            cmd.Connection = connection;
 
             try
             {
-                cnn.Open();
+                connection.Open();
                 dr = cmd.ExecuteReader();
                 dt.Load(dr);
             }
@@ -64,9 +66,9 @@ namespace ClasesBase
                 {
                     dr.Close();
                 }
-                if (cnn.State == ConnectionState.Open)
+                if (connection.State == ConnectionState.Open)
                 {
-                    cnn.Close();
+                    connection.Close();
                 }
             }
             return dt;
@@ -75,18 +77,18 @@ namespace ClasesBase
         // Método para cargar periodos desde la base de datos
         public static DataTable CargarPeriodos()
         {
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+           
             SqlCommand cmd = new SqlCommand();
             SqlDataReader dr = null;
             DataTable dt = new DataTable();
 
             cmd.CommandText = "SELECT PER_Codigo, PER_Descripcion FROM Periodo";
             cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
+            cmd.Connection = connection;
 
             try
             {
-                cnn.Open();
+                connection.Open();
                 dr = cmd.ExecuteReader();
                 dt.Load(dr);
             }
@@ -106,9 +108,9 @@ namespace ClasesBase
                 {
                     dr.Close();
                 }
-                if (cnn.State == ConnectionState.Open)
+                if (connection.State == ConnectionState.Open)
                 {
-                    cnn.Close();
+                    connection.Close();
                 }
             }
             return dt;
@@ -116,29 +118,66 @@ namespace ClasesBase
 
         // Metodo para devolver los prestamos de la base de datos
         public static DataTable getPrestamos(){
-            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+            
 
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "SELECT * FROM Prestamo";
 
             cmd.CommandType = CommandType.Text;
-            cmd.Connection = cn;
+            cmd.Connection = connection;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 
             DataTable dt = new DataTable();
-            cn.Open();
+            connection.Open();
             da.Fill(dt);
 
-            cn.Close();
+            connection.Close();
             return dt;
+        }
+
+        public static DataTable filtrarPrestamos(int codigoDestinoSeleccionado , DateTime desde, DateTime hasta)
+        {
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    // Base del query
+                    StringBuilder query = new StringBuilder("SELECT * FROM Prestamo WHERE 1=1");
+
+                    // Agregamos filtros dinámicamente
+                    if (codigoDestinoSeleccionado > 0)
+                    {
+                        query.Append(" AND DES_Codigo = @codigoDestino");
+                        cmd.Parameters.AddWithValue("@codigoDestino", codigoDestinoSeleccionado);
+                    }
+
+                    if (desde != DateTime.MinValue && hasta != DateTime.MaxValue)
+                    {
+                        query.Append(" AND PRE_Fecha BETWEEN @fechaDesde AND @fechaHasta");
+                        cmd.Parameters.AddWithValue("@fechaDesde", desde);
+                        cmd.Parameters.AddWithValue("@fechaHasta", hasta);
+                    }
+
+                    cmd.CommandText = query.ToString();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = connection;
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        connection.Open();
+                        da.Fill(dt);
+                        connection.Close();
+                        return dt;
+                    }
+                }
+            }
+            
         }
 
         // Metodo para devolver las cuotas asociadas a un prestamo
 
         public static DataTable getCuotas(int numeroPrestamo)
         {
-            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
-
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = @"
         SELECT CUO_Codigo, CUO_Numero, CUO_Vencimiento, CUO_Importe, CUO_Estado
@@ -146,14 +185,14 @@ namespace ClasesBase
         WHERE PRE_Numero = @numeroPrestamo";
 
             cmd.Parameters.AddWithValue("@numeroPrestamo", numeroPrestamo);
-            cmd.Connection = cn;
+            cmd.Connection = connection;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
 
-            cn.Open();
+            connection.Open();
             da.Fill(dt);
-            cn.Close();
+            connection.Close();
 
             return dt;
         }
@@ -161,15 +200,14 @@ namespace ClasesBase
         //Metodo para devolver la descripcion del periodo asociado a un prestamo
         public static Periodo getPeriodoByCodigo(int codigo)
         {
-            SqlConnection cn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
             SqlCommand cmd = new SqlCommand(
                 @"SELECT PER_Descripcion 
             FROM Periodo
-            WHERE PER_Codigo = @codigo", cn);
+            WHERE PER_Codigo = @codigo", connection);
 
             cmd.Parameters.AddWithValue("@codigo", codigo);
 
-            cn.Open();
+            connection.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -177,10 +215,10 @@ namespace ClasesBase
                 {
                     per_Descripcion = dr["PER_Descripcion"].ToString()
                 };
-                cn.Close();
+                connection.Close();
                 return periodo;
             }
-            cn.Close();
+            connection.Close();
             return null;
 
         }
@@ -193,20 +231,19 @@ namespace ClasesBase
         {
             int prestamoNumero = 0; 
 
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
             SqlTransaction transaction = null;
 
             try
             {
-                cnn.Open();
-                transaction = cnn.BeginTransaction(); 
+                connection.Open();
+                transaction = connection.BeginTransaction(); 
 
                 SqlCommand cmdPrestamo = new SqlCommand();
                 cmdPrestamo.CommandText = "INSERT INTO Prestamo (CLI_DNI, DES_Codigo, PER_Codigo, PRE_Fecha, PRE_Importe, PRE_TasaInteres, PRE_CantidadCuotas, PRE_Estado) " +
                                            "VALUES (@CLI_DNI, @DES_Codigo, @PER_Codigo, @PRE_Fecha, @PRE_Importe, @PRE_TasaInteres, @PRE_CantidadCuotas, @PRE_Estado); " +
                                            "SELECT SCOPE_IDENTITY();"; 
                 cmdPrestamo.CommandType = CommandType.Text;
-                cmdPrestamo.Connection = cnn;
+                cmdPrestamo.Connection = connection;
                 cmdPrestamo.Transaction = transaction; 
 
                 cmdPrestamo.Parameters.AddWithValue("@CLI_DNI", cliDni);
@@ -230,7 +267,7 @@ namespace ClasesBase
                     cmdCuota.CommandText = "INSERT INTO Cuota (PRE_Numero, CUO_Numero, CUO_Vencimiento, CUO_Importe, CUO_Estado) " +
                                             "VALUES (@PRE_Numero, @CUO_Numero, @CUO_Vencimiento, @CUO_Importe, @CUO_Estado)";
                     cmdCuota.CommandType = CommandType.Text;
-                    cmdCuota.Connection = cnn;
+                    cmdCuota.Connection = connection;
                     cmdCuota.Transaction = transaction; 
 
                     cmdCuota.Parameters.AddWithValue("@PRE_Numero", prestamoNumero);
@@ -267,9 +304,9 @@ namespace ClasesBase
             }
             finally
             {
-                if (cnn.State == ConnectionState.Open)
+                if (connection.State == ConnectionState.Open)
                 {
-                    cnn.Close();
+                    connection.Close();
                 }
             }
         }
