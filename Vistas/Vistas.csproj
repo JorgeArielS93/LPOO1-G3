@@ -87,6 +87,12 @@
     <Compile Include="VistaDestino\FrmVerDestinos.Designer.cs">
       <DependentUpon>FrmVerDestinos.cs</DependentUpon>
     </Compile>
+    <Compile Include="VistaPago\FrmAltaPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaPago\FrmAltaPago.Designer.cs">
+      <DependentUpon>FrmAltaPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="VistaPrestamos\FrmAltaPrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     <EmbeddedResource Include="VistaDestino\FrmVerDestinos.resx">
       <DependentUpon>FrmVerDestinos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VistaPago\FrmAltaPago.resx">
+      <DependentUpon>FrmAltaPago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VistaPrestamos\FrmAltaPrestamo.resx">
       <DependentUpon>FrmAltaPrestamo.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +212,7 @@
       <DependentUpon>FrmVerUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="prestamosDataSet.xsc">
       <DependentUpon>prestamosDataSet.xsd</DependentUpon>
     </None>

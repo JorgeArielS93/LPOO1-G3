@@ -11,6 +11,7 @@ using ClasesBase;
 using Vistas.VistaCliente;
 using Vistas.VistaDestino;
 using Vistas.VistaPrestamos;
+using Vistas.VistaPago;
 
 namespace Vistas
 {
@@ -158,9 +159,13 @@ namespace Vistas
 
         }
 
-       
-
-       
+        private void altaPagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Instanciar y mostrar el formulario FrmAltaPago
+            FrmAltaPago frmAltaPago = new FrmAltaPago();
+            frmAltaPago.Show();
+        }
+ 
 
     }
 }
