@@ -273,5 +273,23 @@ namespace ClasesBase
                 }
             }
         }
+        public static DataTable exec_listar_prestamos_por_fecha_sp(DateTime fechaDesde, DateTime fechaHasta)
+        {
+            SqlConnection cnn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listar_prestamos_por_fecha_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+            cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
     }
 }

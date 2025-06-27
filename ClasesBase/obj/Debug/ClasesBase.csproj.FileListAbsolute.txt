@@ -5,7 +5,6 @@ D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Program
 D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\ClasesBase\bin\Debug\ClasesBase.dll.config
 D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\ClasesBase\bin\Debug\ClasesBase.dll
 D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\ClasesBase\bin\Debug\ClasesBase.pdb
-D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
 D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.dll
 D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.pdb
 d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\ClasesBase\bin\Debug\ClasesBase.dll.config
@@ -20,3 +19,4 @@ D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Program
 D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 3\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.dll
 D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 3\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.pdb
 D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 3\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
+D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
