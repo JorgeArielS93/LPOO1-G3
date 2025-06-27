@@ -158,8 +158,11 @@ namespace Vistas
 
         }
 
-       
-
+        private void verPrestamosPorFechaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerPrestamosPorFecha frmPrestamosFecha = new FrmVerPrestamosPorFecha();
+            frmPrestamosFecha.Show();
+        }
        
 
     }
