@@ -45,10 +45,11 @@
             this.verDestinosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.periodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verPagosPorClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
-            this.verPagosPorClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -187,10 +188,17 @@
             // pagosToolStripMenuItem
             // 
             this.pagosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaToolStripMenuItem3,
             this.verPagosPorClienteToolStripMenuItem});
             this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
             this.pagosToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.pagosToolStripMenuItem.Text = "Pagos";
+            // 
+            // verPagosPorClienteToolStripMenuItem
+            // 
+            this.verPagosPorClienteToolStripMenuItem.Name = "verPagosPorClienteToolStripMenuItem";
+            this.verPagosPorClienteToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.verPagosPorClienteToolStripMenuItem.Text = "Ver pagos por cliente";
             // 
             // sALIRToolStripMenuItem
             // 
@@ -220,11 +228,12 @@
             this.lblRol.TabIndex = 2;
             this.lblRol.Text = "label1";
             // 
-            // verPagosPorClienteToolStripMenuItem
+            // altaToolStripMenuItem3
             // 
-            this.verPagosPorClienteToolStripMenuItem.Name = "verPagosPorClienteToolStripMenuItem";
-            this.verPagosPorClienteToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.verPagosPorClienteToolStripMenuItem.Text = "Ver pagos por cliente";
+            this.altaToolStripMenuItem3.Name = "altaToolStripMenuItem3";
+            this.altaToolStripMenuItem3.Size = new System.Drawing.Size(184, 22);
+            this.altaToolStripMenuItem3.Text = "Alta";
+            this.altaToolStripMenuItem3.Click += new System.EventHandler(this.altaToolStripMenuItem3_Click);
             // 
             // FrmMain
             // 
@@ -268,5 +277,6 @@
         private System.Windows.Forms.ToolStripMenuItem verPrestamosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verPrestamosPorFechaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verPagosPorClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem3;
     }
 }

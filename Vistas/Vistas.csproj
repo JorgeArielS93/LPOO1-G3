@@ -87,6 +87,12 @@
     <Compile Include="VistaDestino\FrmVerDestinos.Designer.cs">
       <DependentUpon>FrmVerDestinos.cs</DependentUpon>
     </Compile>
+    <Compile Include="VistaPago\FrmAltaPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaPago\FrmAltaPago.Designer.cs">
+      <DependentUpon>FrmAltaPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="VistaPrestamos\FrmAltaPrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
