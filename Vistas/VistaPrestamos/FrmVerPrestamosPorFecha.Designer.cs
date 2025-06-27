@@ -115,6 +115,7 @@
             this.Controls.Add(this.txtTitulo);
             this.Name = "FrmVerPrestamosPorFecha";
             this.Text = "t";
+            this.Load += new System.EventHandler(this.FrmVerPrestamosPorFecha_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamosFecha)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

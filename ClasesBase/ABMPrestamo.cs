@@ -133,6 +133,26 @@ namespace ClasesBase
             return dt;
         }
 
+        // Metodo para devolver los prestamos de la base de datos usando vista vw_prestamo
+        public static DataTable getPrestamosVista()
+        {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM vw_prestamo";
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            cn.Open();
+            da.Fill(dt);
+
+            cn.Close();
+            return dt;
+        }
+
         // Metodo para devolver las cuotas asociadas a un prestamo
 
         public static DataTable getCuotas(int numeroPrestamo)
@@ -187,11 +207,10 @@ namespace ClasesBase
 
 
         // Método para insertar un préstamo y sus cuotas en una transacción
-        public static int InsertarPrestamoYCuotas(
-            string cliDni, int desCodigo, int perCodigo, DateTime preFecha,
-            decimal preImporte, float preTasaInteres, int preCantidadCuotas)
+        public static int InsertarPrestamoYCuotas(string cliDni, int desCodigo, int perCodigo, DateTime preFecha,
+                                                  decimal preImporte, float preTasaInteres, int preCantidadCuotas)
         {
-            int prestamoNumero = 0; 
+            int prestamoNumero = 0;
 
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
             SqlTransaction transaction = null;
@@ -199,15 +218,15 @@ namespace ClasesBase
             try
             {
                 cnn.Open();
-                transaction = cnn.BeginTransaction(); 
+                transaction = cnn.BeginTransaction();
 
                 SqlCommand cmdPrestamo = new SqlCommand();
                 cmdPrestamo.CommandText = "INSERT INTO Prestamo (CLI_DNI, DES_Codigo, PER_Codigo, PRE_Fecha, PRE_Importe, PRE_TasaInteres, PRE_CantidadCuotas, PRE_Estado) " +
                                            "VALUES (@CLI_DNI, @DES_Codigo, @PER_Codigo, @PRE_Fecha, @PRE_Importe, @PRE_TasaInteres, @PRE_CantidadCuotas, @PRE_Estado); " +
-                                           "SELECT SCOPE_IDENTITY();"; 
+                                           "SELECT SCOPE_IDENTITY();";
                 cmdPrestamo.CommandType = CommandType.Text;
                 cmdPrestamo.Connection = cnn;
-                cmdPrestamo.Transaction = transaction; 
+                cmdPrestamo.Transaction = transaction;
 
                 cmdPrestamo.Parameters.AddWithValue("@CLI_DNI", cliDni);
                 cmdPrestamo.Parameters.AddWithValue("@DES_Codigo", desCodigo);
@@ -218,20 +237,35 @@ namespace ClasesBase
                 cmdPrestamo.Parameters.AddWithValue("@PRE_CantidadCuotas", preCantidadCuotas);
                 cmdPrestamo.Parameters.AddWithValue("@PRE_Estado", "PENDIENTE");
 
-                prestamoNumero = Convert.ToInt32(cmdPrestamo.ExecuteScalar()); 
+                prestamoNumero = Convert.ToInt32(cmdPrestamo.ExecuteScalar());
 
                 decimal importePorCuota = preImporte / preCantidadCuotas;
 
                 for (int i = 1; i <= preCantidadCuotas; i++)
                 {
-                    DateTime cuoVencimiento = preFecha.AddMonths(i);
+                    DateTime cuoVencimiento;
+
+                    switch (perCodigo)
+                    {
+                        case 1: // Semanal
+                            cuoVencimiento = preFecha.AddDays(7 * i);
+                            break;
+                        case 2: // Mensual
+                            cuoVencimiento = preFecha.AddMonths(i);
+                            break;
+                        case 3: // Anual
+                            cuoVencimiento = preFecha.AddYears(i);
+                            break;
+                        default:
+                            throw new Exception("Código de período de pago inválido.");
+                    }
 
                     SqlCommand cmdCuota = new SqlCommand();
                     cmdCuota.CommandText = "INSERT INTO Cuota (PRE_Numero, CUO_Numero, CUO_Vencimiento, CUO_Importe, CUO_Estado) " +
                                             "VALUES (@PRE_Numero, @CUO_Numero, @CUO_Vencimiento, @CUO_Importe, @CUO_Estado)";
                     cmdCuota.CommandType = CommandType.Text;
                     cmdCuota.Connection = cnn;
-                    cmdCuota.Transaction = transaction; 
+                    cmdCuota.Transaction = transaction;
 
                     cmdCuota.Parameters.AddWithValue("@PRE_Numero", prestamoNumero);
                     cmdCuota.Parameters.AddWithValue("@CUO_Numero", i);
@@ -242,8 +276,8 @@ namespace ClasesBase
                     cmdCuota.ExecuteNonQuery();
                 }
 
-                transaction.Commit(); 
-                return prestamoNumero; 
+                transaction.Commit();
+                return prestamoNumero;
             }
             catch (SqlException ex)
             {
@@ -273,6 +307,7 @@ namespace ClasesBase
                 }
             }
         }
+
         public static DataTable exec_listar_prestamos_por_fecha_sp(DateTime fechaDesde, DateTime fechaHasta)
         {
             SqlConnection cnn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
@@ -283,6 +318,24 @@ namespace ClasesBase
 
             cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
             cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public static DataTable listar_prestamos_por_destino(string destino)
+        {
+            SqlConnection cnn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listar_prestamos_por_destino";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@destino", destino);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
 

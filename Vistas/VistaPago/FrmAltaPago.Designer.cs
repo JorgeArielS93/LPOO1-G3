@@ -70,12 +70,12 @@
              this.dgvCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
              this.dgvCuotas.Location = new System.Drawing.Point(164, 142);
              this.dgvCuotas.Name = "dgvCuotas";
-             this.dgvCuotas.Size = new System.Drawing.Size(240, 150);
+             this.dgvCuotas.Size = new System.Drawing.Size(472, 193);
              this.dgvCuotas.TabIndex = 3;
              // 
              // btnGuardarPago
              // 
-             this.btnGuardarPago.Location = new System.Drawing.Point(154, 338);
+             this.btnGuardarPago.Location = new System.Drawing.Point(529, 381);
              this.btnGuardarPago.Name = "btnGuardarPago";
              this.btnGuardarPago.Size = new System.Drawing.Size(107, 23);
              this.btnGuardarPago.TabIndex = 4;
@@ -88,18 +88,18 @@
              this.lblFecha.AutoSize = true;
              this.lblFecha.Location = new System.Drawing.Point(24, 30);
              this.lblFecha.Name = "lblFecha";
-             this.lblFecha.Size = new System.Drawing.Size(80, 13);
+             this.lblFecha.Size = new System.Drawing.Size(83, 13);
              this.lblFecha.TabIndex = 5;
-             this.lblFecha.Text = "Fecha de Pago";
+             this.lblFecha.Text = "Fecha de Pago:";
              // 
              // lblClientes
              // 
              this.lblClientes.AutoSize = true;
              this.lblClientes.Location = new System.Drawing.Point(24, 69);
              this.lblClientes.Name = "lblClientes";
-             this.lblClientes.Size = new System.Drawing.Size(44, 13);
+             this.lblClientes.Size = new System.Drawing.Size(45, 13);
              this.lblClientes.TabIndex = 6;
-             this.lblClientes.Text = "Clientes";
+             this.lblClientes.Text = "Cliente: ";
              // 
              // lblPrestamos
              // 
@@ -108,7 +108,7 @@
              this.lblPrestamos.Name = "lblPrestamos";
              this.lblPrestamos.Size = new System.Drawing.Size(112, 13);
              this.lblPrestamos.TabIndex = 7;
-             this.lblPrestamos.Text = "Prestamos Pendientes";
+             this.lblPrestamos.Text = "Numero de Prestamo: ";
              // 
              // lblCuotas
              // 
@@ -123,7 +123,7 @@
              // 
              this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
              this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-             this.ClientSize = new System.Drawing.Size(437, 428);
+             this.ClientSize = new System.Drawing.Size(719, 451);
              this.Controls.Add(this.lblCuotas);
              this.Controls.Add(this.lblPrestamos);
              this.Controls.Add(this.lblClientes);

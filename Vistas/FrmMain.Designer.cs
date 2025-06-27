@@ -45,11 +45,12 @@
             this.verDestinosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.periodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.verPagosPorClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
-            this.altaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.verPrestamosPorDestinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,7 +130,8 @@
             this.prestamosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.altaPrestamoToolStripMenuItem,
             this.verPrestamosToolStripMenuItem,
-            this.verPrestamosPorFechaToolStripMenuItem});
+            this.verPrestamosPorFechaToolStripMenuItem,
+            this.verPrestamosPorDestinoToolStripMenuItem});
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
             this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.prestamosToolStripMenuItem.Text = "Prestamos";
@@ -138,22 +140,22 @@
             // altaPrestamoToolStripMenuItem
             // 
             this.altaPrestamoToolStripMenuItem.Name = "altaPrestamoToolStripMenuItem";
-            this.altaPrestamoToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.altaPrestamoToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.altaPrestamoToolStripMenuItem.Text = "Alta";
             this.altaPrestamoToolStripMenuItem.Click += new System.EventHandler(this.altaPrestamoToolStripMenuItem_Click);
             // 
             // verPrestamosToolStripMenuItem
             // 
             this.verPrestamosToolStripMenuItem.Name = "verPrestamosToolStripMenuItem";
-            this.verPrestamosToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.verPrestamosToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.verPrestamosToolStripMenuItem.Text = "Ver Prestamos";
             this.verPrestamosToolStripMenuItem.Click += new System.EventHandler(this.verPrestamosToolStripMenuItem_Click);
             // 
             // verPrestamosPorFechaToolStripMenuItem
             // 
             this.verPrestamosPorFechaToolStripMenuItem.Name = "verPrestamosPorFechaToolStripMenuItem";
-            this.verPrestamosPorFechaToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.verPrestamosPorFechaToolStripMenuItem.Text = "Ver prestamos por fecha";
+            this.verPrestamosPorFechaToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.verPrestamosPorFechaToolStripMenuItem.Text = "Ver Prestamos por fecha";
             this.verPrestamosPorFechaToolStripMenuItem.Click += new System.EventHandler(this.verPrestamosPorFechaToolStripMenuItem_Click);
             // 
             // destinosToolStripMenuItem
@@ -194,11 +196,19 @@
             this.pagosToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.pagosToolStripMenuItem.Text = "Pagos";
             // 
+            // altaToolStripMenuItem3
+            // 
+            this.altaToolStripMenuItem3.Name = "altaToolStripMenuItem3";
+            this.altaToolStripMenuItem3.Size = new System.Drawing.Size(184, 22);
+            this.altaToolStripMenuItem3.Text = "Pagar una cuota";
+            this.altaToolStripMenuItem3.Click += new System.EventHandler(this.altaToolStripMenuItem3_Click);
+            // 
             // verPagosPorClienteToolStripMenuItem
             // 
             this.verPagosPorClienteToolStripMenuItem.Name = "verPagosPorClienteToolStripMenuItem";
             this.verPagosPorClienteToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.verPagosPorClienteToolStripMenuItem.Text = "Ver pagos por cliente";
+            this.verPagosPorClienteToolStripMenuItem.Text = "Ver Pagos por cliente";
+            this.verPagosPorClienteToolStripMenuItem.Click += new System.EventHandler(this.verPagosPorClienteToolStripMenuItem_Click);
             // 
             // sALIRToolStripMenuItem
             // 
@@ -228,12 +238,12 @@
             this.lblRol.TabIndex = 2;
             this.lblRol.Text = "label1";
             // 
-            // altaToolStripMenuItem3
+            // verPrestamosPorDestinoToolStripMenuItem
             // 
-            this.altaToolStripMenuItem3.Name = "altaToolStripMenuItem3";
-            this.altaToolStripMenuItem3.Size = new System.Drawing.Size(184, 22);
-            this.altaToolStripMenuItem3.Text = "Alta";
-            this.altaToolStripMenuItem3.Click += new System.EventHandler(this.altaToolStripMenuItem3_Click);
+            this.verPrestamosPorDestinoToolStripMenuItem.Name = "verPrestamosPorDestinoToolStripMenuItem";
+            this.verPrestamosPorDestinoToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.verPrestamosPorDestinoToolStripMenuItem.Text = "Ver Prestamos por destino";
+            this.verPrestamosPorDestinoToolStripMenuItem.Click += new System.EventHandler(this.verPrestamosPorDestinoToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -278,5 +288,6 @@
         private System.Windows.Forms.ToolStripMenuItem verPrestamosPorFechaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verPagosPorClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem verPrestamosPorDestinoToolStripMenuItem;
     }
 }

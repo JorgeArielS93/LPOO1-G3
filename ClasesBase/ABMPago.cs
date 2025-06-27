@@ -114,11 +114,9 @@ namespace ClasesBase
             {
                 cn.Open();
                 cmd.ExecuteNonQuery();
-                // Si no hay errores, la transacción fue exitosa en el SP
             }
             catch (Exception ex)
             {
-                // El SP ya maneja el rollback, aquí solo capturamos el error para informarlo
                 throw new Exception("Error al registrar el pago: " + ex.Message, ex);
             }
             finally
@@ -126,6 +124,43 @@ namespace ClasesBase
                 if (cn.State == ConnectionState.Open)
                     cn.Close();
             }
+        }
+
+        public static DataTable getPagos()
+        {
+            SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM vw_pago";
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cn;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            cn.Open();
+            da.Fill(dt);
+
+            cn.Close();
+            return dt;
+        }
+
+        public static DataTable listar_pago_por_cliente(string dni)
+        {
+            SqlConnection cnn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listar_pagos_por_cliente_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@dni", dni);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
         }
     }
 

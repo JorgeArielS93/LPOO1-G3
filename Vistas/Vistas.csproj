@@ -93,11 +93,23 @@
     <Compile Include="VistaPago\FrmAltaPago.Designer.cs">
       <DependentUpon>FrmAltaPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="VistaPago\FrmVerPagoPorCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaPago\FrmVerPagoPorCliente.Designer.cs">
+      <DependentUpon>FrmVerPagoPorCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="VistaPrestamos\FrmAltaPrestamo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VistaPrestamos\FrmAltaPrestamo.Designer.cs">
       <DependentUpon>FrmAltaPrestamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VistaPrestamos\FrmVerPrestamoPorDestino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaPrestamos\FrmVerPrestamoPorDestino.Designer.cs">
+      <DependentUpon>FrmVerPrestamoPorDestino.cs</DependentUpon>
     </Compile>
     <Compile Include="VistaPrestamos\FrmVerPrestamos.cs">
       <SubType>Form</SubType>
@@ -202,8 +214,17 @@
     <EmbeddedResource Include="VistaDestino\FrmVerDestinos.resx">
       <DependentUpon>FrmVerDestinos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VistaPago\FrmAltaPago.resx">
+      <DependentUpon>FrmAltaPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaPago\FrmVerPagoPorCliente.resx">
+      <DependentUpon>FrmVerPagoPorCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VistaPrestamos\FrmAltaPrestamo.resx">
       <DependentUpon>FrmAltaPrestamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaPrestamos\FrmVerPrestamoPorDestino.resx">
+      <DependentUpon>FrmVerPrestamoPorDestino.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VistaPrestamos\FrmVerPrestamos.resx">
       <DependentUpon>FrmVerPrestamos.cs</DependentUpon>

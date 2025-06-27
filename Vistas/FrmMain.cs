@@ -171,6 +171,18 @@ namespace Vistas
             FrmAltaPago frmAltaPago = new FrmAltaPago();
             frmAltaPago.Show();
         }
+
+        private void verPrestamosPorDestinoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerPrestamoPorDestino frmPrestamoDestino = new FrmVerPrestamoPorDestino();
+            frmPrestamoDestino.Show();
+        }
+
+        private void verPagosPorClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerPagoPorCliente frmPagoCliente = new FrmVerPagoPorCliente();
+            frmPagoCliente.Show();
+        }
        
     }
 }

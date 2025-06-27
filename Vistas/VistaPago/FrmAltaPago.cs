@@ -20,12 +20,9 @@ namespace Vistas.VistaPago
 
         private void FrmAltaPago_Load(object sender, EventArgs e)
         {
-            // Configurar el DateTimePicker para la fecha actual (punto a)
             dtpFechaPago.Value = DateTime.Now;
 
-            // Antes de cargar los clientes, establece la bandera en true
             isLoadingForm = true;
-            // Cargar clientes en el ComboBox (punto b)
             cargarClientes();
 
             isLoadingForm = false;
@@ -36,9 +33,9 @@ namespace Vistas.VistaPago
             DataTable dtClientes = ClasesBase.ABMPago.getTodosLosClientes();
 
             cmbClientes.DataSource = dtClientes;
-            cmbClientes.DisplayMember = "CLI_Apellido"; // O "CLI_Nombre" + " " + "CLI_Apellido"
-            cmbClientes.ValueMember = "CLI_DNI"; // El valor asociado es el DNI
-            cmbClientes.SelectedIndex = -1; // No seleccionar ninguno por defecto
+            cmbClientes.DisplayMember = "CLI_Apellido"; 
+            cmbClientes.ValueMember = "CLI_DNI"; 
+            cmbClientes.SelectedIndex = -1; 
         }
 
         private void cmbClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -50,9 +47,7 @@ namespace Vistas.VistaPago
             }
             else
             {
-                // Limpiar el ComboBox de préstamos si no hay cliente seleccionado
                 cmbPrestamos.DataSource = null;
-                // MessageBox.Show("Seleccione un cliente para ver sus préstamos.");
             }
         }
 
@@ -63,13 +58,13 @@ namespace Vistas.VistaPago
             if (dtPrestamos.Rows.Count > 0)
             {
                 cmbPrestamos.DataSource = dtPrestamos;
-                cmbPrestamos.DisplayMember = "PRE_Numero"; // Mostrar el número de préstamo
-                cmbPrestamos.ValueMember = "PRE_Numero";   // El valor asociado es el número de préstamo
+                cmbPrestamos.DisplayMember = "PRE_Numero"; 
+                cmbPrestamos.ValueMember = "PRE_Numero";   
                 cmbPrestamos.SelectedIndex = -1;
             }
             else
             {
-                cmbPrestamos.DataSource = null; // Limpiar el ComboBox de préstamos
+                cmbPrestamos.DataSource = null; 
                 if (!isLoadingForm)
                 {
                     MessageBox.Show("El cliente seleccionado no posee préstamos pendientes.", "Sin préstamos", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -79,10 +74,8 @@ namespace Vistas.VistaPago
 
         private void cmbPrestamos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // CAMBIO AQUÍ: Accede a SelectedItem y luego al DataRowView
             if (cmbPrestamos.SelectedItem != null)
             {
-                // Convierte el SelectedItem a DataRowView
                 DataRowView drv = (DataRowView)cmbPrestamos.SelectedItem;
 
                 int numeroPrestamo = Convert.ToInt32(drv["PRE_Numero"]);
@@ -91,7 +84,7 @@ namespace Vistas.VistaPago
             }
             else
             {
-                dgvCuotas.DataSource = null; // Limpiar la grilla si no hay préstamo seleccionado
+                dgvCuotas.DataSource = null; 
             }
         }
 
@@ -102,7 +95,6 @@ namespace Vistas.VistaPago
             if (dtCuotas.Rows.Count > 0)
             {
                 dgvCuotas.DataSource = dtCuotas;
-                // Opcional: Configurar columnas de la grilla para mejor visualización
             }
             else
             {
@@ -113,7 +105,7 @@ namespace Vistas.VistaPago
 
         private void btnGuardarPago_Click(object sender, EventArgs e)
         {
-            // Validaciones básicas antes de guardar
+
             if (cmbClientes.SelectedValue == null)
             {
                 MessageBox.Show("Por favor, seleccione un cliente.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -134,9 +126,30 @@ namespace Vistas.VistaPago
 
             DataGridViewRow filaSeleccionada = dgvCuotas.SelectedRows[0];
             int cuoCodigo = Convert.ToInt32(filaSeleccionada.Cells["CUO_Codigo"].Value);
-            decimal cuoImporte = Convert.ToDecimal(filaSeleccionada.Cells["CUO_Importe"].Value); // Asegúrate de que el nombre de la columna es correcto
+            int cuoNumero = Convert.ToInt32(filaSeleccionada.Cells["CUO_Numero"].Value);
+            decimal cuoImporte = Convert.ToDecimal(filaSeleccionada.Cells["CUO_Importe"].Value); 
 
-            DateTime fechaPago = dtpFechaPago.Value; // Obtener la fecha del DateTimePicker
+            DateTime fechaPago = dtpFechaPago.Value;
+
+            List<int> numerosDeCuotas = new List<int>();
+            foreach (DataGridViewRow fila in dgvCuotas.Rows)
+            {
+                if (!fila.IsNewRow)
+                {
+                    int numero = Convert.ToInt32(fila.Cells["CUO_Numero"].Value);
+                    numerosDeCuotas.Add(numero);
+                }
+            }
+
+            int menorNumeroCuota = numerosDeCuotas.Min();
+
+            if (cuoNumero != menorNumeroCuota)
+            {
+                MessageBox.Show("No puede pagar esta cuota aún. Debe pagar las cuotas anteriores pendientes primero.",
+                                "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
 
             try
             {
@@ -146,10 +159,10 @@ namespace Vistas.VistaPago
 
 
                 int preNumeroActual = Convert.ToInt32(cmbPrestamos.SelectedValue);
-                cargarCuotasPendientes(preNumeroActual); // Recarga la grilla
+                cargarCuotasPendientes(preNumeroActual); 
 
                 string dniClienteActual = cmbClientes.SelectedValue.ToString();
-                cargarPrestamosPendientes(dniClienteActual); // Recarga los préstamos del cliente
+                cargarPrestamosPendientes(dniClienteActual); 
 
             }
             catch (Exception ex)

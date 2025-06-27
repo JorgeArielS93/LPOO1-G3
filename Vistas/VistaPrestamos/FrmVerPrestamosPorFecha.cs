@@ -40,5 +40,10 @@ namespace Vistas.VistaPrestamos
             dgvPrestamosFecha.DataSource = ABMPrestamo.exec_listar_prestamos_por_fecha_sp(fechaDesde, fechaHasta);
 
         }
+
+        private void FrmVerPrestamosPorFecha_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

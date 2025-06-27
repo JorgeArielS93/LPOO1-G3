@@ -45,7 +45,7 @@
             this.dgvPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrestamos.Location = new System.Drawing.Point(47, 59);
             this.dgvPrestamos.Name = "dgvPrestamos";
-            this.dgvPrestamos.Size = new System.Drawing.Size(538, 217);
+            this.dgvPrestamos.Size = new System.Drawing.Size(921, 217);
             this.dgvPrestamos.TabIndex = 0;
             this.dgvPrestamos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrestamos_CellContentClick);
             this.dgvPrestamos.CurrentCellChanged += new System.EventHandler(this.dgvPrestamos_CurrentCellChanged);
@@ -62,15 +62,16 @@
             // dgbCuotas
             // 
             this.dgbCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgbCuotas.Location = new System.Drawing.Point(47, 428);
+            this.dgbCuotas.Location = new System.Drawing.Point(47, 459);
             this.dgbCuotas.Name = "dgbCuotas";
-            this.dgbCuotas.Size = new System.Drawing.Size(538, 201);
+            this.dgbCuotas.Size = new System.Drawing.Size(656, 201);
             this.dgbCuotas.TabIndex = 2;
+            this.dgbCuotas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbCuotas_CellContentClick);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 317);
+            this.label2.Location = new System.Drawing.Point(44, 303);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 13);
             this.label2.TabIndex = 3;
@@ -79,7 +80,7 @@
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(448, 317);
+            this.lblCliente.Location = new System.Drawing.Point(44, 325);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(82, 13);
             this.lblCliente.TabIndex = 4;
@@ -88,7 +89,7 @@
             // lblDestino
             // 
             this.lblDestino.AutoSize = true;
-            this.lblDestino.Location = new System.Drawing.Point(448, 341);
+            this.lblDestino.Location = new System.Drawing.Point(44, 349);
             this.lblDestino.Name = "lblDestino";
             this.lblDestino.Size = new System.Drawing.Size(85, 13);
             this.lblDestino.TabIndex = 5;
@@ -97,7 +98,7 @@
             // lblPeriodo
             // 
             this.lblPeriodo.AutoSize = true;
-            this.lblPeriodo.Location = new System.Drawing.Point(448, 365);
+            this.lblPeriodo.Location = new System.Drawing.Point(44, 373);
             this.lblPeriodo.Name = "lblPeriodo";
             this.lblPeriodo.Size = new System.Drawing.Size(85, 13);
             this.lblPeriodo.TabIndex = 6;
@@ -106,7 +107,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 397);
+            this.label5.Location = new System.Drawing.Point(44, 428);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 7;
@@ -116,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 672);
+            this.ClientSize = new System.Drawing.Size(1023, 672);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblPeriodo);
             this.Controls.Add(this.lblDestino);

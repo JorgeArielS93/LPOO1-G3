@@ -51,5 +51,10 @@ namespace Vistas.VistaPrestamos
         {
 
         }
+
+        private void dgbCuotas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
