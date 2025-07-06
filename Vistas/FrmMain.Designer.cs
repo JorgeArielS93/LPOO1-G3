@@ -40,6 +40,7 @@
             this.altaPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verPrestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verPrestamosPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verPrestamosPorDestinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.destinosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.verDestinosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +51,7 @@
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
-            this.verPrestamosPorDestinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anularPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,7 +132,8 @@
             this.altaPrestamoToolStripMenuItem,
             this.verPrestamosToolStripMenuItem,
             this.verPrestamosPorFechaToolStripMenuItem,
-            this.verPrestamosPorDestinoToolStripMenuItem});
+            this.verPrestamosPorDestinoToolStripMenuItem,
+            this.anularPrestamoToolStripMenuItem});
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
             this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.prestamosToolStripMenuItem.Text = "Prestamos";
@@ -157,6 +159,13 @@
             this.verPrestamosPorFechaToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.verPrestamosPorFechaToolStripMenuItem.Text = "Ver Prestamos por fecha";
             this.verPrestamosPorFechaToolStripMenuItem.Click += new System.EventHandler(this.verPrestamosPorFechaToolStripMenuItem_Click);
+            // 
+            // verPrestamosPorDestinoToolStripMenuItem
+            // 
+            this.verPrestamosPorDestinoToolStripMenuItem.Name = "verPrestamosPorDestinoToolStripMenuItem";
+            this.verPrestamosPorDestinoToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.verPrestamosPorDestinoToolStripMenuItem.Text = "Ver Prestamos por destino";
+            this.verPrestamosPorDestinoToolStripMenuItem.Click += new System.EventHandler(this.verPrestamosPorDestinoToolStripMenuItem_Click);
             // 
             // destinosToolStripMenuItem
             // 
@@ -238,12 +247,12 @@
             this.lblRol.TabIndex = 2;
             this.lblRol.Text = "label1";
             // 
-            // verPrestamosPorDestinoToolStripMenuItem
+            // anularPrestamoToolStripMenuItem
             // 
-            this.verPrestamosPorDestinoToolStripMenuItem.Name = "verPrestamosPorDestinoToolStripMenuItem";
-            this.verPrestamosPorDestinoToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.verPrestamosPorDestinoToolStripMenuItem.Text = "Ver Prestamos por destino";
-            this.verPrestamosPorDestinoToolStripMenuItem.Click += new System.EventHandler(this.verPrestamosPorDestinoToolStripMenuItem_Click);
+            this.anularPrestamoToolStripMenuItem.Name = "anularPrestamoToolStripMenuItem";
+            this.anularPrestamoToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.anularPrestamoToolStripMenuItem.Text = "Anular Prestamo";
+            this.anularPrestamoToolStripMenuItem.Click += new System.EventHandler(this.anularPrestamoToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -289,5 +298,6 @@
         private System.Windows.Forms.ToolStripMenuItem verPagosPorClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem verPrestamosPorDestinoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem anularPrestamoToolStripMenuItem;
     }
 }

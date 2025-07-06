@@ -2,7 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic; 
-using ClasesBase; 
+using ClasesBase;
+using ClasesBase.Entidades; 
 
 namespace ClasesBase
 {
@@ -344,5 +345,145 @@ namespace ClasesBase
 
             return dt;
         }
+
+        public static int AnularPrestamo(int numeroPrestamo)
+        {
+            using (SqlConnection cnn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("anularPrestamo", cnn)) // Pass commandText and connection directly
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Input parameter
+                    cmd.Parameters.AddWithValue("@PRE_Numero", numeroPrestamo);
+
+                    // Output parameter
+                    SqlParameter outputParam = new SqlParameter("@EstadoActualizado", SqlDbType.Int);
+                    outputParam.Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add(outputParam);
+
+                    try
+                    {
+                        cnn.Open();
+                        cmd.ExecuteNonQuery(); // Execute the SP
+
+                        // It's good practice to check for DBNull if the SP might not set it, though for INT output it's less common.
+                        if (outputParam.Value != DBNull.Value)
+                        {
+                            return (int)outputParam.Value; // Get the value of the output parameter
+                        }
+                        else
+                        {
+                            // Handle case where output parameter is DBNull, maybe return a specific error code
+                            return -1; // Or throw an exception
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        // Log the SQL exception details for debugging
+                        Console.WriteLine("SQL Error in AnularPrestamo: " + ex.Message);
+                        // Optionally re-throw or return a specific error code
+                        throw;
+                    }
+                    catch (Exception ex)
+                    {
+                        // Log general exceptions
+                        Console.WriteLine("General Error in AnularPrestamo: " + ex.Message);
+                        throw;
+                    }
+                }
+            }
+        }
+
+        public static DataRow obtenerDetallePrestamo(int numeroPrestamo)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "obtenerDetallePrestamo";
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@numeroPrestamo", numeroPrestamo);
+
+            cmd.Connection = cnn;
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                cnn.Open();
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener detalles del préstamo (SP): " + ex.Message);
+                throw new Exception("Error al cargar los detalles del préstamo utilizando Stored Procedure: " + ex.Message);
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                return dt.Rows[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+        public static PrestamoEstadisticas obtenerCantPrestamosPorDestino(string destinoDescripcion)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+            // Asegúrate de que el nombre del Stored Procedure aquí coincida con el nombre en tu base de datos
+            SqlCommand cmd = new SqlCommand("obtenerCantPrestamosPorDestino", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@destinoDescripcion", destinoDescripcion);
+
+            PrestamoEstadisticas stats = new PrestamoEstadisticas();
+
+            try
+            {
+                cnn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    stats.CantidadOtorgados = Convert.ToInt32(dr["CantidadOtorgados"]);
+                    stats.CantidadPendientes = Convert.ToInt32(dr["CantidadPendientes"]);
+                    stats.CantidadCancelados = Convert.ToInt32(dr["CantidadCancelados"]);
+                    stats.CantidadAnulados = Convert.ToInt32(dr["CantidadAnulados"]);
+                    stats.CantidadTotalPrestamos = Convert.ToInt32(dr["CantidadTotalPrestamos"]);
+                }
+                dr.Close();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error SQL al obtener estadísticas de préstamos: " + ex.Message);
+                throw new Exception("Error al obtener las estadísticas de préstamos por destino. " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error general al obtener estadísticas de préstamos: " + ex.Message);
+                throw new Exception("Ocurrió un error inesperado al obtener las estadísticas de préstamos. " + ex.Message);
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
+            return stats;
+        }
+
     }
 }

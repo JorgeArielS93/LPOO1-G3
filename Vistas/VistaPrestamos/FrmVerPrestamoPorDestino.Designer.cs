@@ -33,6 +33,11 @@
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.dgvPrestamos = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblOtorgados = new System.Windows.Forms.Label();
+            this.lblPendientes = new System.Windows.Forms.Label();
+            this.lblCancelados = new System.Windows.Forms.Label();
+            this.lblAnulados = new System.Windows.Forms.Label();
+            this.lblTotalPrestamos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +73,7 @@
             this.dgvPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrestamos.Location = new System.Drawing.Point(12, 87);
             this.dgvPrestamos.Name = "dgvPrestamos";
-            this.dgvPrestamos.Size = new System.Drawing.Size(1022, 284);
+            this.dgvPrestamos.Size = new System.Drawing.Size(1004, 284);
             this.dgvPrestamos.TabIndex = 3;
             // 
             // label2
@@ -80,11 +85,61 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Seleccione un destino ";
             // 
+            // lblOtorgados
+            // 
+            this.lblOtorgados.AutoSize = true;
+            this.lblOtorgados.Location = new System.Drawing.Point(150, 396);
+            this.lblOtorgados.Name = "lblOtorgados";
+            this.lblOtorgados.Size = new System.Drawing.Size(35, 13);
+            this.lblOtorgados.TabIndex = 5;
+            this.lblOtorgados.Text = "label3";
+            // 
+            // lblPendientes
+            // 
+            this.lblPendientes.AutoSize = true;
+            this.lblPendientes.Location = new System.Drawing.Point(286, 396);
+            this.lblPendientes.Name = "lblPendientes";
+            this.lblPendientes.Size = new System.Drawing.Size(35, 13);
+            this.lblPendientes.TabIndex = 6;
+            this.lblPendientes.Text = "label4";
+            // 
+            // lblCancelados
+            // 
+            this.lblCancelados.AutoSize = true;
+            this.lblCancelados.Location = new System.Drawing.Point(430, 396);
+            this.lblCancelados.Name = "lblCancelados";
+            this.lblCancelados.Size = new System.Drawing.Size(35, 13);
+            this.lblCancelados.TabIndex = 7;
+            this.lblCancelados.Text = "label5";
+            // 
+            // lblAnulados
+            // 
+            this.lblAnulados.AutoSize = true;
+            this.lblAnulados.Location = new System.Drawing.Point(582, 396);
+            this.lblAnulados.Name = "lblAnulados";
+            this.lblAnulados.Size = new System.Drawing.Size(35, 13);
+            this.lblAnulados.TabIndex = 8;
+            this.lblAnulados.Text = "label6";
+            // 
+            // lblTotalPrestamos
+            // 
+            this.lblTotalPrestamos.AutoSize = true;
+            this.lblTotalPrestamos.Location = new System.Drawing.Point(721, 396);
+            this.lblTotalPrestamos.Name = "lblTotalPrestamos";
+            this.lblTotalPrestamos.Size = new System.Drawing.Size(35, 13);
+            this.lblTotalPrestamos.TabIndex = 9;
+            this.lblTotalPrestamos.Text = "label7";
+            // 
             // FrmVerPrestamoPorDestino
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 383);
+            this.ClientSize = new System.Drawing.Size(1028, 447);
+            this.Controls.Add(this.lblTotalPrestamos);
+            this.Controls.Add(this.lblAnulados);
+            this.Controls.Add(this.lblCancelados);
+            this.Controls.Add(this.lblPendientes);
+            this.Controls.Add(this.lblOtorgados);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvPrestamos);
             this.Controls.Add(this.btnFiltrar);
@@ -106,5 +161,10 @@
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.DataGridView dgvPrestamos;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblOtorgados;
+        private System.Windows.Forms.Label lblPendientes;
+        private System.Windows.Forms.Label lblCancelados;
+        private System.Windows.Forms.Label lblAnulados;
+        private System.Windows.Forms.Label lblTotalPrestamos;
     }
 }
