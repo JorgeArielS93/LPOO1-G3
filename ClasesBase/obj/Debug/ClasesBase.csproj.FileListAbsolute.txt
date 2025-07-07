@@ -16,3 +16,9 @@ D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Program
 D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 3\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
 D:\Users\Buscapina\Documents\APU\Cuarto Año\1er Cuatrimestre\pr\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
 D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 1\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
+C:\lpoo1\LPOO1-G3\ClasesBase\bin\Debug\ClasesBase.dll.config
+C:\lpoo1\LPOO1-G3\ClasesBase\bin\Debug\ClasesBase.dll
+C:\lpoo1\LPOO1-G3\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\lpoo1\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
+C:\lpoo1\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.dll
+C:\lpoo1\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.pdb

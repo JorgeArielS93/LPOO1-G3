@@ -87,3 +87,38 @@ D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Program
 D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPrestamos.FrmVerPrestamoPorDestino.resources
 D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPago.FrmVerPagoPorCliente.resources
 D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPago.FrmAltaPago.resources
+C:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 1\LPOO1-G3\Vistas\bin\Debug\Vistas.exe.config
+C:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.exe
+C:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.pdb
+C:\lpoo1\LPOO1-G3\Vistas\bin\Debug\Vistas.exe.config
+C:\lpoo1\LPOO1-G3\Vistas\bin\Debug\Vistas.exe.manifest
+C:\lpoo1\LPOO1-G3\Vistas\bin\Debug\Vistas.application
+C:\lpoo1\LPOO1-G3\Vistas\bin\Debug\Vistas.exe
+C:\lpoo1\LPOO1-G3\Vistas\bin\Debug\Vistas.pdb
+C:\lpoo1\LPOO1-G3\Vistas\bin\Debug\ClasesBase.dll
+C:\lpoo1\LPOO1-G3\Vistas\bin\Debug\ClasesBase.pdb
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmAltaCliente.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmDestino.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmLogin.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmMain.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmPeriodo.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmPrestamo.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaCliente.FrmVerClientes.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaDestino.FrmAltaDestino.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaDestino.FrmVerDestinos.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPago.FrmAltaPago.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPago.FrmVerPagoPorCliente.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPrestamos.FrmAltaPrestamo.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPrestamos.FrmAnularPrestamo.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPrestamos.FrmVerPrestamoPorDestino.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPrestamos.FrmVerPrestamos.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPrestamos.FrmVerPrestamosPorFecha.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmAltaUsuario.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmVerUsuarios.resources
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.exe.manifest
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.application
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.exe
+C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.pdb

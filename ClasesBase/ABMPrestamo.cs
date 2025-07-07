@@ -485,5 +485,51 @@ namespace ClasesBase
             return stats;
         }
 
+        public static PrestamoEstadisticas obtenerCantPrestamosPorFecha(DateTime fechaDesde, DateTime fechaHasta)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+
+            SqlCommand cmd = new SqlCommand("obtenerCantPrestamosPorFecha", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+            cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+
+            PrestamoEstadisticas stats = new PrestamoEstadisticas();
+
+            try
+            {
+                cnn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    stats.CantidadOtorgados = Convert.ToInt32(dr["CantidadOtorgados"]);
+                    stats.CantidadPendientes = Convert.ToInt32(dr["CantidadPendientes"]);
+                    stats.CantidadCancelados = Convert.ToInt32(dr["CantidadCancelados"]);
+                    stats.CantidadAnulados = Convert.ToInt32(dr["CantidadAnulados"]);
+                    stats.CantidadTotalPrestamos = Convert.ToInt32(dr["CantidadTotalPrestamos"]);
+                }
+                dr.Close();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error SQL al obtener estadísticas de préstamos: " + ex.Message);
+                throw new Exception("Error al obtener las estadísticas de préstamos por fecha. " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error general al obtener estadísticas de préstamos: " + ex.Message);
+                throw new Exception("Ocurrió un error inesperado al obtener las estadísticas de préstamos. " + ex.Message);
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
+            return stats;
+        }
     }
 }

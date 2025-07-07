@@ -26,9 +26,8 @@ namespace ClasesBase.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=\"D:\\Documentos\\Visual Studio 2010\\Proje" +
-            "cts\\LPOOI_GRUPO3\\prestamos.mdf\";Integrated Security=True;Connect Timeout=30;User" +
-            " Instance=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=C:\\lpoo1\\LPOO1-G3\\prestamos.mdf;Integra" +
+            "ted Security=True;Connect Timeout=30;User Instance=True")]
         public string prestamoConnectionString {
             get {
                 return ((string)(this["prestamoConnectionString"]));

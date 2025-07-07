@@ -85,5 +85,11 @@ namespace Vistas.VistaPrestamos
                 ActualizarEstadisticas(destino); // Llama al nuevo método para actualizar estadísticas
             }
         }
+
+        private void dgvPrestamos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }
