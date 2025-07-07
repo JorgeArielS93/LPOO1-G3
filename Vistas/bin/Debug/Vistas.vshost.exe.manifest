@@ -49,29 +49,29 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Qp8g8l7Ce6F93Ut5CevsWlnC/Qg=</dsig:DigestValue>
+        <dsig:DigestValue>YT8izCyZnrK+VGyHfky0iZjWy5c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vistas.exe" size="242688">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vistas.exe" size="243712">
       <assemblyIdentity name="Vistas" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Mp8rIuWjqOdmd5ZAKEBvKCg/LCo=</dsig:DigestValue>
+        <dsig:DigestValue>QLGIHEZQTTtUWl+svIkqKbLlf9c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Vistas.exe.config" size="591">
+  <file name="Vistas.exe.config" size="491">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>rfisj0f6o5JHLsAPrMsD7dQGwWw=</dsig:DigestValue>
+      <dsig:DigestValue>K4xFtyTPGuPA4kzxg6chP+XCl40=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
