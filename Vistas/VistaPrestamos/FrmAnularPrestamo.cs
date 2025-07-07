@@ -31,7 +31,6 @@ namespace Vistas.VistaPrestamos
                 return;
             }
 
-            // --- INICIO DE CÓDIGO NUEVO/MODIFICADO ---
             string nombreCliente = "Desconocido";
             decimal importePrestamo = 0;
 
@@ -47,19 +46,18 @@ namespace Vistas.VistaPrestamos
                 else
                 {
                     MessageBox.Show("No se encontraron detalles para el préstamo N° " + numeroPrestamo.ToString() + ". Verifique el número ingresado.", "Préstamo no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // Sale del método si no se encuentran los detalles del préstamo
+                    return; 
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al obtener los detalles del préstamo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Sale del método si hay un error al obtener los detalles
+                return; 
             }
 
-            // Construir el mensaje de confirmación con la nueva información
             string mensajeConfirmacion = "¿Está seguro que desea anular el préstamo N° " + numeroPrestamo.ToString() + "?\n" +
                                          "Cliente: " + nombreCliente + "\n" +
-                                         "Importe: $" + importePrestamo.ToString("N2"); // Formato de moneda con 2 decimales
+                                         "Importe: $" + importePrestamo.ToString("N2"); 
 
             DialogResult confirmacion = MessageBox.Show(
                 mensajeConfirmacion,
@@ -67,7 +65,6 @@ namespace Vistas.VistaPrestamos
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
             );
-            // --- FIN DE CÓDIGO NUEVO/MODIFICADO ---
 
             if (confirmacion == DialogResult.Yes)
             {
@@ -82,7 +79,7 @@ namespace Vistas.VistaPrestamos
                             this.Close();
                             break;
                         case 1:
-                            MessageBox.Show("El préstamo no fue encontrado o ya estaba anulado. Verifique el número ingresado.", "Error de Anulación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("El préstamo ya esta anulado. Verifique el número ingresado.", "Error de Anulación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             break;
                         case 2:
                             MessageBox.Show("El préstamo no puede ser anulado porque tiene cuotas que ya han sido pagadas.", "Error de Anulación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -97,6 +94,26 @@ namespace Vistas.VistaPrestamos
                     MessageBox.Show("Error al intentar anular el préstamo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            int numero;
+
+            if (int.TryParse(txtNumeroPrestamo.Text, out numero))
+            {
+                dgvPrestamos.DataSource = ABMPrestamo.listar_prestamos_por_numero(numero);
+                dgvCuotas.DataSource = ABMPrestamo.listar_cuotas_por_numero_prestamo(numero);
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un número de préstamo válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void FrmAnularPrestamo_Load(object sender, EventArgs e)
+        {
+
         }
 
     }

@@ -33,13 +33,14 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.lblDescripcion = new System.Windows.Forms.Label();
+            this.txtTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestino)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDestino
             // 
             this.dgvDestino.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDestino.Location = new System.Drawing.Point(28, 23);
+            this.dgvDestino.Location = new System.Drawing.Point(21, 57);
             this.dgvDestino.Name = "dgvDestino";
             this.dgvDestino.Size = new System.Drawing.Size(409, 150);
             this.dgvDestino.TabIndex = 0;
@@ -48,7 +49,7 @@
             // 
             // txtFDescripcion
             // 
-            this.txtFDescripcion.Location = new System.Drawing.Point(454, 51);
+            this.txtFDescripcion.Location = new System.Drawing.Point(448, 73);
             this.txtFDescripcion.Multiline = true;
             this.txtFDescripcion.Name = "txtFDescripcion";
             this.txtFDescripcion.Size = new System.Drawing.Size(198, 56);
@@ -56,7 +57,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(454, 114);
+            this.btnEliminar.Location = new System.Drawing.Point(448, 136);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(577, 114);
+            this.btnModificar.Location = new System.Drawing.Point(571, 136);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 3;
@@ -77,17 +78,29 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(520, 35);
+            this.lblDescripcion.Location = new System.Drawing.Point(514, 57);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 4;
             this.lblDescripcion.Text = "Descripcion";
             // 
+            // txtTitulo
+            // 
+            this.txtTitulo.AutoSize = true;
+            this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.Location = new System.Drawing.Point(278, 9);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(112, 24);
+            this.txtTitulo.TabIndex = 29;
+            this.txtTitulo.Text = "Ver destinos";
+            // 
             // FrmVerDestinos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 201);
+            this.ClientSize = new System.Drawing.Size(664, 255);
+            this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
@@ -109,5 +122,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.Label txtTitulo;
     }
 }

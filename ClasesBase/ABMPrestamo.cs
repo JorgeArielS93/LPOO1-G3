@@ -350,14 +350,12 @@ namespace ClasesBase
         {
             using (SqlConnection cnn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("anularPrestamo", cnn)) // Pass commandText and connection directly
+                using (SqlCommand cmd = new SqlCommand("anularPrestamo", cnn)) 
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    // Input parameter
                     cmd.Parameters.AddWithValue("@PRE_Numero", numeroPrestamo);
 
-                    // Output parameter
                     SqlParameter outputParam = new SqlParameter("@EstadoActualizado", SqlDbType.Int);
                     outputParam.Direction = ParameterDirection.Output;
                     cmd.Parameters.Add(outputParam);
@@ -365,29 +363,24 @@ namespace ClasesBase
                     try
                     {
                         cnn.Open();
-                        cmd.ExecuteNonQuery(); // Execute the SP
+                        cmd.ExecuteNonQuery(); 
 
-                        // It's good practice to check for DBNull if the SP might not set it, though for INT output it's less common.
-                        if (outputParam.Value != DBNull.Value)
+                       if (outputParam.Value != DBNull.Value)
                         {
-                            return (int)outputParam.Value; // Get the value of the output parameter
+                            return (int)outputParam.Value; 
                         }
                         else
                         {
-                            // Handle case where output parameter is DBNull, maybe return a specific error code
-                            return -1; // Or throw an exception
+                            return -1; 
                         }
                     }
                     catch (SqlException ex)
                     {
-                        // Log the SQL exception details for debugging
                         Console.WriteLine("SQL Error in AnularPrestamo: " + ex.Message);
-                        // Optionally re-throw or return a specific error code
                         throw;
                     }
                     catch (Exception ex)
                     {
-                        // Log general exceptions
                         Console.WriteLine("General Error in AnularPrestamo: " + ex.Message);
                         throw;
                     }
@@ -443,7 +436,6 @@ namespace ClasesBase
         public static PrestamoEstadisticas obtenerCantPrestamosPorDestino(string destinoDescripcion)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
-            // Asegúrate de que el nombre del Stored Procedure aquí coincida con el nombre en tu base de datos
             SqlCommand cmd = new SqlCommand("obtenerCantPrestamosPorDestino", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -484,6 +476,132 @@ namespace ClasesBase
             }
             return stats;
         }
+
+        public static DataTable listar_prestamos_por_numero(int nro)
+        {
+            SqlConnection cnn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listar_prestamos_por_nro_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@nroPrestamo", nro);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public static DataTable listar_cuotas_por_numero_prestamo(int nro)
+        {
+            SqlConnection cnn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listar_cuotas_por_nro_prestamo_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@nroPrestamo", nro);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        
+
+        public static PrestamoEstadisticas obtenerCantPrestamosPorFecha(DateTime fechaDesde, DateTime fechaHasta)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
+
+            SqlCommand cmd = new SqlCommand("obtenerCantPrestamosPorFecha", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+            cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+
+            PrestamoEstadisticas stats = new PrestamoEstadisticas();
+
+            try
+            {
+                cnn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    stats.CantidadOtorgados = Convert.ToInt32(dr["CantidadOtorgados"]);
+                    stats.CantidadPendientes = Convert.ToInt32(dr["CantidadPendientes"]);
+                    stats.CantidadCancelados = Convert.ToInt32(dr["CantidadCancelados"]);
+                    stats.CantidadAnulados = Convert.ToInt32(dr["CantidadAnulados"]);
+                    stats.CantidadTotalPrestamos = Convert.ToInt32(dr["CantidadTotalPrestamos"]);
+                }
+                dr.Close();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error SQL al obtener estadísticas de préstamos: " + ex.Message);
+                throw new Exception("Error al obtener las estadísticas de préstamos por fecha. " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error general al obtener estadísticas de préstamos: " + ex.Message);
+                throw new Exception("Ocurrió un error inesperado al obtener las estadísticas de préstamos. " + ex.Message);
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
+            return stats;
+        }
+
+        public static List<int> listarNroPrestamosPorDNICliente(string dni)
+        {
+            List<int> numerosPrestamos = new List<int>();
+
+            using (SqlConnection cnn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("listar_nro_prestamos_por_cliente", cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@DNI", dni);
+
+                cnn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    numerosPrestamos.Add(reader.GetInt32(0));
+                }
+
+                reader.Close();
+            }
+
+            return numerosPrestamos;
+        }
+
+        public static DataTable ObtenerResumenCuotasPorClienteYPrestamo(int nroPrestamo)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection cnn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("obtener_cantidad_cuotas_por_nro_prestamo", cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@nroPrestamo", nroPrestamo);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            return dt;
+        }
+
 
     }
 }

@@ -211,6 +211,11 @@ namespace Vistas
             dgvUsuarios.DataSource = dt;
         }
 
+        private void cbOrdenarPor_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 

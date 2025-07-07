@@ -42,12 +42,13 @@
             this.txtCantidadCuotas = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtTitulo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(41, 19);
+            this.lblCliente.Location = new System.Drawing.Point(75, 63);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(39, 13);
             this.lblCliente.TabIndex = 0;
@@ -56,7 +57,7 @@
             // lblDestino
             // 
             this.lblDestino.AutoSize = true;
-            this.lblDestino.Location = new System.Drawing.Point(41, 50);
+            this.lblDestino.Location = new System.Drawing.Point(75, 94);
             this.lblDestino.Name = "lblDestino";
             this.lblDestino.Size = new System.Drawing.Size(43, 13);
             this.lblDestino.TabIndex = 1;
@@ -65,7 +66,7 @@
             // lblPeriodo
             // 
             this.lblPeriodo.AutoSize = true;
-            this.lblPeriodo.Location = new System.Drawing.Point(41, 88);
+            this.lblPeriodo.Location = new System.Drawing.Point(75, 132);
             this.lblPeriodo.Name = "lblPeriodo";
             this.lblPeriodo.Size = new System.Drawing.Size(86, 13);
             this.lblPeriodo.TabIndex = 2;
@@ -74,7 +75,7 @@
             // lblImporte
             // 
             this.lblImporte.AutoSize = true;
-            this.lblImporte.Location = new System.Drawing.Point(42, 127);
+            this.lblImporte.Location = new System.Drawing.Point(76, 171);
             this.lblImporte.Name = "lblImporte";
             this.lblImporte.Size = new System.Drawing.Size(42, 13);
             this.lblImporte.TabIndex = 4;
@@ -83,7 +84,7 @@
             // lblTasaInteres
             // 
             this.lblTasaInteres.AutoSize = true;
-            this.lblTasaInteres.Location = new System.Drawing.Point(41, 164);
+            this.lblTasaInteres.Location = new System.Drawing.Point(75, 208);
             this.lblTasaInteres.Name = "lblTasaInteres";
             this.lblTasaInteres.Size = new System.Drawing.Size(81, 13);
             this.lblTasaInteres.TabIndex = 5;
@@ -92,7 +93,7 @@
             // lblCantidadCuotas
             // 
             this.lblCantidadCuotas.AutoSize = true;
-            this.lblCantidadCuotas.Location = new System.Drawing.Point(42, 204);
+            this.lblCantidadCuotas.Location = new System.Drawing.Point(76, 248);
             this.lblCantidadCuotas.Name = "lblCantidadCuotas";
             this.lblCantidadCuotas.Size = new System.Drawing.Size(100, 13);
             this.lblCantidadCuotas.TabIndex = 6;
@@ -101,7 +102,7 @@
             // cmbCliente
             // 
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(243, 19);
+            this.cmbCliente.Location = new System.Drawing.Point(277, 63);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(200, 21);
             this.cmbCliente.TabIndex = 7;
@@ -110,7 +111,7 @@
             // cmbPeriodo
             // 
             this.cmbPeriodo.FormattingEnabled = true;
-            this.cmbPeriodo.Location = new System.Drawing.Point(243, 88);
+            this.cmbPeriodo.Location = new System.Drawing.Point(277, 132);
             this.cmbPeriodo.Name = "cmbPeriodo";
             this.cmbPeriodo.Size = new System.Drawing.Size(200, 21);
             this.cmbPeriodo.TabIndex = 8;
@@ -118,35 +119,35 @@
             // cmbDestino
             // 
             this.cmbDestino.FormattingEnabled = true;
-            this.cmbDestino.Location = new System.Drawing.Point(243, 50);
+            this.cmbDestino.Location = new System.Drawing.Point(277, 94);
             this.cmbDestino.Name = "cmbDestino";
             this.cmbDestino.Size = new System.Drawing.Size(200, 21);
             this.cmbDestino.TabIndex = 9;
             // 
             // txtImporte
             // 
-            this.txtImporte.Location = new System.Drawing.Point(243, 124);
+            this.txtImporte.Location = new System.Drawing.Point(277, 168);
             this.txtImporte.Name = "txtImporte";
             this.txtImporte.Size = new System.Drawing.Size(200, 20);
             this.txtImporte.TabIndex = 11;
             // 
             // txtTasaInteres
             // 
-            this.txtTasaInteres.Location = new System.Drawing.Point(243, 161);
+            this.txtTasaInteres.Location = new System.Drawing.Point(277, 205);
             this.txtTasaInteres.Name = "txtTasaInteres";
             this.txtTasaInteres.Size = new System.Drawing.Size(200, 20);
             this.txtTasaInteres.TabIndex = 12;
             // 
             // txtCantidadCuotas
             // 
-            this.txtCantidadCuotas.Location = new System.Drawing.Point(243, 201);
+            this.txtCantidadCuotas.Location = new System.Drawing.Point(277, 245);
             this.txtCantidadCuotas.Name = "txtCantidadCuotas";
             this.txtCantidadCuotas.Size = new System.Drawing.Size(200, 20);
             this.txtCantidadCuotas.TabIndex = 13;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(67, 285);
+            this.btnGuardar.Location = new System.Drawing.Point(101, 329);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 14;
@@ -156,7 +157,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(368, 285);
+            this.btnCancelar.Location = new System.Drawing.Point(402, 329);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 15;
@@ -164,11 +165,23 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // txtTitulo
+            // 
+            this.txtTitulo.AutoSize = true;
+            this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.Location = new System.Drawing.Point(211, 9);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(155, 24);
+            this.txtTitulo.TabIndex = 29;
+            this.txtTitulo.Text = "Agregar prestamo";
+            // 
             // FrmAltaPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 388);
+            this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtCantidadCuotas);
@@ -207,5 +220,6 @@
         private System.Windows.Forms.TextBox txtCantidadCuotas;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label txtTitulo;
     }
 }

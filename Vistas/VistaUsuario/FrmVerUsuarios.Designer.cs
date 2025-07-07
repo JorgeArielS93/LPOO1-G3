@@ -206,6 +206,7 @@
             this.cbOrdenarPor.Name = "cbOrdenarPor";
             this.cbOrdenarPor.Size = new System.Drawing.Size(121, 21);
             this.cbOrdenarPor.TabIndex = 18;
+            this.cbOrdenarPor.SelectedIndexChanged += new System.EventHandler(this.cbOrdenarPor_SelectedIndexChanged_1);
             this.cbOrdenarPor.SelectedValueChanged += new System.EventHandler(this.cbOrdenarPor_SelectedValueChanged);
             // 
             // label7

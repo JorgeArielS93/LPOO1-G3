@@ -27,7 +27,7 @@ namespace Vistas
         private void GenerarCodigoAleatorio()
         {
             Random random = new Random();
-            int codigo = random.Next(1000, 9999); // Número entero aleatorio
+            int codigo = random.Next(1000, 9999); 
             CodigoGenerado = codigo.ToString();
             txtCodDestino.Text = CodigoGenerado;
         }
@@ -57,6 +57,11 @@ namespace Vistas
 
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void FrmDestino_Load(object sender, EventArgs e)
+        {
+
         }
         
     }

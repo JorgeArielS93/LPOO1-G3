@@ -22,18 +22,15 @@ namespace Vistas.VistaPrestamos
         private void FrmVerPrestamoPorDestino_Load(object sender, EventArgs e)
         {
             cargarDestinos();
-            //cargarPrestamos(); // No es necesario si se filtra por el primer destino al cargar
-
-            // Cargar préstamos y estadísticas iniciales para el primer destino seleccionado
             if (cmbDestino.SelectedValue != null)
             {
                 string destinoInicial = cmbDestino.SelectedValue.ToString();
                 dgvPrestamos.DataSource = ABMPrestamo.listar_prestamos_por_destino(destinoInicial);
-                ActualizarEstadisticas(destinoInicial); // Llama al nuevo método para actualizar estadísticas
+                ActualizarEstadisticas(destinoInicial); 
             }
             else
             {
-                // Si no hay destinos, muestra 0 en las estadísticas
+               
                 lblOtorgados.Text = "Otorgados: 0";
                 lblPendientes.Text = "Pendientes: 0";
                 lblCancelados.Text = "Cancelados: 0";
@@ -55,7 +52,6 @@ namespace Vistas.VistaPrestamos
             dgvPrestamos.DataSource = dt;
         }
 
-        // Nuevo método privado para actualizar los labels de estadísticas
         private void ActualizarEstadisticas(string destino)
         {
             PrestamoEstadisticas stats = ABMPrestamo.obtenerCantPrestamosPorDestino(destino);
@@ -72,18 +68,24 @@ namespace Vistas.VistaPrestamos
             string destino = cmbDestino.SelectedValue.ToString();
 
             dgvPrestamos.DataSource = ABMPrestamo.listar_prestamos_por_destino(destino);
-            ActualizarEstadisticas(destino); // Llama al nuevo método para actualizar estadísticas
+            ActualizarEstadisticas(destino); 
         }
 
-        // Opcional: También puedes actualizar las estadísticas cada vez que se cambia el destino en el ComboBox
+        
         private void cmbDestino_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbDestino.SelectedValue != null)
             {
                 string destino = cmbDestino.SelectedValue.ToString();
                 dgvPrestamos.DataSource = ABMPrestamo.listar_prestamos_por_destino(destino);
-                ActualizarEstadisticas(destino); // Llama al nuevo método para actualizar estadísticas
+                ActualizarEstadisticas(destino); 
             }
         }
+
+        private void dgvPrestamos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }

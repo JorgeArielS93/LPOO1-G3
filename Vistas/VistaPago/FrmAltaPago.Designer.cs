@@ -37,12 +37,13 @@
              this.lblClientes = new System.Windows.Forms.Label();
              this.lblPrestamos = new System.Windows.Forms.Label();
              this.lblCuotas = new System.Windows.Forms.Label();
+             this.txtTitulo = new System.Windows.Forms.Label();
              ((System.ComponentModel.ISupportInitialize)(this.dgvCuotas)).BeginInit();
              this.SuspendLayout();
              // 
              // dtpFechaPago
              // 
-             this.dtpFechaPago.Location = new System.Drawing.Point(164, 24);
+             this.dtpFechaPago.Location = new System.Drawing.Point(189, 92);
              this.dtpFechaPago.Name = "dtpFechaPago";
              this.dtpFechaPago.Size = new System.Drawing.Size(200, 20);
              this.dtpFechaPago.TabIndex = 0;
@@ -50,7 +51,7 @@
              // cmbClientes
              // 
              this.cmbClientes.FormattingEnabled = true;
-             this.cmbClientes.Location = new System.Drawing.Point(164, 66);
+             this.cmbClientes.Location = new System.Drawing.Point(189, 134);
              this.cmbClientes.Name = "cmbClientes";
              this.cmbClientes.Size = new System.Drawing.Size(121, 21);
              this.cmbClientes.TabIndex = 1;
@@ -59,7 +60,7 @@
              // cmbPrestamos
              // 
              this.cmbPrestamos.FormattingEnabled = true;
-             this.cmbPrestamos.Location = new System.Drawing.Point(164, 106);
+             this.cmbPrestamos.Location = new System.Drawing.Point(189, 174);
              this.cmbPrestamos.Name = "cmbPrestamos";
              this.cmbPrestamos.Size = new System.Drawing.Size(121, 21);
              this.cmbPrestamos.TabIndex = 2;
@@ -68,14 +69,14 @@
              // dgvCuotas
              // 
              this.dgvCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-             this.dgvCuotas.Location = new System.Drawing.Point(164, 142);
+             this.dgvCuotas.Location = new System.Drawing.Point(189, 210);
              this.dgvCuotas.Name = "dgvCuotas";
              this.dgvCuotas.Size = new System.Drawing.Size(472, 193);
              this.dgvCuotas.TabIndex = 3;
              // 
              // btnGuardarPago
              // 
-             this.btnGuardarPago.Location = new System.Drawing.Point(529, 381);
+             this.btnGuardarPago.Location = new System.Drawing.Point(554, 449);
              this.btnGuardarPago.Name = "btnGuardarPago";
              this.btnGuardarPago.Size = new System.Drawing.Size(107, 23);
              this.btnGuardarPago.TabIndex = 4;
@@ -86,7 +87,7 @@
              // lblFecha
              // 
              this.lblFecha.AutoSize = true;
-             this.lblFecha.Location = new System.Drawing.Point(24, 30);
+             this.lblFecha.Location = new System.Drawing.Point(49, 98);
              this.lblFecha.Name = "lblFecha";
              this.lblFecha.Size = new System.Drawing.Size(83, 13);
              this.lblFecha.TabIndex = 5;
@@ -95,7 +96,7 @@
              // lblClientes
              // 
              this.lblClientes.AutoSize = true;
-             this.lblClientes.Location = new System.Drawing.Point(24, 69);
+             this.lblClientes.Location = new System.Drawing.Point(49, 137);
              this.lblClientes.Name = "lblClientes";
              this.lblClientes.Size = new System.Drawing.Size(45, 13);
              this.lblClientes.TabIndex = 6;
@@ -104,7 +105,7 @@
              // lblPrestamos
              // 
              this.lblPrestamos.AutoSize = true;
-             this.lblPrestamos.Location = new System.Drawing.Point(24, 114);
+             this.lblPrestamos.Location = new System.Drawing.Point(49, 182);
              this.lblPrestamos.Name = "lblPrestamos";
              this.lblPrestamos.Size = new System.Drawing.Size(112, 13);
              this.lblPrestamos.TabIndex = 7;
@@ -113,17 +114,29 @@
              // lblCuotas
              // 
              this.lblCuotas.AutoSize = true;
-             this.lblCuotas.Location = new System.Drawing.Point(24, 176);
+             this.lblCuotas.Location = new System.Drawing.Point(49, 244);
              this.lblCuotas.Name = "lblCuotas";
              this.lblCuotas.Size = new System.Drawing.Size(96, 13);
              this.lblCuotas.TabIndex = 8;
              this.lblCuotas.Text = "Cuotas Pendientes";
              // 
+             // txtTitulo
+             // 
+             this.txtTitulo.AutoSize = true;
+             this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+             this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+             this.txtTitulo.Location = new System.Drawing.Point(277, 23);
+             this.txtTitulo.Name = "txtTitulo";
+             this.txtTitulo.Size = new System.Drawing.Size(147, 24);
+             this.txtTitulo.TabIndex = 29;
+             this.txtTitulo.Text = "Realizar un pago";
+             // 
              // FrmAltaPago
              // 
              this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
              this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-             this.ClientSize = new System.Drawing.Size(719, 451);
+             this.ClientSize = new System.Drawing.Size(719, 529);
+             this.Controls.Add(this.txtTitulo);
              this.Controls.Add(this.lblCuotas);
              this.Controls.Add(this.lblPrestamos);
              this.Controls.Add(this.lblClientes);
@@ -153,5 +166,6 @@
          private System.Windows.Forms.Label lblClientes;
          private System.Windows.Forms.Label lblPrestamos;
          private System.Windows.Forms.Label lblCuotas;
+         private System.Windows.Forms.Label txtTitulo;
      }
  }
