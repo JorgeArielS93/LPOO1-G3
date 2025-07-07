@@ -12,6 +12,7 @@ using Vistas.VistaCliente;
 using Vistas.VistaDestino;
 using Vistas.VistaPrestamos;
 using Vistas.VistaPago;
+using Vistas.VistaCuotas;
 
 namespace Vistas
 {
@@ -167,7 +168,6 @@ namespace Vistas
 
         private void altaToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            // Instanciar y mostrar el formulario FrmAltaPago
             FrmAltaPago frmAltaPago = new FrmAltaPago();
             frmAltaPago.Show();
         }
@@ -187,11 +187,13 @@ namespace Vistas
         private void anularPrestamoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmAnularPrestamo frmAnular = new FrmAnularPrestamo();
-            frmAnular.ShowDialog(); // Usar ShowDialog para que sea modal
-            // Si FrmVerPrestamos está abierto, podrías querer recargar los datos
-            // para reflejar la anulación.
-            // Por ejemplo, si FrmVerPrestamos es MDI child o accesible, podrías llamar a un método público en él.
-            // Si es FrmVerPrestamos el que tiene la anulacion, la llamada a cargarPrestamos() seria en el mismo formulario.
+            frmAnular.ShowDialog(); 
+        }
+
+        private void verCuotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerCuotas frmCuotas = new FrmVerCuotas();
+            frmCuotas.Show();
         }
        
     }

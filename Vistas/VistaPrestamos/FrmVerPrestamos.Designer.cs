@@ -36,6 +36,7 @@
             this.lblDestino = new System.Windows.Forms.Label();
             this.lblPeriodo = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgbCuotas)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +44,7 @@
             // dgvPrestamos
             // 
             this.dgvPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrestamos.Location = new System.Drawing.Point(47, 59);
+            this.dgvPrestamos.Location = new System.Drawing.Point(47, 100);
             this.dgvPrestamos.Name = "dgvPrestamos";
             this.dgvPrestamos.Size = new System.Drawing.Size(921, 217);
             this.dgvPrestamos.TabIndex = 0;
@@ -53,7 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 26);
+            this.label1.Location = new System.Drawing.Point(44, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 1;
@@ -62,7 +63,7 @@
             // dgbCuotas
             // 
             this.dgbCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgbCuotas.Location = new System.Drawing.Point(47, 459);
+            this.dgbCuotas.Location = new System.Drawing.Point(47, 500);
             this.dgbCuotas.Name = "dgbCuotas";
             this.dgbCuotas.Size = new System.Drawing.Size(656, 201);
             this.dgbCuotas.TabIndex = 2;
@@ -71,7 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 303);
+            this.label2.Location = new System.Drawing.Point(44, 344);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 13);
             this.label2.TabIndex = 3;
@@ -80,7 +81,7 @@
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(44, 325);
+            this.lblCliente.Location = new System.Drawing.Point(44, 366);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(82, 13);
             this.lblCliente.TabIndex = 4;
@@ -89,7 +90,7 @@
             // lblDestino
             // 
             this.lblDestino.AutoSize = true;
-            this.lblDestino.Location = new System.Drawing.Point(44, 349);
+            this.lblDestino.Location = new System.Drawing.Point(44, 390);
             this.lblDestino.Name = "lblDestino";
             this.lblDestino.Size = new System.Drawing.Size(85, 13);
             this.lblDestino.TabIndex = 5;
@@ -98,7 +99,7 @@
             // lblPeriodo
             // 
             this.lblPeriodo.AutoSize = true;
-            this.lblPeriodo.Location = new System.Drawing.Point(44, 373);
+            this.lblPeriodo.Location = new System.Drawing.Point(44, 414);
             this.lblPeriodo.Name = "lblPeriodo";
             this.lblPeriodo.Size = new System.Drawing.Size(85, 13);
             this.lblPeriodo.TabIndex = 6;
@@ -107,17 +108,29 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 428);
+            this.label5.Location = new System.Drawing.Point(44, 469);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 7;
             this.label5.Text = "Cuotas";
             // 
+            // txtTitulo
+            // 
+            this.txtTitulo.AutoSize = true;
+            this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.Location = new System.Drawing.Point(426, 9);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(130, 24);
+            this.txtTitulo.TabIndex = 29;
+            this.txtTitulo.Text = "Ver Prestamos";
+            // 
             // FrmVerPrestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1023, 672);
+            this.ClientSize = new System.Drawing.Size(1023, 739);
+            this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblPeriodo);
             this.Controls.Add(this.lblDestino);
@@ -146,5 +159,6 @@
         private System.Windows.Forms.Label lblDestino;
         private System.Windows.Forms.Label lblPeriodo;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label txtTitulo;
     }
 }

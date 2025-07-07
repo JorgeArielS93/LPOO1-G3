@@ -14,16 +14,16 @@
       </applicationRequestMinimum>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
         <!--
-          UAC Manifest Options
-          If you want to change the Windows User Account Control level replace the 
-          requestedExecutionLevel node with one of the following.
+          Opciones del manifiesto de Control de cuentas de usuario
+          Si desea cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el 
+          nodo requestedExecutionLevel por alguno de los siguientes.
 
         <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
         <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
         <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-         If you want to utilize File and Registry Virtualization for backward 
-         compatibility then delete the requestedExecutionLevel node.
+         Si desea usar la virtualización de archivos y del Registro para la 
+         compatibilidad con versiones anteriores, elimine el nodo requestedExecutionLevel.
     -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
@@ -42,36 +42,36 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClasesBase.dll" size="35840">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ClasesBase.dll" size="37376">
       <assemblyIdentity name="ClasesBase" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>vSZ/8iS4vKP9AfL+l8dwReelzAI=</dsig:DigestValue>
+        <dsig:DigestValue>Qp8g8l7Ce6F93Ut5CevsWlnC/Qg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vistas.exe" size="233984">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Vistas.exe" size="242688">
       <assemblyIdentity name="Vistas" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>dTGTN9lqpSlQE6zEQgiOPYWgchs=</dsig:DigestValue>
+        <dsig:DigestValue>Mp8rIuWjqOdmd5ZAKEBvKCg/LCo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Vistas.exe.config" size="614">
+  <file name="Vistas.exe.config" size="591">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>nHhLvC5Jg5a62KizyS6tnU0vU6I=</dsig:DigestValue>
+      <dsig:DigestValue>rfisj0f6o5JHLsAPrMsD7dQGwWw=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

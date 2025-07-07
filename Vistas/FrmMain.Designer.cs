@@ -41,6 +41,7 @@
             this.verPrestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verPrestamosPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verPrestamosPorDestinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anularPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.destinosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.verDestinosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +52,9 @@
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
-            this.anularPrestamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.verCuotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtTitulo = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,10 +68,11 @@
             this.destinosToolStripMenuItem,
             this.periodosToolStripMenuItem,
             this.pagosToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.sALIRToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(582, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(682, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -115,14 +119,14 @@
             // altaToolStripMenuItem1
             // 
             this.altaToolStripMenuItem1.Name = "altaToolStripMenuItem1";
-            this.altaToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
+            this.altaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.altaToolStripMenuItem1.Text = "Alta";
             this.altaToolStripMenuItem1.Click += new System.EventHandler(this.altaToolStripMenuItem1_Click);
             // 
             // verClientesToolStripMenuItem
             // 
             this.verClientesToolStripMenuItem.Name = "verClientesToolStripMenuItem";
-            this.verClientesToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.verClientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.verClientesToolStripMenuItem.Text = "Ver Clientes";
             this.verClientesToolStripMenuItem.Click += new System.EventHandler(this.verClientesToolStripMenuItem_Click);
             // 
@@ -167,6 +171,13 @@
             this.verPrestamosPorDestinoToolStripMenuItem.Text = "Ver Prestamos por destino";
             this.verPrestamosPorDestinoToolStripMenuItem.Click += new System.EventHandler(this.verPrestamosPorDestinoToolStripMenuItem_Click);
             // 
+            // anularPrestamoToolStripMenuItem
+            // 
+            this.anularPrestamoToolStripMenuItem.Name = "anularPrestamoToolStripMenuItem";
+            this.anularPrestamoToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.anularPrestamoToolStripMenuItem.Text = "Anular Prestamo";
+            this.anularPrestamoToolStripMenuItem.Click += new System.EventHandler(this.anularPrestamoToolStripMenuItem_Click);
+            // 
             // destinosToolStripMenuItem
             // 
             this.destinosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -179,14 +190,14 @@
             // altaToolStripMenuItem2
             // 
             this.altaToolStripMenuItem2.Name = "altaToolStripMenuItem2";
-            this.altaToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
+            this.altaToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.altaToolStripMenuItem2.Text = "Alta";
             this.altaToolStripMenuItem2.Click += new System.EventHandler(this.altaToolStripMenuItem2_Click);
             // 
             // verDestinosToolStripMenuItem
             // 
             this.verDestinosToolStripMenuItem.Name = "verDestinosToolStripMenuItem";
-            this.verDestinosToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.verDestinosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.verDestinosToolStripMenuItem.Text = "Ver Destinos";
             this.verDestinosToolStripMenuItem.Click += new System.EventHandler(this.verDestinosToolStripMenuItem_Click);
             // 
@@ -247,18 +258,38 @@
             this.lblRol.TabIndex = 2;
             this.lblRol.Text = "label1";
             // 
-            // anularPrestamoToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            this.anularPrestamoToolStripMenuItem.Name = "anularPrestamoToolStripMenuItem";
-            this.anularPrestamoToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.anularPrestamoToolStripMenuItem.Text = "Anular Prestamo";
-            this.anularPrestamoToolStripMenuItem.Click += new System.EventHandler(this.anularPrestamoToolStripMenuItem_Click);
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verCuotasToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(56, 20);
+            this.toolStripMenuItem1.Text = "Cuotas";
+            // 
+            // verCuotasToolStripMenuItem
+            // 
+            this.verCuotasToolStripMenuItem.Name = "verCuotasToolStripMenuItem";
+            this.verCuotasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.verCuotasToolStripMenuItem.Text = "Ver Cuotas";
+            this.verCuotasToolStripMenuItem.Click += new System.EventHandler(this.verCuotasToolStripMenuItem_Click);
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.AutoSize = true;
+            this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.Location = new System.Drawing.Point(15, 112);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(103, 24);
+            this.txtTitulo.TabIndex = 29;
+            this.txtTitulo.Text = "GRUPO 03";
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 484);
+            this.ClientSize = new System.Drawing.Size(682, 484);
+            this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.lblRol);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.menuStrip1);
@@ -299,5 +330,8 @@
         private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem verPrestamosPorDestinoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem anularPrestamoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem verCuotasToolStripMenuItem;
+        private System.Windows.Forms.Label txtTitulo;
     }
 }

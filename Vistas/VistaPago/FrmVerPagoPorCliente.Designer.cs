@@ -28,22 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.dgvPagos = new System.Windows.Forms.DataGridView();
+            this.txtTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(398, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Selecciona un Cliente";
             // 
             // cmbCliente
             // 
@@ -75,21 +66,32 @@
             // dgvPagos
             // 
             this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPagos.Location = new System.Drawing.Point(46, 111);
+            this.dgvPagos.Location = new System.Drawing.Point(49, 112);
             this.dgvPagos.Name = "dgvPagos";
             this.dgvPagos.Size = new System.Drawing.Size(850, 282);
             this.dgvPagos.TabIndex = 4;
+            // 
+            // txtTitulo
+            // 
+            this.txtTitulo.AutoSize = true;
+            this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.Location = new System.Drawing.Point(385, 9);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(182, 24);
+            this.txtTitulo.TabIndex = 29;
+            this.txtTitulo.Text = "Seleccione un cliente";
             // 
             // FrmVerPagoPorCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 440);
+            this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.dgvPagos);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbCliente);
-            this.Controls.Add(this.label1);
             this.Name = "FrmVerPagoPorCliente";
             this.Text = "FrmVerPagoPorCliente";
             this.Load += new System.EventHandler(this.FrmVerPagoPorCliente_Load);
@@ -101,10 +103,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.DataGridView dgvPagos;
+        private System.Windows.Forms.Label txtTitulo;
     }
 }

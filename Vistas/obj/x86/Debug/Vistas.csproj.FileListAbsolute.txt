@@ -122,3 +122,36 @@ C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.exe.manifest
 C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.application
 C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.exe
 C:\lpoo1\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.pdb
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\bin\Debug\Vistas.exe.config
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\bin\Debug\Vistas.exe.manifest
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\bin\Debug\Vistas.application
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\bin\Debug\Vistas.exe
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\bin\Debug\Vistas.pdb
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\bin\Debug\ClasesBase.dll
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\bin\Debug\ClasesBase.pdb
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmAltaCliente.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmDestino.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmLogin.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmMain.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmPeriodo.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmPrestamo.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaCliente.FrmVerClientes.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaDestino.FrmAltaDestino.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaDestino.FrmVerDestinos.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPago.FrmAltaPago.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPago.FrmVerPagoPorCliente.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPrestamos.FrmAltaPrestamo.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPrestamos.FrmAnularPrestamo.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPrestamos.FrmVerPrestamoPorDestino.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPrestamos.FrmVerPrestamos.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaPrestamos.FrmVerPrestamosPorFecha.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmAltaUsuario.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.FrmVerUsuarios.resources
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.exe.manifest
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.application
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.exe
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.pdb
+D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\Vistas\obj\x86\Debug\Vistas.VistaCuotas.FrmVerCuotas.resources

@@ -46,6 +46,7 @@
             this.Telefono = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.numIngreso = new System.Windows.Forms.NumericUpDown();
+            this.txtTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numIngreso)).BeginInit();
             this.SuspendLayout();
             // 
@@ -247,11 +248,23 @@
             131072});
             this.numIngreso.ValueChanged += new System.EventHandler(this.numIngreso_ValueChanged);
             // 
+            // txtTitulo
+            // 
+            this.txtTitulo.AutoSize = true;
+            this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.Location = new System.Drawing.Point(119, 9);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(137, 24);
+            this.txtTitulo.TabIndex = 29;
+            this.txtTitulo.Text = "Agregar Cliente";
+            // 
             // FrmAltaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 479);
+            this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.numIngreso);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.Telefono);
@@ -300,6 +313,7 @@
         private System.Windows.Forms.Label Telefono;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.NumericUpDown numIngreso;
+        private System.Windows.Forms.Label txtTitulo;
 
 
 

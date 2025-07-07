@@ -88,6 +88,12 @@
     <Compile Include="VistaCliente\FrmVerClientes.Designer.cs">
       <DependentUpon>FrmVerClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="VistaCuotas\FrmVerCuotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VistaCuotas\FrmVerCuotas.Designer.cs">
+      <DependentUpon>FrmVerCuotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="VistaDestino\FrmAltaDestino.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     <EmbeddedResource Include="VistaCliente\FrmVerClientes.resx">
       <DependentUpon>FrmVerClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VistaCuotas\FrmVerCuotas.resx">
+      <DependentUpon>FrmVerCuotas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VistaDestino\FrmAltaDestino.resx">
       <DependentUpon>FrmAltaDestino.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,7 +295,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

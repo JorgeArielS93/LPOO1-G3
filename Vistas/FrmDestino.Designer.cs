@@ -39,35 +39,37 @@
             // Codigo
             // 
             this.Codigo.AutoSize = true;
-            this.Codigo.Location = new System.Drawing.Point(278, 56);
+            this.Codigo.Location = new System.Drawing.Point(208, 46);
+            this.Codigo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Codigo.Name = "Codigo";
-            this.Codigo.Size = new System.Drawing.Size(52, 17);
+            this.Codigo.Size = new System.Drawing.Size(40, 13);
             this.Codigo.TabIndex = 0;
             this.Codigo.Text = "Codigo";
             // 
             // Descripcion
             // 
             this.Descripcion.AutoSize = true;
-            this.Descripcion.Location = new System.Drawing.Point(263, 150);
+            this.Descripcion.Location = new System.Drawing.Point(197, 122);
+            this.Descripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Size = new System.Drawing.Size(82, 17);
+            this.Descripcion.Size = new System.Drawing.Size(63, 13);
             this.Descripcion.TabIndex = 2;
             this.Descripcion.Text = "Descripcion";
             // 
             // txtDescripcionDest
             // 
-            this.txtDescripcionDest.Location = new System.Drawing.Point(104, 199);
+            this.txtDescripcionDest.Location = new System.Drawing.Point(78, 162);
+            this.txtDescripcionDest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDescripcionDest.Multiline = true;
             this.txtDescripcionDest.Name = "txtDescripcionDest";
-            this.txtDescripcionDest.Size = new System.Drawing.Size(400, 177);
+            this.txtDescripcionDest.Size = new System.Drawing.Size(301, 145);
             this.txtDescripcionDest.TabIndex = 3;
             // 
             // btnGuardarDestino
             // 
-            this.btnGuardarDestino.Location = new System.Drawing.Point(393, 438);
-            this.btnGuardarDestino.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardarDestino.Location = new System.Drawing.Point(295, 356);
             this.btnGuardarDestino.Name = "btnGuardarDestino";
-            this.btnGuardarDestino.Size = new System.Drawing.Size(166, 30);
+            this.btnGuardarDestino.Size = new System.Drawing.Size(124, 24);
             this.btnGuardarDestino.TabIndex = 4;
             this.btnGuardarDestino.Text = "Guardar Destino";
             this.btnGuardarDestino.UseVisualStyleBackColor = true;
@@ -76,9 +78,10 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(58, 438);
+            this.btnVolver.Location = new System.Drawing.Point(44, 356);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(96, 30);
+            this.btnVolver.Size = new System.Drawing.Size(72, 24);
             this.btnVolver.TabIndex = 5;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -86,25 +89,28 @@
             // 
             // txtCodDestino
             // 
-            this.txtCodDestino.Location = new System.Drawing.Point(246, 100);
+            this.txtCodDestino.Location = new System.Drawing.Point(184, 81);
+            this.txtCodDestino.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCodDestino.Name = "txtCodDestino";
             this.txtCodDestino.ReadOnly = true;
-            this.txtCodDestino.Size = new System.Drawing.Size(116, 22);
+            this.txtCodDestino.Size = new System.Drawing.Size(88, 20);
             this.txtCodDestino.TabIndex = 6;
             // 
             // FrmDestino
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 506);
+            this.ClientSize = new System.Drawing.Size(461, 411);
             this.Controls.Add(this.txtCodDestino);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnGuardarDestino);
             this.Controls.Add(this.txtDescripcionDest);
             this.Controls.Add(this.Descripcion);
             this.Controls.Add(this.Codigo);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmDestino";
             this.Text = "FrmDestino";
+            this.Load += new System.EventHandler(this.FrmDestino_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

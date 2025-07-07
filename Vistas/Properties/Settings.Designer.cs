@@ -26,7 +26,10 @@ namespace Vistas.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"Data Source=.\SQLEXPRESS;AttachDbFilename=""D:\Educación\Facultad\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico 1\LPOO1-G3-Local\prestamos.mdf"";Integrated Security=True;Connect Timeout=30;User Instance=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=\"D:\\Educación\\Facultad\\3° Año\\1er Cuatr" +
+            "imestre\\Laboratorio de Programacion Orientado a Objetos I\\Correccion TP Final\\LP" +
+            "OO1-G3\\prestamos.mdf\";Integrated Security=True;Connect Timeout=30;User Instance=" +
+            "True")]
         public string prestamosConnectionString {
             get {
                 return ((string)(this["prestamosConnectionString"]));

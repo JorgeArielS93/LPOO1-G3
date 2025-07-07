@@ -13,8 +13,8 @@ namespace ClasesBase
         {
             SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString);
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "obtenerClientes"; // Llama al Stored Procedure
-            cmd.CommandType = CommandType.StoredProcedure; // Indica que es un SP
+            cmd.CommandText = "obtenerClientes"; 
+            cmd.CommandType = CommandType.StoredProcedure; 
             cmd.Connection = cn;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -27,7 +27,7 @@ namespace ClasesBase
             }
             catch (Exception ex)
             {
-                // Manejo de errores (puedes loggear el error o mostrar un mensaje)
+                
                 Console.WriteLine("Error al obtener clientes: " + ex.Message);
             }
             finally
@@ -46,7 +46,7 @@ namespace ClasesBase
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cn;
 
-            cmd.Parameters.AddWithValue("@cliDNI", cliDNI); // Pasa el DNI del cliente como parámetro
+            cmd.Parameters.AddWithValue("@cliDNI", cliDNI); 
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

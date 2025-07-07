@@ -92,7 +92,6 @@ namespace Vistas
                 return false;
             }
 
-            // Validar que el DNI no esté ya en uso
             if (ABMCliente.existeDNI(txtDNI.Text))
             {
                 MessageBox.Show("El DNI ingresado ya está registrado en otro cliente.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
