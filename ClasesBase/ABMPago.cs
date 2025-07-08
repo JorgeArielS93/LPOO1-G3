@@ -162,6 +162,27 @@ namespace ClasesBase
 
             return dt;
         }
+
+        public static DataSet listar_pagos_por_fecha_y_cliente(string dni, DateTime fechaDesde, DateTime fechaHasta)
+        {
+            SqlConnection cnn = new SqlConnection(Properties.Settings.Default.prestamoConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "listar_pagos_por_fecha_y_cliente_sp";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@dni_cliente", dni);
+            cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+            cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd); 
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            return ds;
+        }
+
     }
 
 }
