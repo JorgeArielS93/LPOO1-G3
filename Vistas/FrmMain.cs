@@ -195,6 +195,12 @@ namespace Vistas
             FrmVerCuotas frmCuotas = new FrmVerCuotas();
             frmCuotas.Show();
         }
+
+        private void verPagosPorFechaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVerPagoPorFechaCliente frmPagosFech = new FrmVerPagoPorFechaCliente();
+            frmPagosFech.Show();
+        }
        
     }
 }

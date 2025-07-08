@@ -66,5 +66,10 @@ namespace Vistas.VistaPago
             lblCantidadPagos.Text = "Pagos realizados: " + cantidad;
             lblTotalImporte.Text = "Importe total: $" + total.ToString("N2");
         }
+
+        private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
