@@ -51,7 +51,20 @@ namespace Vistas.VistaPago
         {
             string dni = cmbCliente.SelectedValue.ToString();
 
-            dgvPagos.DataSource = ABMPago.listar_pago_por_cliente(dni);
+            DataTable pagos = ABMPago.listar_pago_por_cliente(dni);
+
+            dgvPagos.DataSource = pagos;
+            int cantidad = pagos.Rows.Count;
+            decimal total = 0;
+
+            foreach (DataRow row in pagos.Rows)
+            {
+                if (row["importe"] != DBNull.Value)
+                    total += Convert.ToDecimal(row["importe"]);
+            }
+
+            lblCantidadPagos.Text = "Pagos realizados: " + cantidad;
+            lblTotalImporte.Text = "Importe total: $" + total.ToString("N2");
         }
     }
 }

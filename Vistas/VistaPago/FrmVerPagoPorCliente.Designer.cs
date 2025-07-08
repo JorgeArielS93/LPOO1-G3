@@ -33,6 +33,8 @@
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.dgvPagos = new System.Windows.Forms.DataGridView();
             this.txtTitulo = new System.Windows.Forms.Label();
+            this.lblCantidadPagos = new System.Windows.Forms.Label();
+            this.lblTotalImporte = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,11 +84,31 @@
             this.txtTitulo.TabIndex = 29;
             this.txtTitulo.Text = "Seleccione un cliente";
             // 
+            // lblCantidadPagos
+            // 
+            this.lblCantidadPagos.AutoSize = true;
+            this.lblCantidadPagos.Location = new System.Drawing.Point(215, 431);
+            this.lblCantidadPagos.Name = "lblCantidadPagos";
+            this.lblCantidadPagos.Size = new System.Drawing.Size(99, 13);
+            this.lblCantidadPagos.TabIndex = 30;
+            this.lblCantidadPagos.Text = "Pagos realizados: 0";
+            // 
+            // lblTotalImporte
+            // 
+            this.lblTotalImporte.AutoSize = true;
+            this.lblTotalImporte.Location = new System.Drawing.Point(622, 431);
+            this.lblTotalImporte.Name = "lblTotalImporte";
+            this.lblTotalImporte.Size = new System.Drawing.Size(98, 13);
+            this.lblTotalImporte.TabIndex = 31;
+            this.lblTotalImporte.Text = "Importe total: $0.00";
+            // 
             // FrmVerPagoPorCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 440);
+            this.ClientSize = new System.Drawing.Size(942, 510);
+            this.Controls.Add(this.lblTotalImporte);
+            this.Controls.Add(this.lblCantidadPagos);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.dgvPagos);
             this.Controls.Add(this.btnFiltrar);
@@ -108,5 +130,7 @@
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.DataGridView dgvPagos;
         private System.Windows.Forms.Label txtTitulo;
+        private System.Windows.Forms.Label lblCantidadPagos;
+        private System.Windows.Forms.Label lblTotalImporte;
     }
 }

@@ -27,3 +27,9 @@ D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Ori
 D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\ClasesBase\bin\Debug\ClasesBase.pdb
 D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.dll
 D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Correccion TP Final\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\54388\Documents\LPOO1\LPOO1-G3\ClasesBase\bin\Debug\ClasesBase.dll.config
+C:\Users\54388\Documents\LPOO1\LPOO1-G3\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\54388\Documents\LPOO1\LPOO1-G3\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\54388\Documents\LPOO1\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
+C:\Users\54388\Documents\LPOO1\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\54388\Documents\LPOO1\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.pdb
