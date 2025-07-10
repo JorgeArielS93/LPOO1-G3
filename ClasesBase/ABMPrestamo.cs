@@ -240,7 +240,9 @@ namespace ClasesBase
 
                 prestamoNumero = Convert.ToInt32(cmdPrestamo.ExecuteScalar());
 
-                decimal importePorCuota = preImporte / preCantidadCuotas;
+                decimal interesTotal = preImporte * ((decimal)preTasaInteres / 100.0m);
+                decimal montoTotalAPagar = preImporte + interesTotal;
+                decimal importePorCuota = montoTotalAPagar / preCantidadCuotas;
 
                 for (int i = 1; i <= preCantidadCuotas; i++)
                 {

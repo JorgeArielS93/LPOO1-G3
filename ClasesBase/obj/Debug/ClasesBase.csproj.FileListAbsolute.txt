@@ -38,3 +38,8 @@ D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Ori
 D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico Final\LPOO1-G3\ClasesBase\bin\Debug\ClasesBase.pdb
 D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico Final\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.dll
 D:\Educación\Facultad\3° Año\1er Cuatrimestre\Laboratorio de Programacion Orientado a Objetos I\Practica\Trabajo Practico Final\LPOO1-G3\ClasesBase\obj\Debug\ClasesBase.pdb
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\ClasesBase\bin\Debug\ClasesBase.dll.config
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\ClasesBase\bin\Debug\ClasesBase.dll
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\ClasesBase\bin\Debug\ClasesBase.pdb
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\ClasesBase\obj\Debug\ClasesBase.dll
+d:\documentos\visual studio 2010\Projects\LPOOI_GRUPO3\ClasesBase\obj\Debug\ClasesBase.pdb
