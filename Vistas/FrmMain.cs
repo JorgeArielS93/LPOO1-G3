@@ -43,7 +43,6 @@ namespace Vistas
                 case "ADMIN":
                     usuarioToolStripMenuItem.Visible = true;
                     destinosToolStripMenuItem.Visible = true;
-                    periodosToolStripMenuItem.Visible = true;
                     break;
                 
                 case "OPER":
@@ -55,7 +54,6 @@ namespace Vistas
                 case "AUDI":
                     usuarioToolStripMenuItem.Visible = true;
                     destinosToolStripMenuItem.Visible = true;
-                    periodosToolStripMenuItem.Visible = true;
                     clientesToolStripMenuItem.Visible = true;
                     prestamosToolStripMenuItem.Visible = true;
                     pagosToolStripMenuItem.Visible = true;
@@ -200,6 +198,11 @@ namespace Vistas
         {
             FrmVerPagoPorFechaCliente frmPagosFech = new FrmVerPagoPorFechaCliente();
             frmPagosFech.Show();
+        }
+
+        private void periodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
        
     }

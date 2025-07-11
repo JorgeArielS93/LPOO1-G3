@@ -64,7 +64,12 @@ namespace Vistas.VistaPrestamos
 
         private void dgvPrestamosFecha_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+                            
+        }
 
+        private void dgvPrestamosFecha_CurrentCellChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvPrestamosFecha.AllowUserToAddRows = false;
         }
     }
 }

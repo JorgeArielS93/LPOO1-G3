@@ -107,6 +107,7 @@
             // 
             // dgvPagos
             // 
+            this.dgvPagos.AllowUserToAddRows = false;
             this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPagos.Location = new System.Drawing.Point(78, 179);
             this.dgvPagos.Name = "dgvPagos";

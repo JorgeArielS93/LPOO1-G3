@@ -49,13 +49,13 @@
             this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.verPagosPorClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verPagosPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.verCuotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
             this.txtTitulo = new System.Windows.Forms.Label();
-            this.verPagosPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -207,6 +207,7 @@
             this.periodosToolStripMenuItem.Name = "periodosToolStripMenuItem";
             this.periodosToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.periodosToolStripMenuItem.Text = "Periodos";
+            this.periodosToolStripMenuItem.Click += new System.EventHandler(this.periodosToolStripMenuItem_Click);
             // 
             // pagosToolStripMenuItem
             // 
@@ -231,6 +232,13 @@
             this.verPagosPorClienteToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.verPagosPorClienteToolStripMenuItem.Text = "Ver Pagos por cliente";
             this.verPagosPorClienteToolStripMenuItem.Click += new System.EventHandler(this.verPagosPorClienteToolStripMenuItem_Click);
+            // 
+            // verPagosPorFechaToolStripMenuItem
+            // 
+            this.verPagosPorFechaToolStripMenuItem.Name = "verPagosPorFechaToolStripMenuItem";
+            this.verPagosPorFechaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.verPagosPorFechaToolStripMenuItem.Text = "Ver pagos por fecha";
+            this.verPagosPorFechaToolStripMenuItem.Click += new System.EventHandler(this.verPagosPorFechaToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -285,13 +293,6 @@
             this.txtTitulo.Size = new System.Drawing.Size(103, 24);
             this.txtTitulo.TabIndex = 29;
             this.txtTitulo.Text = "GRUPO 03";
-            // 
-            // verPagosPorFechaToolStripMenuItem
-            // 
-            this.verPagosPorFechaToolStripMenuItem.Name = "verPagosPorFechaToolStripMenuItem";
-            this.verPagosPorFechaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.verPagosPorFechaToolStripMenuItem.Text = "Ver pagos por fecha";
-            this.verPagosPorFechaToolStripMenuItem.Click += new System.EventHandler(this.verPagosPorFechaToolStripMenuItem_Click);
             // 
             // FrmMain
             // 

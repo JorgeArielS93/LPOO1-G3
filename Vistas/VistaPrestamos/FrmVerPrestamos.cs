@@ -32,7 +32,8 @@ namespace Vistas.VistaPrestamos
         }
 
         private void dgvPrestamos_CurrentCellChanged(object sender, EventArgs e)
-        {   
+        {
+            dgvPrestamos.AllowUserToAddRows = false;
             if(dgvPrestamos.CurrentRow != null){
 
                 Destino destino = ABMDestino.getDestinoByCodigo(Convert.ToInt32(dgvPrestamos.CurrentRow.Cells["DES_Codigo"].Value.ToString()));

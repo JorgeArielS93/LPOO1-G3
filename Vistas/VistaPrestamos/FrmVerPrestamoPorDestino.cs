@@ -87,5 +87,10 @@ namespace Vistas.VistaPrestamos
 
         }
 
+        private void cmbDestino_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

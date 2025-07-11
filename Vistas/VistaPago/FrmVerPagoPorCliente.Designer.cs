@@ -68,11 +68,13 @@
             // 
             // dgvPagos
             // 
+            this.dgvPagos.AllowUserToAddRows = false;
             this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPagos.Location = new System.Drawing.Point(49, 112);
+            this.dgvPagos.Location = new System.Drawing.Point(44, 114);
             this.dgvPagos.Name = "dgvPagos";
             this.dgvPagos.Size = new System.Drawing.Size(850, 282);
             this.dgvPagos.TabIndex = 4;
+            this.dgvPagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagos_CellContentClick);
             // 
             // txtTitulo
             // 

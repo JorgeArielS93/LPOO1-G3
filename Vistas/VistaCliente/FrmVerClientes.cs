@@ -44,6 +44,7 @@ namespace Vistas.VistaCliente
 
         private void dgvClientes_CurrentCellChanged(object sender, EventArgs e)
         {
+            dgvClientes.AllowUserToAddRows = false;
             if (dgvClientes.CurrentRow != null) 
             {
                 txtDNI.Text = dgvClientes.CurrentRow.Cells["DNI"].Value.ToString();
@@ -149,23 +150,36 @@ namespace Vistas.VistaCliente
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             string dni = dgvClientes.CurrentRow.Cells["DNI"].Value.ToString();
-
-            DialogResult respuesta = MessageBox.Show(
-                "¿Estás seguro de eliminar este usuario?",
-                "Confirmar eliminación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button2);
-
-            if (respuesta == DialogResult.Yes)
+            Boolean result = ABMPrestamo.existeDNIConPrestamoPendiente(dni);
+            if (result)
             {
-                ABMCliente.eliminarCliente(dni);
-
-                MessageBox.Show("Cliente eliminado correctamente.", "Éxito",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                load_clientes();
+                MessageBox.Show(
+                   "El cliente tiene prestamos pendientes",
+                   "Aviso",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Question,
+                   MessageBoxDefaultButton.Button2);
             }
+            else 
+            {
+                DialogResult respuesta = MessageBox.Show(
+                    "¿Estás seguro de eliminar este cliente?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    ABMCliente.eliminarCliente(dni);
+
+                    MessageBox.Show("Cliente eliminado correctamente.", "Éxito",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    load_clientes();
+                }
+            }
+
         }
 
         private void btnOrdenarApellido_Click(object sender, EventArgs e)

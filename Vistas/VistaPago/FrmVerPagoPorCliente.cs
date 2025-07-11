@@ -71,5 +71,10 @@ namespace Vistas.VistaPago
         {
 
         }
+
+        private void dgvPagos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

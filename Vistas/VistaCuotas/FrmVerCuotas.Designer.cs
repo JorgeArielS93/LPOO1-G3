@@ -100,6 +100,7 @@
             // 
             // dgvCuotas
             // 
+            this.dgvCuotas.AllowUserToAddRows = false;
             this.dgvCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCuotas.Location = new System.Drawing.Point(96, 221);
             this.dgvCuotas.Name = "dgvCuotas";

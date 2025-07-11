@@ -604,7 +604,24 @@ namespace ClasesBase
             return dt;
         }
 
-       
+        public static bool existeDNIConPrestamoPendiente(string dni)
+        {
+            bool tienePrestamoPendiente = false;
+
+            using (SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Prestamo WHERE CLI_DNI = @dni AND PRE_Estado = 'PENDIENTE'", cn);
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                cn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                cn.Close();
+
+                tienePrestamoPendiente = (count > 0);
+            }
+
+            return tienePrestamoPendiente;
+        }
 
     }
 }

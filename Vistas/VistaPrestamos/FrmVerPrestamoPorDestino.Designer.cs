@@ -48,6 +48,7 @@
             this.cmbDestino.Name = "cmbDestino";
             this.cmbDestino.Size = new System.Drawing.Size(213, 21);
             this.cmbDestino.TabIndex = 0;
+            this.cmbDestino.SelectedIndexChanged += new System.EventHandler(this.cmbDestino_SelectedIndexChanged_1);
             // 
             // label1
             // 
@@ -70,6 +71,7 @@
             // 
             // dgvPrestamos
             // 
+            this.dgvPrestamos.AllowUserToAddRows = false;
             this.dgvPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrestamos.Location = new System.Drawing.Point(12, 87);
             this.dgvPrestamos.Name = "dgvPrestamos";

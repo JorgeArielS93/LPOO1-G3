@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.lblAnularPrestamo = new System.Windows.Forms.Label();
-            this.txtNumeroPrestamo = new System.Windows.Forms.TextBox();
             this.btnAnular = new System.Windows.Forms.Button();
-            this.btnFiltrar = new System.Windows.Forms.Button();
             this.dgvPrestamos = new System.Windows.Forms.DataGridView();
             this.dgvCuotas = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTitulo = new System.Windows.Forms.Label();
+            this.cmbPrestamo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuotas)).BeginInit();
             this.SuspendLayout();
@@ -47,14 +46,8 @@
             this.lblAnularPrestamo.Name = "lblAnularPrestamo";
             this.lblAnularPrestamo.Size = new System.Drawing.Size(106, 13);
             this.lblAnularPrestamo.TabIndex = 0;
-            this.lblAnularPrestamo.Text = "Numero de Prestamo";
-            // 
-            // txtNumeroPrestamo
-            // 
-            this.txtNumeroPrestamo.Location = new System.Drawing.Point(218, 83);
-            this.txtNumeroPrestamo.Name = "txtNumeroPrestamo";
-            this.txtNumeroPrestamo.Size = new System.Drawing.Size(125, 20);
-            this.txtNumeroPrestamo.TabIndex = 1;
+            this.lblAnularPrestamo.Text = "Seleccione prestamo";
+            this.lblAnularPrestamo.Click += new System.EventHandler(this.lblAnularPrestamo_Click);
             // 
             // btnAnular
             // 
@@ -66,18 +59,9 @@
             this.btnAnular.UseVisualStyleBackColor = true;
             this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.Location = new System.Drawing.Point(465, 78);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
-            this.btnFiltrar.TabIndex = 3;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
             // dgvPrestamos
             // 
+            this.dgvPrestamos.AllowUserToAddRows = false;
             this.dgvPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPrestamos.Location = new System.Drawing.Point(64, 141);
             this.dgvPrestamos.Name = "dgvPrestamos";
@@ -86,6 +70,7 @@
             // 
             // dgvCuotas
             // 
+            this.dgvCuotas.AllowUserToAddRows = false;
             this.dgvCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCuotas.Location = new System.Drawing.Point(64, 307);
             this.dgvCuotas.Name = "dgvCuotas";
@@ -112,18 +97,26 @@
             this.txtTitulo.TabIndex = 29;
             this.txtTitulo.Text = "Anular prestamo";
             // 
+            // cmbPrestamo
+            // 
+            this.cmbPrestamo.FormattingEnabled = true;
+            this.cmbPrestamo.Location = new System.Drawing.Point(183, 80);
+            this.cmbPrestamo.Name = "cmbPrestamo";
+            this.cmbPrestamo.Size = new System.Drawing.Size(180, 21);
+            this.cmbPrestamo.TabIndex = 30;
+            this.cmbPrestamo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // FrmAnularPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1137, 582);
+            this.Controls.Add(this.cmbPrestamo);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvCuotas);
             this.Controls.Add(this.dgvPrestamos);
-            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.btnAnular);
-            this.Controls.Add(this.txtNumeroPrestamo);
             this.Controls.Add(this.lblAnularPrestamo);
             this.Name = "FrmAnularPrestamo";
             this.Text = "FrmAnularPrestamo";
@@ -138,12 +131,11 @@
         #endregion
 
         private System.Windows.Forms.Label lblAnularPrestamo;
-        private System.Windows.Forms.TextBox txtNumeroPrestamo;
         private System.Windows.Forms.Button btnAnular;
-        private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.DataGridView dgvPrestamos;
         private System.Windows.Forms.DataGridView dgvCuotas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label txtTitulo;
+        private System.Windows.Forms.ComboBox cmbPrestamo;
     }
 }
