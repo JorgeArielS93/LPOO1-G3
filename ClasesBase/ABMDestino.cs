@@ -100,5 +100,24 @@ namespace ClasesBase
 
         }
 
+        public static bool existeDestinoConPrestamo(int codigo)
+        {
+            bool tienePrestamo = false;
+
+            using (SqlConnection cn = new SqlConnection(ClasesBase.Properties.Settings.Default.prestamoConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Prestamo WHERE DES_Codigo = @codigo", cn);
+                cmd.Parameters.AddWithValue("@codigo", codigo);
+
+                cn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                cn.Close();
+
+                tienePrestamo = (count > 0);
+            }
+
+            return tienePrestamo;
+        }
+
     }
 }

@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClasesBase", "ClasesBase\Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vistas", "Vistas\Vistas.csproj", "{DF867FD5-5296-48EE-9FBF-07D86045FE5F}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InstaladorGrupo3", "InstaladorGrupo3\InstaladorGrupo3.vdproj", "{756A12C6-FFDA-4578-9076-D87235EC5BB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,12 @@ Global
 		{DF867FD5-5296-48EE-9FBF-07D86045FE5F}.Release|Mixed Platforms.Build.0 = Release|x86
 		{DF867FD5-5296-48EE-9FBF-07D86045FE5F}.Release|x86.ActiveCfg = Release|x86
 		{DF867FD5-5296-48EE-9FBF-07D86045FE5F}.Release|x86.Build.0 = Release|x86
+		{756A12C6-FFDA-4578-9076-D87235EC5BB2}.Debug|Any CPU.ActiveCfg = Debug
+		{756A12C6-FFDA-4578-9076-D87235EC5BB2}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{756A12C6-FFDA-4578-9076-D87235EC5BB2}.Debug|x86.ActiveCfg = Debug
+		{756A12C6-FFDA-4578-9076-D87235EC5BB2}.Release|Any CPU.ActiveCfg = Release
+		{756A12C6-FFDA-4578-9076-D87235EC5BB2}.Release|Mixed Platforms.ActiveCfg = Release
+		{756A12C6-FFDA-4578-9076-D87235EC5BB2}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

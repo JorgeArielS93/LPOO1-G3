@@ -78,22 +78,34 @@ namespace Vistas.VistaDestino
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             int codigo = Convert.ToInt32(dgvDestino.CurrentRow.Cells["Codigo"].Value);
-
-            DialogResult respuesta = MessageBox.Show(
-                "¿Estás seguro de eliminar este destino?",
-                "Confirmar eliminación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button2);
-
-            if (respuesta == DialogResult.Yes)
+            Boolean result = ABMDestino.existeDestinoConPrestamo(codigo);
+            if (result)
             {
-                ABMDestino.eliminarDestino(codigo);
+                MessageBox.Show(
+                   "El destino tiene prestamos asignados",
+                   "Aviso",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Question,
+                   MessageBoxDefaultButton.Button2);
+            }
+            else
+            {
+                DialogResult respuesta = MessageBox.Show(
+                    "¿Estás seguro de eliminar este destino?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2);
 
-                MessageBox.Show("Destino eliminado correctamente.", "Éxito",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (respuesta == DialogResult.Yes)
+                {
+                    ABMDestino.eliminarDestino(codigo);
 
-                cargarDestinos();
+                    MessageBox.Show("Destino eliminado correctamente.", "Éxito",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    cargarDestinos();
+                }
             }
         }
 
